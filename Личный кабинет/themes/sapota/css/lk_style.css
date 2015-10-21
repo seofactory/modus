@@ -1,3 +1,5 @@
+/*цвет текста - #994f2a*/
+/*основной цвет текста - #5e2a00*/
 /*цвет для картинок и текста по hover - #f55205*/
 /*цвет активной ссылки - #f14b00*/
 
@@ -273,7 +275,7 @@
     margin: 40px 0 27px 0;
 }
 .wrapperOnMainPage.lk  .bgInSerchFormWithTabs {
-    padding: 0;
+    padding: 0 0 15px 0;
     width: 100%;
 	min-height: 400px;
 }
@@ -364,6 +366,9 @@ ul.tabNavigation li a.rulesCooperation.selected {
 .personalFoto p {
 	margin-bottom: 10px;	
 }
+.personalFoto > p {
+	font-size: .85em;
+}
 .fotoMaster{
     width: 179px;
     height: 173px;
@@ -390,6 +395,7 @@ ul.tabNavigation li a.rulesCooperation.selected {
 }
 .chahgeFoto {
     margin: 5px 0 15px 18px;
+	font-size: .85em;
 }
 .chahgeFoto a,
 .moderator a  {
@@ -549,13 +555,15 @@ span.value {
 }
 	/*ваш адрес*/
 .toClient div,
-.area_undeground div{
+.area div,
+.underground div{
 	display: inline-block;
 }
 .toClient div:first-child {
 	margin-right: 55px;
 }
-.area_undeground div:first-child{
+.underground div:first-child,
+.area div:first-child{
 	margin-right: 16px;
 }
 .toClient label{
@@ -575,20 +583,37 @@ span.value {
 .selectbox:after {
     box-shadow: none;
 }
-.area_undeground div.areaWay,
-.area_undeground div.cityWay {
+.area_underground div.areaWay,
+.area_underground div.cityWay {
 	margin-top: 20px;
 }
 .personalData span.text_normal {
     font-weight: normal;
 }
 .addressSelects{
-	width: 51%;
+	width: 76%;
+}
+.blockPersonalInfoWrapper{
+	display: inline-block;
 }
 .mapBlockWrapper{
-	width:25%;
-	padding-top: 30px;
-	padding-left: 3px;
+	width: 33%;
+    padding-top: 10px;
+    padding-left: 3px;
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+}
+.underground div.changeOnShemeUnderground {
+    display: block;
+	font-size: .785em;
+}
+.changeOnShemeUnderground img,
+.changeOnShemeUnderground a{
+	vertical-align: middle;
+}
+.changeOnShemeUnderground a{
+	color: #5e2a00;
 }
 .mapBlock img {
     padding: 3px;
@@ -606,16 +631,25 @@ span.value {
 .personalData span.selectbox {
     font-weight: normal;
 }
-.areaWay {
+.areaWay,
+.undergroundWay {
     margin-bottom: 20px;
+	width: 64%;
 }
 .cityWay,
-.areaWay{
+.area,
+.underground{
 	padding-left: 22%;
 	font-size: .85em;
 }
+.area div,
+.underground div{
+	vertical-align: top;
+}
 .cityWay p,
-.areaWay p{
+.areaWay p,
+.area p,
+.underground p{
 	font-weight: bold;
 }
 .cityWay p span.text_normal,
@@ -625,6 +659,7 @@ span.value {
 .changeSelect > span {
     display: inline-block;
     width: 185px;
+	font-weight: normal;
 }
 .cityWay  .selectbox,
 .areaWay  .selectbox{
@@ -637,6 +672,17 @@ span.value {
 }
 .changeSelect {
     margin-left: 34px;
+}
+.area .changeSelectWrapper,
+.underground .changeSelectWrapper{
+	width: 50%
+}
+.underground .changeSelectWrapper{
+	margin-left: -5px;
+}
+.area .changeSelect,
+.underground .changeSelect {
+	margin-left: 5px;
 }
 
 /*регистрационная форма*/
@@ -702,25 +748,6 @@ span.value {
 	.inputRegBlock {
 		margin-top: 5px;
 	}
-	/*.form_block form input[type='text'] {
-		width: 230px;
-		background-color: #ffefcf;
-		border: 1px solid #fff6e8;
-		border-radius: 2px;
-		box-shadow: inset 0px 0px 6px rgb(230,204,164);
-		color: #5e2a00;
-		font-size: .875em;
-		padding: 7px 5px;
-		margin-top: 10px;
-	}
-	.form_block .inputRegBlock span:after{
-		content: '*';
-		font-size: 1em;
-		font-weight: bold;
-		position: relative;
-		left: -20px;
-		top: 4px;
-	}*/
 	.form_block form .readyRegBlock label {
 		margin-left: -2px;
 		margin-top: 10px;
@@ -960,34 +987,37 @@ footer {
 }
 
 /*прайс-лист*/
-.priceListBlockWrapper {
-    width: 80%;
-    float: right;
-}
 .personalData.priceList{
-    width: 93%;
-    padding-left: 20px;
+    width: 56%;
+    padding-left: 29px;
     font-size: 1em;
 }
 .descPrice {
-	font-size: 0.875em;
+	font-size: 0.75em;
 	height: 100%;
 }
 .descPrice label{
     margin-left: 5px;
 }
 .notice {
-    color: #f14b00;
+    /*color: #f14b00;*/
+	color: #5e2a00;
     font-weight: bold;
+}
+.personalData span.addNotice{
+	display: block;
+    margin: 5px 0;
+    font-weight: normal;
 }
 .noticeList{
 	list-style: none;
-    margin: 15px 0;
+    margin: 0 10px 15px 0;
+    line-height: 17px;
 }
 .servicesMajor ,
 .servicesAddition{
 	height: 100%;
-    font-size: 1em;
+    font-size: .875em;
     margin-top: 20px;
 }
 .servicesMajor h2,
@@ -1005,6 +1035,10 @@ footer {
 	cursor: pointer;
 	text-decoration: underline;
 }
+.servicesMajor .services span.fa,
+.servicesAddition .services span.fa{
+	text-decoration: none;
+}
 .servicesMajor .services span.textVal,
 .servicesAddition .services span.textVal{
 	text-decoration: none;
@@ -1019,7 +1053,7 @@ footer {
 	color: #f14b00;
 }
 .listServices {
-	width: 73.7%;
+	width: 94.7%;
     height: 100%;
 	padding: 10px;
     background: url(../img/bodyBgLight.jpg) repeat;
@@ -1062,8 +1096,7 @@ footer {
 	margin-top: 5px;
 	padding: 0 35px 0 12px;
     height: 30px;
-    /*width: 185px;*/
-	width: 70%;
+	width: 90%;
     line-height: 30px;
     background: url(../img/bodyBgLight.jpg) repeat;
     border: 1px solid #fff6e8;
@@ -1138,6 +1171,14 @@ footer {
 .servicesAddition .services span.iconStatus{
 	right: -20px;
     top: 1px;
+}
+.services i.fa {
+    position: absolute;
+    right: -20px;
+    top: 1px;
+    font-size: 1.125em;
+    width: 15px;
+    height: 15px;
 }
 .personalData input.showCostInput{
     width: 70px;
@@ -1223,3 +1264,723 @@ footer {
 span.checkk.redChecked.checked {
     background-position: 0 -48px;
 }
+
+/*---------------------------------------------------------добавил после 14.10.15--------------------------------*/
+/*войти на сайт*/
+.intoSiteFormWrapperAll,
+.intoNonRegSiteFormWrapperAll,
+.portfolioPhotoPopUpWrapper {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,.5);
+}
+.intoSiteFormWrapper,
+.intoNonRegSiteFormWrapper,
+.portfolioPhotoPopUp{
+	background-color: #ffefcf;
+    padding: 3px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,.5);
+    border-radius: 5px;
+    width: 410px;
+    height: auto;
+	position: absolute;
+	top: 100px;
+    left: 400px;
+    z-index: 12;
+	font-size: 16px;
+}
+.intoSiteForm,
+.intoNonRegSiteForm,
+.portfolioPhotoPopUpForm{
+	background-color: #f1d9b1;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+	position: relative;
+}
+.intoSiteForm_content,
+.intoNonRegSiteForm_content{
+	padding: 30px;
+}
+.intoSiteForm .close_button,
+.intoNonRegSiteForm .close_button,
+.portfolioPhotoPopUpForm .close_button{
+	right: -20px;
+    top: -16px;
+}
+.headerIntoSite{
+	font-family: 'Segoe Script';
+	text-align: center;
+	font-size: 1.125em;
+    font-weight: bold;
+}
+.bodyIntoSite {
+	text-align: center;
+	font-size: .875em;
+}
+.toMaster .bodyIntoSite,
+.intoNonRegSiteForm_content .bodyIntoSite{
+	margin-top: 25px;
+}
+.bodyIntoSite p.infoBodyLinks{
+    font-weight: bold;
+	line-height: 22px;
+	margin-top: 20px;
+}
+.bodyIntoSite a{
+	color: #f14b00;
+}
+.toMaster .intoBlock ,
+.intoNonRegSiteForm_content .intoBlock {
+	margin-top: 30px;
+}
+.formWantAlso {
+    text-align: center;
+}
+.formWantAlso h2{
+    text-align: left;
+	margin-left: 27px;
+    font-size: .875em;
+}
+.formWantAlso .comments {
+    margin-top: 20px;
+}
+.intoBlock span,
+.formWantAlso span{
+	position: relative;
+}
+.intoBlock input[type='text'],
+.formWantAlso input[type='text'] {
+    width: 210px;
+    background-color: #ffefcf;
+    border: 1px solid #fff6e8;
+    border-radius: 2px;
+    box-shadow: inset 0px 0px 6px rgb(230,204,164);
+    color: #5e2a00;
+    font-size: .875em;
+    padding: 7px 25px 7px 5px;
+    margin-top: 10px;
+}
+.formWantAlso input[type='text']{
+	width: 285px;
+	font-size: .75em;
+}
+.intoBlock span:not(.forgotPassword):after,
+.formWantAlso span:not(.forgotPassword):after{
+    content: '*';
+    font-size: 1em;
+    font-weight: bold;
+    position: absolute;
+    top: 6px;
+    right: 10px;
+}
+.formWantAlso span:not(.forgotPassword):after{
+	font-size: .875em;
+	top: 10px;
+}
+.passwordBlock {
+    position: relative;
+    display: inline-block;
+}
+.passwordBlock .forgotPassword{
+	position: absolute;
+    bottom: -16px;
+    right: 0;
+    font-size: .75em;
+}
+.intoButtonBlock{
+	margin-top: 40px;
+}
+.contentPhotoPopUpWrapper{
+	padding: 10px 20px 0;
+	font-size: .875em;
+}
+.textPortfolioPopUp{
+	font-size: .875em;
+	line-height: 16px;
+}
+.wantAlso{
+	text-align: center;
+	margin: 25px 0 0;
+}
+.wantAlso button{
+	text-align: center;
+	margin-bottom: 25px;
+}
+.intoButtonBlock button,
+.wantAlso button,
+.messClaim{
+    padding: 8px 28px;
+    background-color: #f14b00;
+    border: 2px solid #f5e2c0;
+    border-radius: 8px;
+    box-shadow: inset 0px -1px 1px rgba(0,0,0,0.7);
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1em;
+}
+.buttonClick {
+    background: none!important;
+    box-shadow: none!important;
+    border: 2px solid #e5c99f!important;
+    color: #e5c99f!important;
+}
+.wantAlso button{
+	font-size: .875em;
+}
+.messClaim {
+    margin-top: 20px;
+	font-size: .875em;
+}
+.bodyIntoSite .socialIn{
+    width: 100%;
+}
+.boldtext{
+	font-weight: bold;
+}
+.intoBlock .boldtext{
+	font-size: 1.125em;
+}
+.descPortfolioPopUp {
+    margin-bottom: 15px;
+}
+.descPortfolioPopUp > div{
+	display: inline-block;
+    vertical-align: top;
+}
+.photoMasterForPopUp{
+	background-color: #ffffff;
+    width: auto;
+    padding: 2px;
+	font-size: 0;
+	line-height: 0;
+}
+.descMasterForPopUp {
+    line-height: 28px;
+    margin-left: 10px;
+	font-size: 1em;
+}
+.descMasterNamePopUp{
+	font-weight: bold;
+}
+.costDescMasterForPopUpWrapp{
+	color: #f14b00;
+	font-size: .875em;
+}
+.costDescMasterForPopUp{
+	font-size: 1.125em;
+}
+.nextPrevPhotos {
+    float: right;
+    position: relative;
+    top: 4px;
+}
+.nextPrevPhotos .fa {
+    font-size: 20px;
+	cursor: pointer;
+}
+.nextPrevPhotos .fa:hover {
+    color: #f55205;
+}
+.nextPrevPhotos div {
+    width: 1px;
+    display: inline-block;
+    background-color: #5e2a00;
+    height: 14px;
+	margin: 0 5px 0 5px;
+}
+.bigPhotoPortfolio{
+	background-color: #f1d9b1;
+}
+.bigPhotoPortfolio img {
+    width: 100%;
+    height: auto;
+}
+.formWantAlsoWrapper {
+    padding: 0 20px 20px 20px;
+}
+.formWantAlsoWrapper .borderBox {
+    margin-top: 0;
+}
+
+/*стили для окна без регистрации, мастер*/
+.intoNonRegSiteForm_content .bodyIntoSite {
+	text-align: left;
+}
+.intoNonRegSiteForm_content .infoBodyText {
+    display: table;
+}
+.intoNonRegSiteForm_content .infoBodyText span {
+    display: table-cell;
+    vertical-align: middle;
+}
+.intoNonRegSiteForm_content .infoBodyText button {
+    display: table-cell;
+    vertical-align: middle;	
+	font-size: 0.8125em;
+    color: #994f2a;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+    padding: 10px 25px;
+    cursor: pointer;
+    background: url(../img/bodyBgLight.jpg) repeat;
+    border-radius: 8px;
+    border: 1px solid #fff6e8;
+    -moz-box-shadow: inset 0px 0px 6px rgb(230,204,164);
+    -o-box-shadow: inset 0px 0px 6px rgb(230,204,164);
+    -webkit-box-shadow: inset 0px 0px 6px rgb(230,204,164);
+    box-shadow: inset 0px 0px 6px rgb(230,204,164);
+	z-index: 1;
+}
+.intoNonRegSiteForm_content .infoBodyText button:after {
+    content: '';
+    box-shadow: 0px 3px 6px rgb(210,183,141);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    border-radius: 8px;
+}
+.needServices{
+	margin-top: 15px;
+}
+.needServices textarea,
+.formWantAlso textarea {
+    width: 90%;
+	height: 80px;
+    background-color: #ffefcf;
+    border: 1px solid #fff6e8;
+    border-radius: 2px;
+    box-shadow: inset 0px 0px 6px rgb(230,204,164);
+    color: #5e2a00;
+    font-size: .875em;
+    padding: 7px 25px 7px 5px;
+    margin-top: 10px;
+}
+.formWantAlso textarea {
+    width: 77%;
+	font-size: .75em;
+}
+.intoNonRegSiteForm_content .intoBlock input[type='text'] {
+    width: 90%;
+}
+.intoNonRegSiteForm_content .intoButtonBlock{
+	text-align: center;
+}
+.intoNonRegSiteForm_content .socialIn .social_text {
+    padding-left: 20px;
+}
+.infoMaster{
+	margin-top:5px;
+}
+.infoMaster span{
+	vertical-align: middle;
+}
+.infoMaster .photoMaster{
+	display: inline-block;
+}
+.borderBox {
+    height: 1px;
+    width: 100%;
+    background: url(../img/border_img_body_gorisontal.png) repeat-x;
+	margin: 20px 0;
+}
+/*END войти на сайт*/
+
+/*----------стили для анкеты мастера, как её видят клиенты----------*/
+.viewAnketaMasterWrapper{
+	font-size: 14px;
+	height: 100%;
+	padding-top: 25px;
+}
+.masterPhotoRating > div,
+.infoMasterWrapper > div{
+	display: inline-block;
+	vertical-align: top;
+}
+.infoMasterWrapper h1,
+.infoMasterWrapper h2{
+	text-transform: uppercase;
+}
+.photoMaster{
+	width: 21%;
+	position:relative;
+}
+.popUpViewAnketaWrapper{
+    position: absolute;
+    top: -55px;
+    left: 0;
+    z-index: 11;
+    cursor: text;
+    background-color: #ffefcf;
+    border-radius: 5px;
+    -moz-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+    -o-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+    -webkit-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+    box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+	font-size: .875em;
+}
+.popUpViewAnketa{
+	position: relative;
+	min-width: 415px;
+    max-width: 415px;
+	padding: 10px 15px;
+}
+.popUpViewAnketa img{
+	position: absolute;
+	left: 80px;
+    bottom: -9px;
+}
+.popUpViewAnketa a{
+	color: #f55205;
+}
+.popUpViewAnketa a:hover{
+	text-decoration: none;
+}
+.photoMaster > div {
+    margin-bottom: 12px;
+}
+.masterName{
+	font-size: 1em;
+	font-weight: bold;
+}
+.masterPhotoRating{
+	font-size: .857em;
+}
+.ratingMasterBox {
+    margin-left: 5px;
+}
+.ratingMasterBox .ratingStarsColor,
+.clientDateOpinion .ratingStarsColor {
+    display: inline-block;
+    background-color: #f14b00;
+    font-size: 0;
+    line-height: 0;
+    margin-top: 5px;
+}
+.photoMasterBox {
+    background-color: #ffffff;
+    width: auto;
+    height: 80px;
+    padding: 2px;
+}
+.messMasterButton {
+    padding: 8px 20px;
+    background-color: #f14b00;
+    border: 2px solid #f5e2c0;
+    border-radius: 8px;
+    box-shadow: inset 0px -1px 1px rgba(0,0,0,0.5);
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 1em;
+}
+.addCompare{
+	font-family: 'Segoe Script';
+    font-size: .857em;
+	color: #5e2a00;
+}
+.masterPhone {
+    font-size: .857em;
+    font-weight: bold;
+}
+.masterPhone p{
+	display: table;
+}
+.masterPhone p i,
+.masterPhone p span{
+	display: table-cell;
+}
+.masterPhone i.fa {
+    width: 20px;
+}
+.showPhoneNumberMaster{
+	font-weight: normal;
+	cursor: pointer;
+	text-decoration: underline;
+}
+.showPhoneNumberMaster:hover{
+	color: #f55205;
+}
+.infoMasterAnketa{
+	width: 51%;
+}
+.infoMasterAnketa h1 {
+    margin-bottom: 14px;
+}
+.infoMasterAnketa h2{
+	font-size: .857em;
+}
+.infoMasterAnketa > p{
+	font-size: .857em;
+	line-height: 1.4em;
+	margin-bottom: 5px;
+}
+.infoMasterAnketa .showFull{
+	margin-top: -8px;
+}
+.infoMasterAnketa a{
+	font-size: .857em;
+	color: #f55205;
+}
+.infoMasterAnketa a:hover {
+    text-decoration: none;
+}
+.costServiceBox > div,
+.costAddServiceBox > div{
+    position: relative;
+    border-bottom: 1px solid #a37d53;
+	font-size: .857em;
+	line-height: 20px;
+}
+.costAddServiceBox > div{
+	font-size: 1em;
+}
+.costServiceBox > div.costAddServiceBox{
+	border-bottom: none;
+}
+.costServiceBox > div span,
+.costAddServiceBox > div span{
+    position: absolute;
+    right: 0;
+}
+.addressMaster{
+    margin-left: 20px;
+	width: 25%;
+}
+.addressBox {
+    display: table;
+    font-size: 12px;
+}
+.addressBox  i{
+    display: table-cell;
+}
+.addressBox .addressMasterTextWrapper{
+    display: table-cell;
+	padding-left: 5px;
+}
+.addressMasterText{
+    display: table;
+	width: 100%;
+}
+.addressMasterText span{
+    display: table-cell;
+}
+.addressMasterText span.boldtext{
+    padding-right: 5px;
+}
+.addressMasterTextWrapper a,
+.portfolioMasterWrapper a,
+.opinionMasterWrapper a{
+	color: #f55205;
+}
+.addressMasterTextWrapper a:hover,
+.portfolioMasterWrapper a:hover,
+.opinionMasterWrapper a:hover{
+    text-decoration: none;
+}
+.opinionMasterWrapper .opinionStay a{
+	color: #5e2a00;
+}
+.opinionMasterWrapper .opinionStay a:hover {
+    color: #f55205;
+}
+.exitToClient{
+	position: relative;
+}
+.exitToClient i{
+    position: absolute;
+    top: 5px;
+    left: -20px;
+}
+.regionExit > div,
+.undergroundExit > div  {
+    line-height: 16px;
+}
+.areaExit{
+	color: #f55205;
+}
+.undergroundNameandImage img{
+	margin-right: 3px;
+    position: relative;
+    top: 2px;
+}
+.undergroundExit {
+    position: relative;
+}
+.undergroundExit img {
+    position: absolute;
+    left: -21px;
+    top: 3px;
+}
+/*портфолио в анкете мастера*/
+.portfolioMasterWrapper {
+    padding-top: 5px;
+}
+.portfolioMasterWrapper > div{
+	display: inline-block;
+	vertical-align: top;
+}
+.countPortfolio {
+    width: 21%;
+	font-size: .857em;
+}
+.photosPortfolio{
+	width: 78.3%;
+	/*height: 110px;
+    overflow: hidden;*/
+}/*
+.allPhotosShow{
+	height: 100%;
+}*/
+.photosPortfolio > span,
+.portfolioImgHide > span{
+    display: inline-block;
+    width: auto;
+    height: 105px;
+    border-radius: 8px;
+    margin: 0 5px 5px 0;
+    overflow: hidden;
+}
+.photosPortfolio img{
+	cursor: pointer;
+}
+/*END портфолио в анкете мастера*/
+
+/*отзывы*/
+.opinionMasterWrapper > div{
+	display: inline-block;
+	vertical-align: top;
+}
+.opinionCount{
+	width: 21%;
+	font-size: .857em;
+}
+.opinionText{
+	width: 51%;
+	font-size: .857em;
+}
+.clientNameOpinion,
+.clientDateOpinion {
+    display: table;
+    width: 100%;
+}
+.clientNameOpinion > span,
+.clientDateOpinion > span {
+    display: table-cell;
+}
+.clientDateOpinion > span {
+    vertical-align: middle;
+}
+.clientNameOpinion span:first-child,
+.clientDateOpinion span:first-child {
+    width: 75%;
+}
+.clientTextOpinion {
+    line-height: 1.4em;
+}
+.opinionStay {
+    margin-left: 20px;
+    width: 25%;
+	font-size: .857em;
+}
+.opinionStay .socialNetworks {
+    margin: 10px 0 5px 0;
+    display: table;
+}
+.opinionStay .socialNetworks span,
+.opinionStay .socialNetworks ul{
+    display: table-cell;
+}
+.opinionStay .socialNetworks span {
+    vertical-align: top;
+    line-height: 14px;
+    font-weight: bold;
+    padding-right: 10px;
+}
+.opinionStay .socialNetworks ul{
+    width: 60%;
+}
+.opinionStay button{
+	background: url(../img/btnBgRepeat.png) repeat-x;
+    display: block;
+    height: 34px;
+    line-height: 34px;
+	margin-left: 18px;
+	font-family: 'Segoe Script';
+	font-size: 1em;
+    font-weight: bold; 
+}
+.opinionStayBtn{
+	position: relative;
+    background: none;
+    padding: 0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #994f2a;
+    font-size: 18px;
+    height: 34px;   
+}
+.opinionStayBtn:hover{
+    color: #f55205;
+}
+.opinionStayBtn:after,
+.opinionStayBtn:before {
+    content: '';
+    display: block;
+    background: url(../img/spriteBtn.png) no-repeat;
+    width: 18px;
+    height: 34px;	
+    position: absolute;	 
+	top: 0;
+}
+.opinionStayBtn:before {
+    background-position: 0 0;
+    left: -18px;
+}
+.opinionStayBtn:after {
+    background-position: -20px 0;
+    right: -18px;
+}
+.countPortfolioText,
+.opinionCountText {
+    margin-bottom: 4px;
+}
+/*END отзывы*/
+
+/*PrettyPhoto*/
+.gallery.clearfix li{
+	float: left;
+}
+div.pp_pic_holder{
+	box-shadow: 0px 0px 15px rgba(0,0,0,.5)!important;
+}
+.pp_social{
+	display: none;
+}
+.pp_top, .pp_bottom {
+    height: 5px!important;
+}
+.pp_content_container .pp_left {
+    padding-left: 5px!important;
+}
+.pp_content_container .pp_right {
+    padding-right: 5px!important;
+}
+.pp_bottom .pp_left,
+.pp_bottom .pp_middle,
+.pp_bottom .pp_right{
+    height: 5px!important;
+}
+a.pp_close {
+    right: -12px!important;
+    top: -19px!important;
+}
+/*END PrettyPhoto*/
+/*----------END стили для анкеты мастера, как её видят клиенты----------*/
+/*---------------------------------------------------------END добавил после 14.10.15--------------------------------*/
