@@ -1,0 +1,1220 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+
+<link href='http://fonts.googleapis.com/css?family=Play&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="themes/sapota/css/reset.css">
+<link rel="stylesheet" type="text/css" href="themes/sapota/css/template.css">
+<link rel="stylesheet" type="text/css" href="themes/sapota/css/lk_style.css">
+
+<!--script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script-->
+<script src="themes/sapota/js/jquery.js"></script>
+
+<!--маска для телефона-->
+<script src="themes/sapota/js/jquery.maskedinput.min.js"></script>
+<!--чекбоксы-->
+<script src="themes/sapota/js/check.js"></script>
+<!--селекты-->
+<script src="themes/sapota/js/jquery.selectbox.js"></script>
+
+<!--общий-->
+<script src="themes/sapota/js/site.js"></script>
+
+<!--[if IE]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<link rel="stylesheet" type="text/css" href="/themes/sapota/css/font_ie.css">
+<script src="/themes/sapota/js/selectivizr-min.js"></script>
+<![endif]-->
+
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="/themes/sapota/css/ie.css">
+<![endif]-->
+
+<script type="text/javascript">
+  jQuery(function($) {
+      $('#phone').mask('9 (999) 999-99-99');
+      $('#phoneRegSalon').mask('9 (999) 999-99-99');
+  });
+</script> 
+
+</head>
+<body>
+<div class="layout">
+  <header class="headerMain">
+  
+  <!--форма регистрации, клиенты-->
+  <div class="registrationClientFormWrapper" style="display:none;">
+      <div class="registrationClientForm">
+          <img class="close_button" src="themes/sapota/img/close_button.png" />
+          <div class="headerClientReg">
+              Найдите лучшего специалиста для себя
+          </div>
+          <div class="fasterReg">
+              <span>Быстрая регистрация через:</span>
+              <div class="fasterRegSocialIcon">
+                <a href="#"><span class="social_big vk"></span></a>
+                <a href="#"><span class="social_big f"></span></a>
+              </div>
+              <span>или по элекронной почте</span>
+          </div>
+          <form class="formClientReg">
+              <div class="inputRegBlock">
+                <span><input type="text" placeholder="Ваше имя" /></span>
+                <span><input type="text" placeholder="E-mail" /></span>
+                <input type="text" placeholder="Город" />
+            </div>
+            <div class="readyRegBlock">
+              <label class="inputWithValue">
+                <span class="check redChecked"></span>
+                <span class="value">Подписаться на новости проекта</span>
+                <!--input type="checkbox" name="main_prof[]" value="1" style="display: none;"-->
+              </label>
+              <label class="inputWithValue">
+                <span class="check redChecked"></span>
+                <span class="value">Присылать уведомления о появлении<br /> новых мастеров в Вашем городе</span>
+                <!--input type="checkbox" name="main_prof[]" value="1" style="display: none;"-->
+              </label>
+              <button>
+                Зарегистрироваться
+              </button>
+            </div>
+            <div class="go">
+              Уже зарегистрированы? 
+              <a href="#">Войти</a>
+            </div>
+        </form>
+      </div>
+  </div>
+  <!--END форма регистрации, клиенты-->
+  
+  <!--форма регистрации, мастера, салоны-->
+  <div class="registrationFormWrapper" style="display:none;">
+      <div class="registrationForm">
+          <img class="close_button" src="themes/sapota/img/close_button.png" />
+          <div class="headerRegBlock">
+              <span>Тысячи клиентов ждут тебя!</span>
+              Мастер Модус - место, где салоны красоты и мастера находят своих клиентов.
+          </div>
+          <div class="clear"></div>
+          <div class="form_block">
+              <span>Регистрация</span>
+              <form>
+                  <div class="changeMasterSalon">
+                    <span>Вы</span>
+                    <label class="inputWithValue">
+                        <span class="check redChecked"></span>
+                        <span class="value">мастер</span>
+                        <!--input type="checkbox" name="main_prof[]" value="1" style="display: none;"-->
+                      </label>
+                      <label class="inputWithValue">
+                        <span class="check redChecked checked"></span>
+                        <span class="value red">салон красоты</span>
+                        <!--input type="checkbox" name="main_prof[]" value="1" style="display: none;"-->
+                      </label>
+                    </div>
+                    <div class="inputRegBlock">
+                        <span><input type="text" placeholder="Название салона" class="master_salon_name" /></span>
+                        <span><input type="text" placeholder="E-mail" /></span>
+                        <span><input type="text" id="phoneRegSalon" placeholder="Телефон" /></span>
+                        <input type="text" placeholder="Город" />
+                    </div>
+                    <div class="readyRegBlock">
+                        <label class="inputWithValue">
+                          <span class="check redChecked"></span>
+                          <span class="value">Я принимаю условия <a href="#">договора оферты</a></span>
+                          <!--input type="checkbox" name="main_prof[]" value="1" style="display: none;"-->
+                        </label>
+                        <button>
+                            Зарегистрироваться
+                        </button>
+                    </div>
+                    <div class="socialIn">
+                        <span class="social_text">Войти через:</span>
+                        <a href="#"><span class="social vk"></span></a>
+                        <a href="#"><span class="social f"></span></a>
+                    </div>
+                    <div class="go">
+                        Уже зарегистрированы? 
+                        <a href="#">Войти</a>
+                    </div>
+              </form>
+          </div>
+          <div class="description">
+              <div class="descHeader">
+                  <span class="whatWeOffered active">Что мы предлагаем?</span>
+                  <span class="howThisWork">Как это работает?</span>
+              </div>
+              <div class="descBody_offered">
+                  <p>
+                      <img class="v_img" src="themes/sapota/img/v_img.png" alt="" />
+                      <span class="h2">Новые клиенты</span>
+                      Ежедневно более 245 записей в салоны красоты и к частным мастерам по всей Москве и Московской области.
+                  </p>
+                  <p>
+                      <img class="v_img" src="themes/sapota/img/v_img.png" alt="" />
+                      <span class="h2">Управление и контроль</span>
+                      С помощью личного кабинета Вы можете без труда планировать свое расписание, принимать заявки и следить за их статусами.
+                  </p>
+                  <p>
+                      <img class="v_img" src="themes/sapota/img/v_img.png" alt="" />
+                      <span class="h2">Работа только за результат</span>
+                      Оплата производится только за клиента, который воспользовался Вашими услугами.
+                  </p>
+              </div>
+              <div class="descBody_work" style="display:none;">
+                  <ul style="list-style:none;">
+                    <li><span class="numberOrder">1.</span> <span>Вы регистрируетесь на нашем портале.</span></li>
+                    <li><span class="numberOrder">2.</span> <span>Заполняете свою персональную анкету.</span></li>
+                    <li><span class="numberOrder">3.</span> <span>Потенциальный клиента выбирает Вас на нашем сайте.</span></li>
+                    <li><span class="numberOrder">4.</span> <span>Оставляет online-заявку.</span></li>
+                    <li><span class="numberOrder">5.</span> <span>Заявка отражается в Личном кабинете.</span></li>
+                    <li><span class="numberOrder">6.</span> <span>Вы связываетесь с клиентом и договариваетесь о дате и времени приема.</span></li>
+                    <li><span class="numberOrder">7.</span> <span>Клиент приходит к Вам на прием.</span></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--END форма регистрации, мастера, салоны-->
+  <div class="inner"> 
+    <!--логин, телефон, лого-->
+    <div class="logoPhoneLoginLeft">
+      <div class="phone">+7 (495) <span>324-65-78</span></div>
+      <a class="logo" href="/"><img src="themes/sapota/img/logo.png" alt="" /></a>
+      <!--/.logoPhoneLogin--> 
+    </div>
+    <!--статистика-->
+    <div class="statisticsBlock statisticsWizard"> <i class="inlineBlock"></i>
+      <div>99 999 999</div>
+      мастеров 
+    </div>
+    <div class="statisticsBlock statisticsCity"> <i class="inlineBlock"></i>
+      <div>999</div>
+      городов 
+    </div>
+    <div class="statisticsBlock statisticsCountry"> <i class="inlineBlock"></i>
+      <div>9</div>
+      стран
+    </div>
+    <div class="balanceRatingBlock">
+        <div class="nameMaster">Мария Машкова</div>
+        <div class="balance">
+          Ваш баланс: 200 руб.
+          <div>
+              <a href="#">пополнить баланс?</a>
+          </div>
+        </div>
+        <div class="rating">
+            Ваш рейтинг: 4,5
+            <span class="ratingStars four"></span>
+        </div>
+        <button class="exit">
+            выход
+        </button>
+    </div>
+    <div class="statis_block">
+        <div class="status_text red">
+            <span style="display:none;">Ваш статус для клиентов "В отпуске"</span><!--статус "В отпуске-->
+            <span style="color: #0d8705;">Ваша анкета активна</span><!--статус "Анкета активна-->
+            <span style="display:none;">Ваша анкета проверяется модератором</span><!--статус "Модератор-->
+        </div><!--если статус "в отпуске" или "анкета активна"-->
+          <div class="button status_master">
+                <!--работаю-->
+                в отпуске
+              <div class="popupWrapper" style="display:none;">
+                <img src="themes/sapota/img/corner_popup.png" alt="corner" />
+                <div class="status_desc_wrapper">
+                    <div class="status_desc">
+                      <!--если статус "В отпуске"-->
+                      <span style="display:none;">
+                        Сейчас клиенты не видят вашу анкету.<br />
+                        Нажмите на кнопку "Работаю", чтобы вновь сделать её активной.
+                      </span>
+                      <!--если статус "Ваша анкета активна"-->
+                      <span>
+                        На время отсутствия включите режим "в отпуске"<br />
+                        во избежании заказов от клиентов в этот период.
+                      </span>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <!--если статус "Ваша анкета проверяется модератором"-->
+          <div class="moderator" style="display:none;">
+              <a href="mailto:info@modus.ru" class="mail_link_info">info@modus.ru</a> | 8(800) 888-90-90 | <a href="#">Онлайн-консультант</a>
+          </div>
+    </div>
+    <!--/.inner--> 
+  </div>
+</header>
+
+<div class="wrapper wrapperOnMainPage lk">
+<div class="body_lk_wrapper wrapper">
+    <div class="fasterFindClient">
+        <span>Найдите клиента быстрее</span>
+        <div>
+          <div class="wrapper_mini_block premium">
+              <a href="#">
+                <span class="icon_bonus_block"></span>
+                <span>СДЕЛАТЬ ПРЕМИУМ</span>
+              </a>
+          </div>
+        </div>
+        <div>
+          <div class="wrapper_mini_block vip">
+              <a href="#">
+                  <span class="icon_bonus_block"></span>
+                  <span>СДЕЛАТЬ VIP</span>
+              </a>
+          </div>    
+        </div>
+        <div>
+          <div class="wrapper_mini_block eliminate">
+              <a href="#">
+                  <span class="icon_bonus_block"></span>
+                  <span>ВЫДЕЛИТЬ</span>
+              </a>
+          </div>
+        </div>
+        <div>
+          <div class="wrapper_mini_block liftToFind">
+              <a href="#">
+                <span class="icon_bonus_block"></span>
+                <span>ПОДНЯТЬ В ПОИСКЕ</span>
+              </a>
+          </div>
+        </div>
+        <div>
+          <div class="wrapper_mini_block makePackeg">
+              <a href="#">
+                <span class="icon_bonus_block"></span>
+                <span>ПРИМЕНИТЬ ПАКЕТ УСЛУГ</span>
+              </a>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapperSerchFormWithTabs"> 
+      
+      <!------------------------------------> 
+      <!--АНКЕТА, ПРАВИЛА, ЗАКАЗЫ, КОШЕЛЕК--> 
+      <!------------------------------------>
+      
+      <form>
+        <div class="tabs">
+        
+        <!--НАВИГАЦИЯ ПО ВКЛАДКАМ-->
+        <ul class="tabNavigation">
+          <li><a class="selected" href="#anketa">Анкета</a></li>
+          <li><a class="rulesCooperation" href="#problems">Правила сотрудничества</a></li>
+          <li><a class="" href="#serveses">Заказы</a></li>
+          <li><a class="" href="#serveses">Кошелек</a></li>
+        </ul>
+        <div class="blockWithDarkBg bgInSerchFormWithTabs">
+          <div class="innerSerchFormWithTabs"> 
+            
+            <!--ВКЛАДКА ПЕРВАЯ. АНКЕТА-->
+            <div id="anketa" class="tab_conteiner"> 
+                <div class="colWidth150 personalInformation"> 
+                  <ul style="list-style:none;">
+                      <li>
+                          <a href="#personalInfoBlock" class="active">Личная информация</a>
+                      </li>
+                      <li>
+                          <a href="#adressBlock">Ваш адрес</a>
+                      </li>
+                      <li>
+                          <a href="#priceBlock">Прайс-лист</a>
+                      </li>
+                      <li>
+                          <a href="#">Образование</a>
+                      </li>
+                      <li>
+                          <a href="#">Фотогалерея работ</a>
+                      </li>
+                      <li>
+                          <a href="#">График работы</a>
+                      </li>
+                      <li>
+                          <a href="#">Изменить пароль</a>
+                      </li>
+                      <li>
+                          <a href="#">Как видят мою анкету клиенты</a>
+                      </li>
+                  </ul>
+                  <div class="myServicesBlock" style="display:none;">
+                      <span>Мои услуги:</span>
+                  </div>
+                  <div class="border_artWrapper">
+                      <div class="border_art">
+                          <div>
+                              <img src="themes/sapota/img/border_img_top.png">
+                          </div>
+                          <div class="border_art_bottom">
+                              <img src="themes/sapota/img/border_img_bottom.png">
+                          </div>
+                      </div>
+                  </div>
+                </div> 
+                
+          <!--вкладки с различной информацией-->
+          <div class="wrapperBlocksData">   
+            <!--вкладка с личной информацией-->
+              <div class="blockWithPersonalInfo" id="personalInfoBlock">
+                <div class="colWidth150 personalData name">
+                  <div class="blockPersonalInfo">
+                    <span>Имя и фамилия*:</span><br />
+                    <input type="text" placeholder="Ваши имя и фамилия" />
+                  </div>
+                  <div class="blockPersonalInfo">
+                    <span>Телефон*:</span><br />
+                    <input type="text" id="phone" placeholder="8 (916) 111 00 99" />
+                  </div>
+                  <div>
+                    <p>Основная специализация*:</p>
+                    <label class="inputWithValue">
+                      <span class="check redChecked"></span>
+                      <span class="value">Визажист</span>
+                      <!--input type="checkbox" name="main_prof[]" value="1" style="display: none;"-->
+                    </label>
+                    <label class="inputWithValue">
+                      <span class="check redChecked"></span>
+                      <span class="value">Косметолог</span>
+                      <!--input type="checkbox" name="main_prof[]" value="2" style="display: none;"-->
+                    </label>
+                    <label class="inputWithValue">
+                      <span class="check redChecked"></span>
+                      <span class="value">Массажист</span>
+                      <!--input type="checkbox" name="main_prof[]" value="3" style="display: none;"-->
+                    </label>
+                    <label class="inputWithValue">
+                      <span class="check redChecked"></span>
+                      <span class="value">Мастер ногтевого сервиса</span>
+                      <!--input type="checkbox" name="main_prof[]" value="3" style="display: none;"-->
+                    </label>
+                    <label class="inputWithValue">
+                      <span class="check redChecked"></span>
+                      <span class="value">Мастер по пирсингу</span>
+                      <!--input type="checkbox" name="main_prof[]" value="4" style="display: none;"-->
+                    </label>
+                    <label class="inputWithValue">
+                      <span class="check redChecked"></span>
+                      <span class="value">Мастер по татуировкам</span>
+                      <!--input type="checkbox" name="main_prof[]" value="5" style="display: none;"-->
+                    </label>
+                    <label class="inputWithValue">
+                      <span class="check redChecked"></span>
+                      <span class="value">Парикмахер</span>
+                      <!--input type="checkbox" name="main_prof[]" value="6" style="display: none;"-->
+                    </label>
+                  </div>
+                </div>
+                <div class="colWidth150 personalData">
+                  <div class="blockPersonalInfo">
+                    <span>Город*:</span><br />
+                    <input type="text" placeholder="Ваш город" />
+                  </div>
+                  <div class="blockPersonalInfo">
+                    <span>E-mail*:</span><br />
+                    <input type="text" placeholder="test@test.ru" />
+                  </div>
+                  <div>
+                    <p>Дополнительная специализация*:</p>
+                    <label class="inputWithValue">
+                      <span class="check redChecked"></span>
+                      <span class="value">Визажист</span>
+                      <!--input type="checkbox" name="dop_prof[]" value="1" style="display: none;"-->
+                    </label>
+                    <label class="inputWithValue">
+                      <span class="check redChecked"></span>
+                      <span class="value">Косметолог</span>
+                      <!--input type="checkbox" name="dop_prof[]" value="1" style="display: none;"-->
+                    </label>
+                    <label class="inputWithValue">
+                      <span class="check redChecked"></span>
+                      <span class="value">Массажист</span>
+                      <!--input type="checkbox" name="dop_prof[]" value="2" style="display: none;"-->
+                    </label>
+                    <label class="inputWithValue">
+                      <span class="check redChecked"></span>
+                      <span class="value">Мастер ногтевого сервиса</span>
+                      <!--input type="checkbox" name="dop_prof[]" value="3" style="display: none;"-->
+                    </label>
+                    <label class="inputWithValue">
+                      <span class="check redChecked"></span>
+                      <span class="value">Мастер по пирсингу</span>
+                      <!--input type="checkbox" name="dop_prof[]" value="4" style="display: none;"-->
+                    </label>
+                    <label class="inputWithValue">
+                      <span class="check redChecked"></span>
+                      <span class="value">Мастер по татуировкам</span>
+                      <!--input type="checkbox" name="dop_prof[]" value="5" style="display: none;"-->
+                    </label>
+                    <label class="inputWithValue">
+                      <span class="check redChecked"></span>
+                      <span class="value">Парикмахер</span>
+                      <!--input type="checkbox" name="dop_prof[]" value="6" style="display: none;"-->
+                    </label>
+                  </div>
+                </div> 
+                <div class="colWidth150 personalFoto">
+                  <div class="fotoMaster">
+                      <img src="themes/sapota/img/fotoMaster.jpg" alt="master" />
+                  </div>
+                  <div class="chahgeFoto">
+                      <a href="#" title="Другое фото">Сменить фотографию</a>
+                  </div>
+                  <p>
+                      Добавьте Вашу реальную фотографию.
+                  </p>
+                  <p>
+                      Клиент доверится мастеру, который не скрывает свое лицо.
+                  </p>
+                  <div class="maleFemale">
+                    <p>Ваш пол:</p>
+                    <label class="inputWithValue female">
+                      <span class="check redChecked"></span>
+                      <span class="value">Ж</span>
+                      <!--input type="checkbox" name="female[]" value="1" style="display: none;"-->
+                    </label>
+                    <label class="inputWithValue">
+                      <span class="check redChecked"></span>
+                      <span class="value">М</span>
+                      <!--input type="checkbox" name="male[]" value="1" style="display: none;"-->
+                    </label>
+                  </div>
+                </div>
+                <div class="clear"></div>
+               <div class="dopInfo">
+                   <div class="required_fields">
+                      <span>* - поля обязательные для заполнения</span>  
+                    </div>
+                    <div class="save_block">
+                      <div class="save_block_popup" style="display: none;">
+                          Информация успешно сохранена!
+                      </div>
+                      <button type="submit" class="saveBtn">
+                          <span>Сохранить</span>
+                      </button>
+                  </div>
+               </div>
+             </div>
+            <!--END вкладка с личной информацией-->
+             
+            <!--вкладка с адресом-->
+             <div class="blockWithAddress" id="adressBlock" style="display:none;">
+                 <div class="colWidth150 personalData addressSelects">
+                  <div class="blockPersonalInfo">
+                    <span>Город*:</span><br />
+                    <input type="text" placeholder="Ваш город" />
+                  </div>
+                  <div class="blockPersonalInfo toClient">
+                      <div>
+                        <span>Я к клиенту*:</span>
+                        <label class="inputWithValue">
+                          <span class="check redChecked"></span>
+                          <span class="value">да</span>
+                          <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                        </label>
+                        <label class="inputWithValue">
+                          <span class="check redChecked"></span>
+                          <span class="value">нет</span>
+                          <!--input type="checkbox" name="no[]" value="1" style="display: none;"-->
+                        </label>
+                      </div>
+                      <div>
+                        <span>Клиент ко мне*:</span>
+                        <label class="inputWithValue">
+                          <span class="check redChecked"></span>
+                          <span class="value">да</span>
+                          <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                        </label>
+                        <label class="inputWithValue">
+                          <span class="check redChecked"></span>
+                          <span class="value">нет</span>
+                          <!--input type="checkbox" name="no[]" value="1" style="display: none;"-->
+                        </label>
+                      </div>
+                  </div>
+                  <div class="blockPersonalInfo">
+                    <span>Улица:</span><br />
+                    <input type="text" placeholder="Ваша улица" />
+                  </div>
+                  <div class="blockPersonalInfo area_undeground">
+                    <div>
+                      <span>Ваш район*:</span><br />
+                      <select>
+                          <option>Академический</option>
+                          <option>Академический</option>
+                          <option>Академический</option>
+                          <option>Академический</option>
+                          <option>Академический</option>
+                      </select>
+                    </div>
+                    <div>
+                      <span>Метро*:</span><br />
+                      <select>
+                          <option>Кожуховская</option>
+                          <option>Кожуховская</option>
+                          <option>Кожуховская</option>
+                          <option>Кожуховская</option>
+                          <option>Кожуховская</option>
+                      </select>
+                    </div>
+                  </div>
+                  <!--div>
+                    <div class="required_fields">
+                      <span>* - поля обязательные для заполнения</span>  
+                    </div>
+                  </div-->
+                </div>
+               <div class="colWidth150 personalData mapBlockWrapper">
+                 <div class="mapBlock">
+                     <img src="themes/sapota/img/map_example.jpg" alt="map" />
+                 </div>
+                 <div class="showMap">
+                      <a href="#" title="Карта">Показать на карте</a>
+                  </div>
+               </div>
+               <div class="clear"></div>
+               <div class="areaWay">
+                      <p>Район выезда <span class="text_normal">(Вы можете выбрать районы выезда)</span>:</p>
+                      <select>
+                          <option>Академический</option>
+                          <option>Академический</option>
+                          <option>Академический</option>
+                          <option>Академический</option>
+                          <option>Академический</option>
+                      </select>
+                      <div class="changeSelectWrapper">
+                   <div class="changeSelect">
+                     <span>Москворечье-Сабурово</span>
+                     <label class="inputWithValue" style="display: inline-block;">
+                       <span class="check redChecked close"></span>
+                       <span class="value">&nbsp;</span>
+                       <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                     </label>
+                   </div>
+                   <div class="changeSelect">
+                     <span>Щукино</span>
+                     <label class="inputWithValue" style="display: inline-block;">
+                       <span class="check redChecked close"></span>
+                       <span class="value">&nbsp;</span>
+                       <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                     </label>
+                   </div>
+                   <div class="changeSelect">
+                     <span>Очаково-Матвеевское</span>
+                     <label class="inputWithValue" style="display: inline-block;">
+                       <span class="check redChecked close"></span>
+                       <span class="value">&nbsp;</span>
+                       <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                     </label>
+                   </div>
+                 </div>
+                    </div>
+               <div class="cityWay">
+                 <p>Выезд в города <span class="text_normal">(Вы можете выбрать город в любой точке России)</span>:</p>
+                 <select multiple="multiple">
+                   <option>Жулебино</option>
+                   <option>Коломна</option>
+                   <option>Люберцы</option>
+                   <option>Воронеж</option>
+                   <option>Ростов</option>
+                 </select>
+                 <div class="changeSelectWrapper">
+                   <div class="changeSelect">
+                     <span>Александровск-Сахалинский</span>
+                     <label class="inputWithValue" style="display: inline-block;">
+                       <span class="check redChecked close"></span>
+                       <span class="value">&nbsp;</span>
+                       <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                     </label>
+                     <label class="inputWithValue" style="display: inline-block;">
+                       <span class="check redChecked"></span>
+                       <span class="value">и около него</span>
+                       <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                     </label>
+                   </div>
+                   <div class="changeSelect">
+                     <span>Сочи</span>
+                     <label class="inputWithValue" style="display: inline-block;">
+                       <span class="check redChecked close"></span>
+                       <span class="value">&nbsp;</span>
+                       <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                     </label>
+                     <label class="inputWithValue" style="display: inline-block;">
+                       <span class="check redChecked"></span>
+                       <span class="value">и около него</span>
+                       <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                     </label>
+                   </div>
+                   <div class="changeSelect">
+                     <span>Петропавловск-Камчатский</span>
+                     <label class="inputWithValue" style="display: inline-block;">
+                       <span class="check redChecked close"></span>
+                       <span class="value">&nbsp;</span>
+                       <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                     </label>
+                     <label class="inputWithValue" style="display: inline-block;">
+                       <span class="check redChecked"></span>
+                       <span class="value">и около него</span>
+                       <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                     </label>
+                   </div>
+                 </div>
+               </div>
+               <div class="dopInfo">
+                   <div class="required_fields">
+                      <span>* - поля обязательные для заполнения</span>  
+                    </div>
+                    <div class="save_block">
+                      <div class="save_block_popup" style="display: none;">
+                          Информация успешно сохранена!
+                      </div>
+                      <button type="submit" class="saveBtn">
+                          <span>Сохранить</span>
+                      </button>
+                  </div>
+               </div>
+             </div>
+            <!--END вкладка с адресом-->
+            
+            <!--вкладка Прайс-лист-->
+            <div class="priceListBlockWrapper" id="priceBlock" style="display:none;">
+                <div class="colWidth150 personalData priceList">
+                  <div class="descPrice">
+                    <span class="notice">Обращаем Ваше внимание! Данный прайс-лист будет отображаться в Вашей анкете на сайте, поэтому:</span>
+                    <ul class="noticeList">   
+                      <li>1) В графе "цена" укажите актуальню цену на процедуру.</li>
+                      <li>2) Если стоимость услуги рассчитывается по количеству выполненых единиц (например, роспись ногтей), то стоимость указывается за 1 единицу (роспись 1 ногтя).</li>
+                      <li>3) В случае если итоговая стоимость услуки рассчитывается только после проведения услуги (например, тату), выберите галочку "от", тогда данная цена в Вашем прейскуранте будет обозначена как "от 1200 руб.".</li>
+                    </ul>
+                  </div>
+                <!--услуги по основной специализации-->
+                  <div class="servicesMajor">
+                      <h2>Услуги по основной специализации:</h2>
+                      <div class="services first">
+                          <span>
+                              Услуги массажиста
+                              <span class="iconStatus"></span>
+                          </span>
+                          <div class="selectBox">
+                              <b class="trigger"><i class="arrow"></i></b>
+                              массаж
+                          </div>
+                          <div class="listServices" style="display:none;">
+                              <label class="inputWithValue">
+                                <span class="checkk redChecked"></span>
+                                <span class="value">Общий массаж</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Лечебно-оздоровительный массаж</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Точечный массаж</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Спортивный массаж</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Антицеллюлитный массаж</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Вакуумно-роликовый lpg массаж</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Антицеллюлитный массаж</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Лимфодренажный массаж</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Маслянный массаж</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">SPA-массаж</span>
+                                 <div class="addDottedBorder"></div>
+                                     <div class="addList" style="display:none;">
+                                         <div class="pointAddList">
+                                             <label class="inputWithValue">
+                                                 <span class="checkk redChecked"></span>
+                                                 <span class="value">Лицо</span>
+                                                 <div class="addDottedBorder"></div>
+                                                 <div class="costService">
+                                                     <input type="text" class="showCostInput" />
+                                                     <button class="activMyServButton">ок</button>
+                                                 </div>
+                                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                                             </label>
+                                         </div>
+                                         <div class="pointAddList">
+                                             <label class="inputWithValue">
+                                                 <span class="checkk redChecked"></span>
+                                                 <span class="value">Спина</span>
+                                                 <div class="addDottedBorder"></div>
+                                                 <div class="costService">
+                                                     <input type="text" class="showCostInput" />
+                                                     <button class="activMyServButton">ок</button>
+                                                 </div>
+                                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                                             </label>
+                                         </div>
+                                     </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Тайский массаж</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Массаж камнями</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Креольский массаж</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                          </div>
+                      </div>
+                    </div>
+                   <!--END услуги по основной специализации-->
+                      
+                   <!--услуги по доп. специализации-->   
+                    <div class="servicesAddition">
+                      <h2>Услуги по дополнительной специализации:</h2>
+                      <!--первая услуга-->
+                      <div class="services first">
+                          <span>
+                              Услуги мастера по татуировкам
+                              <span class="iconStatus"></span>
+                          </span>
+                          <div class="selectBox">
+                              <b class="trigger"><i class="arrow"></i></b>
+                              нанесение татуировок
+                          </div>
+                          <div class="listServices" style="display:none;">
+                              <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Простая татуировка</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Цветная татуировка</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                          </div>
+                      </div>
+                      <!--END первая услуга-->
+                      
+                      <!--вторая услуга-->
+                      <div class="services first">
+                          <span>
+                              Услуги косметолога
+                              <span class="iconStatus"></span>
+                          </span>
+                          <!--первая внутреняя доп. услуга-->
+                          <div class="selectBox">
+                              <b class="trigger"><i class="arrow"></i></b>
+                              макияж
+                          </div>
+                          <div class="listServices" style="display:none;">
+                              <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">макияж</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">макияж</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">макияж</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                          </div>
+                          <!--вторая внутренняя доп. услуга-->
+                          <div class="selectBox">
+                              <b class="trigger"><i class="arrow"></i></b>
+                              коррекция бровей
+                          </div>
+                          <div class="listServices" style="display:none;">
+                              <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">коррекция бровей</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">окрашивание бровей</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                          </div>
+                          
+                          <!--вторая внутренняя доп. услуга-->
+                          <div class="selectBox">
+                              <b class="trigger"><i class="arrow"></i></b>
+                              наращивание ресниц
+                          </div>
+                          <div class="listServices" style="display:none;">
+                              <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Ламинирование ресниц</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Поресничная технология наращивания</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Наращивание ресниц пучками</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Наращивание уголков ресниц</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Неполное наращивание ресниц</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Объемное наращивание ресниц</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">3D наращивание ресниц</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Коррекция нарощенных ресниц</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Снятие нарощенных ресниц</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Окрашивание ресниц</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                             <label class="inputWithValue">
+                                 <span class="checkk redChecked"></span>
+                                 <span class="value">Завивка ресниц</span>
+                                 <div class="addDottedBorder"></div>
+                                 <div class="costService">
+                                     <input type="text" class="showCostInput" />
+                                     <button class="activMyServButton">ок</button>
+                                 </div>
+                                 <!--input type="checkbox" name="yes[]" value="1" style="display: none;"-->
+                             </label>
+                          </div>
+                      </div>
+                      <!--END вторая услуга-->
+                   </div>
+                   <!--END услуги по доп. специализации-->
+                </div>
+            </div>
+            <!--END вкладка Прайс-лист-->
+         </div>
+         <!--END вкладки с различной информацией-->
+                 
+                <div class="clear"></div>
+                <!--/#wizard--> 
+            </div>
+            
+            <!--ВКЛАДКА ВТОРАЯ. ПРАВИЛА СОТРУДНИЧЕСТВА-->
+            <div id="problems" class="tab_conteiner" style="display: none;">
+                <div class="colWidth150">
+
+                </div>                
+                <div class="clear"></div>
+                <!--/#problems--> 
+            </div>
+            
+            <!--ВКЛАДКА ТРЕТЬЯ. УСЛУГИ-->
+            <div id="serveses" class="tab_conteiner" style="display: none;">
+                <div class="colWidth150">
+                
+                </div> 
+                <div class="clear"></div>
+                <!--/#serveses--> 
+            </div>
+            
+            <!--/.innerSerchFormWithTabs--> 
+          </div>
+          <div class="clear"></div>
+          
+          <!--/.serchFormWithTabs--> 
+        </div>
+        <!--/.tabs-->
+      
+    </div></form>   
+    <!--/.wrapperSerchFormWithTabs--> 
+  </div>
+</div>
+<div class="helperFooter"></div>
+<!--/.layout-->
+</div>
+
+<!--FOOTER-->
+<footer>
+  <div class="inner"> 
+    
+    <!--footerContactsBlock-->
+    <div class="footerContactsBlock"> <a href="/" class="footerLogo"><img src="themes/sapota/img/logoInFooter.png" alt="" /></a>
+      <div class="phone">+7 (495) <span>324-65-78</span></div>
+      <a href="mailto:info@master_modus.com" class="mail">info@master_modus.com</a>
+      <div class="socialNetworks">
+        <ul>
+          <li class="vk"><a href="#"></a></li>
+          <li class="fb"><a href="#"></a></li>
+          <li class="odn"><a href="#"></a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <div class="login"> 
+          <a class="getInto" href="#">Войти</a> | <a class="goRegistration" href="#">Зарегистрироваться</a> 
+          <div class="changeGetInto" style="display:none;">
+            <label class="inputWithValue client">
+              <span class="check redChecked"></span>
+              <span class="value">как клиент</span>
+              <!--input type="checkbox" name="main_prof[]" value="5" style="display: none;"-->
+            </label>
+            <label class="inputWithValue master">
+              <span class="check redChecked"></span>
+              <span class="value">как мастер/салон</span>
+              <!--input type="checkbox" name="main_prof[]" value="5" style="display: none;"-->
+            </label>
+            <div class="continueButton">
+              <button class="continue">
+                  Продолжить
+              </button>
+            </div>
+          </div>
+      </div>
+      <!--/.footerContactsBlock--> 
+    </div>
+    
+    <!--footerNavLeft-->
+    <nav class="footerNavLeft">
+      <ul>
+        <li><a href="#">О нас</a></li>
+        <li><a href="#">Форум</a></li>
+        <li><a href="#">Модные новости</a></li>
+        <li><a href="#">Часто задаваемые вопросы</a></li>
+        <li><a href="#">Правила сотрудничества</a></li>
+      </ul>
+      <!--/.footerNavLeft--> 
+    </nav>
+    <!--footerNavRight-->
+    <nav class="footerNavRight"> <a href="#" class="bigOrangeH txt13">Статьи</a>
+      <ul>
+        <li><a href="#">Длинный заголовок длинной длинной длинной длинной статьи</a></li>
+        <li><a href="#">Заголовок статьи</a></li>
+        <li><a href="#">Заголовок статьи</a></li>
+        <li><a href="#">Заголовок статьи</a></li>
+      </ul>
+      <a href="#" class="bigOrangeH txt11">Все статьи</a> 
+      <!--/.footerNavRight--> 
+    </nav>
+    <div class="clear"></div>
+    <!--/.inner--> 
+  </div>
+  <div class="footerBottom">
+    <!--inner-->
+    <div class="inner"> 
+    <a class="logoSF" href="http://www.seofactory.ru/" target="_blank">
+        <img src="themes/sapota/img/logoSeoFactory.png" alt="" />
+        <span>Создание и<br> продвижение сайтов</span>
+    </a>
+    <!--/.inner-->
+    </div>
+    <!--/.footerBottom--> 
+  </div>
+</footer>
+</body>
+</html>
