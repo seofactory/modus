@@ -414,6 +414,11 @@ $(document).ready(function(){
 	var imgLength = $('.ratingMasterBox .ratingStarsColor img').width();
 	var ratingLength = (ratingNumber * imgLength)/5;    
 	$('.ratingMasterBox .ratingStarsColor').width(ratingLength);
+	if(ratingLength <= imgLength){
+			$('.ratingMasterBox .ratingStarsColor').width(ratingLength);
+	} else{
+		$('.ratingMasterBox .ratingStarsColor').width(imgLength);
+	}
 	//END только для теста с промпт
 	
 	/*var ratingText = $('.ratingNumber').text();       //получаем текстовое значение рейтинга
@@ -421,7 +426,11 @@ $(document).ready(function(){
 	var ratingNumber = parseFloat(y);                   //преобразуем текст в число
 	var imgLength = $('.ratingStarsColor img').width(); //получаем длину элемента для формулы
 	var ratingLength = (ratingNumber * imgLength)/5;    //вычисляем длину закрашенного фона
-	$('.ratingStarsColor').width(ratingLength);*/
+	if(ratingLength <= imgLength){
+			$('.ratingMasterBox .ratingStarsColor').width(ratingLength);
+	} else{
+		$('.ratingMasterBox .ratingStarsColor').width(imgLength);
+	}*/
 	
 	//закрашиваем звездочки оценки по отзыву (для всех отзывов)
 	$('.opinionTextWrapper').each(function(){
@@ -430,7 +439,11 @@ $(document).ready(function(){
 		var evaluationNumber = parseFloat(y);                          //преобразуем текст в число
 		var imgLength = $(this).find('.ratingStarsColor img').width(); //получаем длину элемента для формулы
 		var evaluationLength = (evaluationNumber * imgLength)/5;       //вычисляем длину закрашенного фона
-		$(this).find('.ratingStarsColor').width(evaluationLength);
+		if(evaluationLength <= imgLength){
+			$(this).find('.ratingStarsColor').width(evaluationLength);
+		} else{
+			$(this).find('.ratingStarsColor').width(imgLength);
+		}
 	});                                                 
 	
 	//показать полное описание О себе
@@ -538,6 +551,11 @@ $(document).ready(function(){
 	$('.wantAlso button').on('click', function(){
 		$(this).addClass('buttonClick');
 		$('.formWantAlsoWrapper').slideDown('slow');
+		var posElemTop = $('.portfolioPhotoPopUp').css('top');
+		var posElemTopClear = parseFloat(posElemTop);
+		if( posElemTopClear > 270 ){
+			$('.portfolioPhotoPopUp').css({'top': posElemTopClear-400});
+		}
 	});
 /*----------END скрипты для портфолио----------*/
 })
