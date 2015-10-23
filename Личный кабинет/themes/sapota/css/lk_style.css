@@ -38,8 +38,8 @@
     top: 20px;
 }
 .nameMaster {
-    font-family: 'Segoe Script';
-    font-size: 18px;
+    font-family: 'Marck Script';
+    font-size: 1.5em;
     color: #994f2a;
     border-bottom: 2px solid #994f2a;
 }
@@ -59,7 +59,8 @@
 .rating {
     margin-top: 5px;
 }
-.ratingStars {
+.ratingStars ,
+.ratingStarsOneStar{
 	position: relative;
     top: 3px;
     display: inline-block;
@@ -92,7 +93,7 @@
     font-size: 0.75em;
     color: #994f2a;
 	text-transform: uppercase;
-	margin-top: 32px;
+	margin-top: 27px;
 	cursor: pointer;
     background: url(../img/bodyBgLight.jpg) repeat;
     border-radius: 8px;
@@ -280,8 +281,8 @@
 	min-height: 400px;
 }
 .wrapperOnMainPage.lk ul.tabNavigation li a {
-	font-family: 'Segoe Script';
-    font-size: 1em;
+	font-family: 'Marck Script';
+    font-size: 1.25em;
     line-height: 40px;
 }
 ul.tabNavigation li a.rulesCooperation{
@@ -419,9 +420,9 @@ ul.tabNavigation li a.rulesCooperation.selected {
     border: none;
     cursor: pointer;
     color: #994f2a;
-    font-size: 18px;
     height: 34px;
-    font-family: 'Segoe Script';
+    font-family: 'Marck Script';
+    font-size: 1.9em;
 }
 .saveBtn {
 	margin-top: 25px;
@@ -1645,15 +1646,22 @@ span.checkk.redChecked.checked {
 .photoMaster > div {
     margin-bottom: 12px;
 }
-.masterName{
+.masterName,
+.salon .masterName{
 	font-size: 1em;
 	font-weight: bold;
+}
+.salon .masterName{
+	text-transform: uppercase;
 }
 .masterPhotoRating{
 	font-size: .857em;
 }
 .ratingMasterBox {
     margin-left: 5px;
+}
+.salon .ratingMasterBox {
+    margin-left: 0;
 }
 .ratingMasterBox .ratingStarsColor,
 .clientDateOpinion .ratingStarsColor {
@@ -1663,13 +1671,25 @@ span.checkk.redChecked.checked {
     line-height: 0;
     margin-top: 5px;
 }
-.photoMasterBox {
+.salon .ratingStarsColor{
+	position: relative;
+    top: 3px;
+    left: 5px;
+    display: inline-block;
+	margin-top: 0;
+	margin-bottom: 15px;
+}
+.photoMasterBox,
+.salon .photoMasterBox {
     background-color: #ffffff;
     width: auto;
-    height: 80px;
+    height: auto;
     padding: 2px;
+	font-size: 0;
+    line-height: 0;
 }
-.messMasterButton {
+.messMasterButton,
+.signUpMasterButton {
     padding: 8px 20px;
     background-color: #f14b00;
     border: 2px solid #f5e2c0;
@@ -1679,9 +1699,12 @@ span.checkk.redChecked.checked {
     cursor: pointer;
     font-size: 1em;
 }
+.salon .signUpMasterButton{
+    width: 170px;
+}
 .addCompare{
-	font-family: 'Segoe Script';
-    font-size: .857em;
+	font-family: 'Marck Script';
+    font-size: 1.14em;
 	color: #5e2a00;
 }
 .masterPhone {
@@ -1731,22 +1754,30 @@ span.checkk.redChecked.checked {
     text-decoration: none;
 }
 .costServiceBox > div,
-.costAddServiceBox > div{
+.costAddServiceBox > div,
+.costServiceMinBox > div{
     position: relative;
     border-bottom: 1px solid #a37d53;
 	font-size: .857em;
-	line-height: 20px;
+	line-height: 22px;
 }
-.costAddServiceBox > div{
+.costAddServiceBox > div,
+.costServiceMinBox > div{
 	font-size: 1em;
 }
-.costServiceBox > div.costAddServiceBox{
+.costServiceBox > div.costAddServiceBox,
+.costServiceBox > div.costServiceMinBox,
+.costServiceMinBox > div:last-child{
 	border-bottom: none;
 }
 .costServiceBox > div span,
 .costAddServiceBox > div span{
     position: absolute;
     right: 0;
+}
+.costServiceBox .borderBox {
+    margin: 10px 0 15px 0;
+	border-bottom: none;
 }
 .addressMaster{
     margin-left: 20px;
@@ -1775,15 +1806,18 @@ span.checkk.redChecked.checked {
 }
 .addressMasterTextWrapper a,
 .portfolioMasterWrapper a,
-.opinionMasterWrapper a{
+.opinionMasterWrapper a,
+.salonOpinionsWrapper a{
 	color: #f55205;
 }
 .addressMasterTextWrapper a:hover,
 .portfolioMasterWrapper a:hover,
-.opinionMasterWrapper a:hover{
+.opinionMasterWrapper a:hover,
+.salonOpinionsWrapper a:hover{
     text-decoration: none;
 }
-.opinionMasterWrapper .opinionStay a{
+.opinionMasterWrapper .opinionStay a,
+.salonOpinionsWrapper .opinionStay a{
 	color: #5e2a00;
 }
 .opinionMasterWrapper .opinionStay a:hover {
@@ -1838,7 +1872,9 @@ span.checkk.redChecked.checked {
 	height: 100%;
 }*/
 .photosPortfolio > span,
-.portfolioImgHide > span{
+.portfolioImgHide > span,
+.salonPortfolioPhotosBlock > span,
+.mastersSalonPortfolioPhotosBlock > span{
     display: inline-block;
     width: auto;
     height: 105px;
@@ -1852,7 +1888,8 @@ span.checkk.redChecked.checked {
 /*END портфолио в анкете мастера*/
 
 /*отзывы*/
-.opinionMasterWrapper > div{
+.opinionMasterWrapper > div,
+.salonOpinionsWrapper > div{
 	display: inline-block;
 	vertical-align: top;
 }
@@ -1910,10 +1947,9 @@ span.checkk.redChecked.checked {
     display: block;
     height: 34px;
     line-height: 34px;
-	margin-left: 18px;
-	font-family: 'Segoe Script';
-	font-size: 1em;
-    font-weight: bold; 
+    margin-left: 18px;
+    font-family: 'Marck Script';
+    font-size: 1.33em;
 }
 .opinionStayBtn{
 	position: relative;
@@ -1952,6 +1988,176 @@ span.checkk.redChecked.checked {
     margin-bottom: 4px;
 }
 /*END отзывы*/
+
+/*----------анкета салона, как её видят клиенты----------*/
+.menuSalonBlock{
+    overflow: hidden;
+	width: 100%;
+	margin: 30px 0;
+    border-radius: 10px;
+    border: 1px solid #f2dcbc;
+    -moz-box-shadow: inset 0px 0px 6px rgb(197,172,131);
+    -o-box-shadow: inset 0px 0px 6px rgb(197,172,131);
+    -webkit-box-shadow: inset 0px 0px 6px rgb(197,172,131);
+    box-shadow: inset 0px 0px 6px rgb(197,172,131);
+    font-size: 1.14em;
+    font-weight: bold;
+    display: table;
+}
+.menuSalonBlockPoints{
+	list-style: none;
+}
+.menuSalonBlockPoints li {
+    float: left;
+    width: 25%;
+	padding: 15px 0px;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: .875em;
+    font-weight: normal;
+	color: #994f2a;
+}
+.menuSalonBlock .activePoits {
+    color: #f14b00;
+    background-color: rgba(0,0,0,0.06);
+}
+.salonMaster .masterName {
+    text-transform: none;
+}
+.exitYesNo{
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+.exitYesNo span{
+	padding-left: 5px;
+}
+.salonMaster .ratingNumber {
+    padding-right: 5px;
+}
+.masterNameSalon{
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.masterNameSalon  span{
+	display: block;
+	text-transform: uppercase;
+}
+.signUpBlock {
+    display: inline-block;
+}
+.signUpBlock .signUpMasterButton {
+	margin: 15px 0 10px 0;
+    position: relative;
+}
+.signUpBlock .addToChange {
+    display: block;
+    text-align: center;
+    font-size: .875em;
+    color: #994f2a;
+}
+.countSignUp{
+	margin-top: 5px;
+}
+.addToChange:hover,
+.countPortfolioMasterSalon a:hover{
+	color: #f55205;
+}
+.countPortfolioMasterSalon{
+	margin-top: 20px;
+}
+.countPortfolioMasterSalon a{
+	font-weight: normal;
+	color: #994f2a;
+}
+.examplePortfolioMasterSalonWrapper {
+    margin-top: 30px;
+}
+.examplePortfolioMasterSalonWrapper span {
+	margin: 0 3px 3px 0;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.examplePortfolioMasterSalonWrapper img{
+	cursor: pointer;
+}
+.examplePortfolioMasterSalonWrapper span:last-child {
+	margin-right: 0;
+}
+
+/*прайс-лист салона*/
+.salonPriceList{
+	width: 510px;
+	margin: 0 auto;
+	position: relative;
+}
+.costServiceBox h1 {
+    font-size: 1.1em;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+	position: relative;
+	cursor: pointer;
+}
+.costServiceBox h1 .trigger {
+    position: absolute;
+    right: 0;
+    width: 22px;
+    height: 100%;
+    top: 50%;
+    margin-top: -7px;
+}
+.costServiceBox h1 .trigger .arrow {
+	position: absolute;
+    background: url(../img/spriteFormNew.png) no-repeat;
+    background-position: 0 4px;
+    width: 15px;
+    height: 15px;
+    overflow: hidden;
+}
+.costServiceBox h1 .trigger .arrow.openList{
+    background-position: 0 -9px;
+}
+.costServiceBox .costServiceMinBox{
+	display: none;
+}
+.salonPriceList .showAllPricesSalon {
+    position: absolute;
+    right: -135px;
+    font-size: .875em;
+    color: #f14b00;
+}
+.salonPriceList .showAllPricesSalon:hover {
+    text-decoration: none;
+}
+/*END прайс-лист салона*/
+
+/*портфолио салона*/
+.salonPortfolioPhotos{
+	margin-bottom: 20px;
+}
+.salonPortfolioPhotos > div,
+.mastersSalonPortfolioPhotos > div {
+    display: inline-block;
+    vertical-align: top;
+}
+.salonPortfolioPhotosCount,
+.mastersSalonPortfolioPhotosCount{
+	width: 20%;
+	font-size: .857em;
+    font-weight: bold;
+}
+.salonPortfolioPhotosBlock,
+.mastersSalonPortfolioPhotosBlock{
+	width: 79%;
+}
+.mastersSalonPortfolioPhotosBlock > span {
+    margin: 0 7px 7px 0;
+}
+/*END портфолио салона*/
+/*----------END анкета салона, как её видят клиенты----------*/
 
 /*PrettyPhoto*/
 .gallery.clearfix li{

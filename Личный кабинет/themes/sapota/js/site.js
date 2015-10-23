@@ -133,7 +133,8 @@ window.onload = function(){
 	sizeBodyInto();//---------------------------------------------------------добавил после 14.10.15--------------------------------
 	portfolioBigImg();
 	
-	$('.opinionText').children().not( $(".opinionTextWrapper")[0] ).hide();//скрыть все отзывы кроме первого при загрузке страницы
+	$('.opinionMasterWrapper').find('.opinionText').children().not( $(".opinionTextWrapper")[0] ).hide();//скрыть все отзывы кроме первого при загрузке страницы
+	//$('.salonOpinionsWrapper').find('.opinionText').children().not( $(".opinionTextWrapper")[0] ).hide();//скрыть все отзывы кроме первого при загрузке страницы
 	
 	//сокращаем текст описания О себе
 	var textLength = $('.oneself').text();
@@ -411,14 +412,30 @@ $(document).ready(function(){
 	var ratingText = $('.ratingNumber').text(promptRating);
 	var y = promptRating.replace(",", ".");
 	var ratingNumber = parseFloat(y);
-	var imgLength = $('.ratingMasterBox .ratingStarsColor img').width();
-	var ratingLength = (ratingNumber * imgLength)/5;    
-	$('.ratingMasterBox .ratingStarsColor').width(ratingLength);
-	if(ratingLength <= imgLength){
-			$('.ratingMasterBox .ratingStarsColor').width(ratingLength);
-	} else{
-		$('.ratingMasterBox .ratingStarsColor').width(imgLength);
+	var elemClassRating = $('.ratingStarsOneStar').attr('class');
+	if( ratingNumber == 0 ){
+		$('.ratingStarsOneStar').addClass('zero');
+	} else if( ratingNumber > 0 && ratingNumber <= 1){
+		$('.ratingStarsOneStar').addClass('one');
+	} else if( ratingNumber > 1 && ratingNumber <= 2){
+		$('.ratingStarsOneStar').addClass('two');
+	} else if( ratingNumber > 2 && ratingNumber <= 3.2){
+		$('.ratingStarsOneStar').addClass('three');
+	} else if( ratingNumber > 3.2 && ratingNumber <= 4.5){
+		$('.ratingStarsOneStar').addClass('four');
+	} else if( ratingNumber > 4.5){
+		$('.ratingStarsOneStar').addClass('five');
 	}
+	//var imgLength = $('.ratingMasterBox .ratingStarsColor img').width();
+	$('.ratingMasterBox .ratingStarsColor img').each(function(){
+		var imgLength = $(this).width();
+		var ratingLength = (ratingNumber * imgLength)/5;    
+		if(ratingLength <= imgLength){
+			$('.ratingMasterBox .ratingStarsColor').width(ratingLength);
+		} else{
+			$('.ratingMasterBox .ratingStarsColor').width(imgLength);
+		}
+	});
 	//END только для теста с промпт
 	
 	/*var ratingText = $('.ratingNumber').text();       //получаем текстовое значение рейтинга
@@ -427,7 +444,7 @@ $(document).ready(function(){
 	var imgLength = $('.ratingStarsColor img').width(); //получаем длину элемента для формулы
 	var ratingLength = (ratingNumber * imgLength)/5;    //вычисляем длину закрашенного фона
 	if(ratingLength <= imgLength){
-			$('.ratingMasterBox .ratingStarsColor').width(ratingLength);
+		$('.ratingMasterBox .ratingStarsColor').width(ratingLength);
 	} else{
 		$('.ratingMasterBox .ratingStarsColor').width(imgLength);
 	}*/
@@ -506,8 +523,7 @@ $(document).ready(function(){
 			$('.photosPortfolio').find('.portfolioImgHide').slideUp('slow');
 			$(this).text('Показать все работы');
 			showPhotos = true;		
-		}
-		
+		}	
 	});
 	
 	//Показать все отзывы
@@ -558,4 +574,92 @@ $(document).ready(function(){
 		}
 	});
 /*----------END скрипты для портфолио----------*/
+
+/*-------------анкета салона, как её видят клиенты------------------*/
+	$('.menuSalonBlockPoints li').on('click', function(){
+		$('.menuSalonBlockPoints li').removeClass('activePoits');
+		$(this).addClass('activePoits');
+	});
+	
+	//записаться к мастеру
+	$('.signUpMasterButton').on('click', function(e){
+		e.preventDefault();
+		$('.viewAnketaMasterWrapper').show();
+		$(this).parents('.viewAnketaMasterWrapper').hide();
+	});
+	
+	//показать портфолио мастера салона
+	var showPhotosEx = true;
+	$('.countPortfolioMasterSalon a').on('click',function(e){
+		e.preventDefault();
+		if(showPhotosEx == true){
+			$(this).parents('.salonMaster').find('.portfolioImgHide').slideDown('slow');
+			showPhotosEx = false;
+		} else if(showPhotosEx == false){
+			$(this).parents('.salonMaster').find('.portfolioImgHide').slideUp('slow');
+			showPhotosEx = true;		
+		}		
+	});
+	
+	//переключение вкладок меню салона
+	$('.menuSalonBlockPoints li').on('click', function(){
+		if($(this).hasClass('menuSalonPrice')){
+			$('.salonDataMenuWrapper > div').hide();
+			$('.salonPriceListWrapper').show();
+		} else if($(this).hasClass('menuSalonMasters')){
+			$('.salonDataMenuWrapper > div').hide();
+			$('.salonMasterAllWrapper').show();
+		} else if($(this).hasClass('menuSalonPortfolio')){
+			$('.salonDataMenuWrapper > div').hide();
+			$('.salonPortfolioWrapper').show();
+		} else if($(this).hasClass('menuSalonOpinions')){
+			$('.salonDataMenuWrapper > div').hide();
+			$('.salonOpinionsWrapper').show();
+		}
+	});
+	
+	//показать форму Хочу также при клике на фото в портфолио мастера салона
+	$('.examplePortfolioMasterSalonWrapper img').each(function(){
+		$(this).on('click',function(){
+			$('.wantAlso button').removeClass('buttonClick');
+			$('.formWantAlsoWrapper').hide();
+			$('.portfolioPhotoPopUpWrapper').show();
+			portfolioBigImg();
+		});	
+	});
+	
+	//показ стоимости услуг во вкладке прайс-лист салона
+	$('.salonPriceList .costServiceBox h1').on('click', function(){
+		if($(this).siblings('.costServiceMinBox').hasClass('active')){
+			$(this).siblings('.costServiceMinBox').slideUp('slow');
+			$(this).find('.arrow').removeClass('openList');
+			$(this).siblings('.costServiceMinBox').removeClass('active');
+			$(this).parents('.salonPriceList').find('.showAllPricesSalon').text('развернуть все').removeClass('activeLink');;
+		} else {
+			$(this).siblings('.costServiceMinBox').slideDown('slow');
+			$(this).find('.arrow').addClass('openList');
+			$(this).siblings('.costServiceMinBox').addClass('active');
+		}
+	});
+	
+	//показ стоимости всех услуг во вкладке прайс-лист салона
+	$('.showAllPricesSalon').on('click', function(e){
+		e.preventDefault();
+		if($(this).hasClass('activeLink')){
+			$(this).text('развернуть все');
+			$(this).siblings('.costServiceBox').find('.costServiceMinBox').each(function(){
+				$(this).slideDown('slow').removeClass('active').slideUp('slow');
+			});
+			$(this).siblings('.costServiceBox').find('.arrow').removeClass('openList');
+			$(this).removeClass('activeLink');
+		} else {
+			$(this).text('свернуть все');
+			$(this).siblings('.costServiceBox').find('.costServiceMinBox').each(function(){
+				$(this).slideDown('slow').addClass('active');
+			});
+			$(this).siblings('.costServiceBox').find('.arrow').addClass('openList');
+			$(this).addClass('activeLink');
+		}	
+	});
+/*-------------END анкета салона, как её видят клиенты------------------*/
 })
