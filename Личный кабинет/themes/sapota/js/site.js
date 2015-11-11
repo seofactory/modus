@@ -133,8 +133,7 @@ window.onload = function(){
 	sizeBodyInto();//---------------------------------------------------------добавил после 14.10.15--------------------------------
 	portfolioBigImg();
 	
-	$('.opinionMasterWrapper').find('.opinionText').children().not( $(".opinionTextWrapper")[0] ).hide();//скрыть все отзывы кроме первого при загрузке страницы
-	//$('.salonOpinionsWrapper').find('.opinionText').children().not( $(".opinionTextWrapper")[0] ).hide();//скрыть все отзывы кроме первого при загрузке страницы
+	$('.opinionMasterWrapper').find('.opinionText').children().not( ':first-child' ).hide();//скрыть все отзывы кроме первого при загрузке страницы
 	
 	//сокращаем текст описания О себе
 	var textLength = $('.oneself').text();
@@ -412,6 +411,7 @@ $(document).ready(function(){
 	var ratingText = $('.ratingNumber').text(promptRating);
 	var y = promptRating.replace(",", ".");
 	var ratingNumber = parseFloat(y);
+	//закрашивание рейтинга для одной звезды
 	var elemClassRating = $('.ratingStarsOneStar').attr('class');
 	if( ratingNumber == 0 ){
 		$('.ratingStarsOneStar').addClass('zero');
@@ -426,7 +426,7 @@ $(document).ready(function(){
 	} else if( ratingNumber > 4.5){
 		$('.ratingStarsOneStar').addClass('five');
 	}
-	//var imgLength = $('.ratingMasterBox .ratingStarsColor img').width();
+	//закрашивание рейтинга для пяти звезд
 	$('.ratingMasterBox .ratingStarsColor img').each(function(){
 		var imgLength = $(this).width();
 		var ratingLength = (ratingNumber * imgLength)/5;    
@@ -454,7 +454,7 @@ $(document).ready(function(){
 		var jobEvaluationText = $(this).find('.jobEvaluation').text(); //получаем текстовое значение оценки
 		var y = jobEvaluationText.replace(",", ".");                   //преобразуем запятую в точку 
 		var evaluationNumber = parseFloat(y);                          //преобразуем текст в число
-		var imgLength = $(this).find('.ratingStarsColor img').width(); //получаем длину элемента для формулы
+		var imgLength = 100; //задал размер картинки принудительно, так как на момент загрузки, изображение имеет ширину = 0!!!
 		var evaluationLength = (evaluationNumber * imgLength)/5;       //вычисляем длину закрашенного фона
 		if(evaluationLength <= imgLength){
 			$(this).find('.ratingStarsColor').width(evaluationLength);
@@ -527,19 +527,17 @@ $(document).ready(function(){
 	});
 	
 	//Показать все отзывы
-	var count = true;
 	$('.showAllOpinion').on('click', function(e){
 		e.preventDefault();
-		if(count == true){
-			$('.opinionText').children().slideDown('slow');
-			$(this).text('Свернуть отзывы');
-			count = false;
-		} else if(count == false){
-			$('.opinionText').children().not( $(".opinionTextWrapper")[0] ).slideUp('slow');
+		if($(this).hasClass('clickShowOpinion')){
+			$(this).parent().siblings('.opinionText').children().not( ':first-child' ).slideUp('slow');
 			$(this).text('Показать все отзывы');
-			count = true;		
-		}
-		
+			$(this).removeClass('clickShowOpinion');
+		} else {
+			$(this).parent().siblings('.opinionText').children().slideDown('slow');
+			$(this).text('Свернуть отзывы');
+			$(this).addClass('clickShowOpinion');		
+		}	
 	});
 	
 	//Показать все районы выезда
@@ -661,5 +659,26 @@ $(document).ready(function(){
 			$(this).addClass('activeLink');
 		}	
 	});
+	
+	//средняя оценка по всем отзывам
+	var allRatings = [];
+	$('.menuSalonOpinions').on('click', function(){
+		$(this).parents('.viewAnketaMasterWrapper.salon').find('.jobEvaluation').each(function(){
+			var d = $(this).text();
+			var y = d.replace(",", ".");
+			allRatings.push(y);	
+		});
+		var arrLength = allRatings.length;
+		var zero = 0;
+		for(var i = 0; i < allRatings.length; i++){
+			zero += +allRatings[i];
+			console.log(zero);
+			var result = zero / arrLength;
+			var resiltAround = result.toFixed(1);
+			
+			$('.middleRate').text(resiltAround);
+		}
+	})
+	
 /*-------------END анкета салона, как её видят клиенты------------------*/
 })
