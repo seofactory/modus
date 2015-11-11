@@ -2157,6 +2157,37 @@ span.checkk.redChecked.checked {
     margin: 0 7px 7px 0;
 }
 /*END портфолио салона*/
+
+/*отзывы о салоне*/
+.middleRateWrapper {
+    margin-top: 10px;
+}
+.middleRate {
+    padding-left: 5px;
+}
+.howMatchRatingOneTable{
+	display: table;
+}
+.howMatchRatingOneRow {
+    display: table-row;
+}
+.howMatchRatingOneRow .howMatchRatingWrapper,
+.howMatchRatingOneRow > span{
+    display: table-cell;
+}
+.howMatchRatingWrapper{
+	padding-right: 10px;
+}
+.howMatchRatingOne {
+    position: relative;
+    top: 3px;
+    display: inline-block;
+    width: 20px;
+    height: 19px;
+    background: url('../img/spriteStars.png')no-repeat;
+	background-position: -109px 0;
+}
+/*END отзывы о салоне*/
 /*----------END анкета салона, как её видят клиенты----------*/
 
 /*PrettyPhoto*/
