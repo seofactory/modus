@@ -1,0 +1,222 @@
+<!--
+
+Попапы открываются в fancybox (вызов прописан в site.js по айдишнику). 
+
+На всякий случай подписываю номера с макетов перед попапами
+
+У попапов с 'Оставить отзыв' и 'Записаться' много вариаций. Я оставила по одной вызываемой (если кликнуть на кнопку 'Оставить отзыв'/'Записаться' откроется соответствующая). Остальные вариации закоменчены, чтобы посмотреть другую, соответственно коментим текущую и раскоменчиваем, какая нужна.
+
+Сообщения после успешной отправки различаются только текстом в общем. 
+
+//вызов сообщения после успешной отправки в fancybox, 
+
+$.fancybox($('айдишник'), popupParams);
+
+//popupParams - параметры fancybox для попапов, прописаны в site.js
+
+(разметка ниже)
+
+-->
+
+<!--ПОПАПЫ С ОТЗЫВАМИ-->
+<!--оставить отзыв. если пользователь авторизован-->
+
+
+<!--14.1 - оставить отзыв. если пользователь не авторизован-->
+<div class="popup" id="popupReview" style="display: none">
+  <div class="popup-title">Оставить отзыв</div>
+  <p class="align-center">Чтобы оставить отзыв, Вы должны быть арегистрированным пользователем</p>
+  <div class="account-no-name">Нет аккаунта? <a href="#">Зарегистрироваться</a></div>
+  <form method="post">
+    <div class="popup-title-sub">Войти на сайт</div>
+    <div class="form-box-narrow">
+       <input type="text" required placeholder="Логин">
+       <input type="password" class="password" required placeholder="Пароль">
+       <a class="recall-password" href="#">Напомнить пароль</a>
+    </div>
+    <div class="wrapper-btn align-center">
+      <button type="submit" class="red-btn middle-red-btn wide-red-btn">Войти</button>
+    </div>
+    <div class="enter-networks networks">
+         <span>Войти через:</span>
+         <a class="vk" href=""></a> 
+         <a class="fb" href=""></a>
+    </div>
+  </form>
+</div>
+<!--14.1.1 - оставить отзыв. зарегистрироваться-->
+<!--<div class="popup" id="popupReview" style="display: none">
+  <div class="popup-title">Оставить отзыв</div>
+  <div class="enter-networks networks big-icon-networks">
+      <div class="popup-title-sub">Войти через</div>
+      <a class="vk" href=""></a> 
+      <a class="fb" href=""></a>
+  </div>
+  <form method="post">
+    <div class="popup-title-sub">Регистрация на сайте</div>
+    <div class="form-box-narrow">
+       <input type="text" required placeholder="Ваше имя">
+       <input type="email" required placeholder="E-mail">
+       <input type="text" placeholder="Город">
+    </div>
+    <div class="wrapper-btn align-center">
+      <button type="submit" class="red-btn middle-red-btn wide-red-btn">Зарегистрироваться</button>
+    </div>
+  </form>
+</div>-->
+
+<!--14.3 сообщение после успешной отправки-->
+<div class="popup popup-ok" id="" style="display: none">
+  <div class="popup-title">Спасибо за отзыв</div>
+  <div class="ok-text">
+    <p>Ваш отзыв будет опубликован после проверки модератором.</p>
+  </div>
+</div>
+
+<!--ПОПАПЫ С ЗАПИСЬЮ-->
+
+<!--15.1 - записаться. без регистрации, если пользователь не авторизован-->
+<div class="popup" id="popupRequest" style="display: none">
+  <div class="popup-title">Записаться к мастеру</div>
+  <div class="enter-if-account">
+   <p class="enter-if-account-left">Пожауйста, авторизуйтесь, если Вы уже являетесь нашим пользователем</p>
+   <a href="#" class="light-btn brown enter-if-account-right">войти</a>
+  </div>
+  <form method="post">
+   <div class="form-str">
+       <p class="bold">Вы выбрали мастера/салон:</p>
+       <div class="avatar-small-name">
+         <img class="border-beige" src="/php/pic.php?w=27&h=27&file=/themes/sapota/img/ex/img02.jpg" alt="" />
+         <span>Елена Иванова</span>
+       </div>
+    </div>
+    <div class="form-str">
+      <p class="bold">Необходимые услуги:</p>
+      <textarea></textarea>
+    </div>
+    <div class="form-str">
+       <p class="bold">Ваши личные данные:</p>
+       <input type="text" required placeholder="Имя">
+       <input type="tel" required placeholder="Телефон">
+       <input type="email" required placeholder="E-mail">
+    </div>
+    <div class="wrapper-btn align-center">
+      <button type="submit" class="red-btn middle-red-btn wide-red-btn">Записаться без регистрации</button>
+    </div>
+    <div class="enter-networks-right">
+       <div class="enter-networks networks">
+            <span class="enter-networks-left-box"><a href="#">Зарегистрироваться</a></span>
+            <span>Войти через:</span>
+            <a class="vk" href=""></a> 
+            <a class="fb" href=""></a>
+       </div>
+    </div>
+  </form>
+</div>
+
+<!--15.1.1 - записаться. если пользователь не авторизован и нажал кнопку 'Войти' на предыдущей форме-->
+<!--<div class="popup" id="popupRequest" style="display: none">
+  <div class="popup-title">Записаться к мастеру</div>
+  <form method="post">
+    <div class="form-str">
+       <p class="bold">Авторизоваться на сайте:</p>
+       <input type="text" required placeholder="Логин">
+       <input type="password" class="password" required placeholder="Пароль">
+       <a class="recall-password" href="#">Напомнить пароль</a>
+    </div>
+    <div class="enter-networks networks align-left enter-networks-not-bottom">
+         <span>Войти через:</span>
+         <a class="vk" href=""></a> 
+         <a class="fb" href=""></a>
+    </div>
+    <div class="form-str">
+       <p class="bold">Вы выбрали мастера/салон:</p>
+       <div class="avatar-small-name">
+         <img class="border-beige" src="/php/pic.php?w=27&h=27&file=/themes/sapota/img/ex/img02.jpg" alt="" />
+         <span>Елена Иванова</span>
+       </div>
+    </div>
+    <div class="form-str">
+      <p class="bold">Необходимые услуги:</p>
+      <textarea></textarea>
+    </div>
+    <div class="wrapper-btn align-center">
+      <button type="submit" class="red-btn middle-red-btn wide-red-btn">Войти и записаться</button>
+    </div>
+  </form>
+</div>-->
+
+<!--15.1.0 сообщение после успешной отправки-->
+<div class="popup popup-ok" id="" style="display: none">
+  <div class="popup-title">Спасибо за использование нашего сервиса!</div>
+  <div class="ok-text">
+     <p>Мастер свяжется с Вами в ближайшее время.</p>
+     <p>Ваши авторизационные данные высланы на указанный e-mail. Теперь Вы можете пользоваться всеми преимуществами зарегистрированного пользователя.</p>
+  </div>
+</div>
+
+<!--15.2 - записаться. если пользователь авторизован-->
+<!--<div class="popup" id="popupRequest" style="display: none">
+  <div class="popup-title">Записаться к мастеру</div>
+  <div class="account-name icon"><i></i>Петрова Вера <a href="#">Выйти</a></div>
+  <form method="post">
+   <div class="form-str">
+       <p class="bold">Вы выбрали мастера/салон:</p>
+       <div class="avatar-small-name">
+         <img class="border-beige" src="/php/pic.php?w=27&h=27&file=/themes/sapota/img/ex/img02.jpg" alt="" />
+         <span>Елена Иванова</span>
+       </div>
+    </div>
+    <div class="bold form-str">
+    Необходимые услуги:
+    <textarea class="big-textarea"></textarea>
+    </div>
+    <div class="wrapper-btn align-center">
+      <button type="submit" class="red-btn middle-red-btn wide-red-btn">Отправить</button>
+    </div>
+  </form>
+</div>-->
+
+<!--15.2.1 сообщение после успешной отправки-->
+<div class="popup popup-ok" id="" style="display: none">
+  <div class="popup-title">Спасибо за использование нашего сервиса!</div>
+  <div class="ok-text">
+     <p>Мастер свяжется с Вами в ближайшее время.</p>
+  </div>
+</div>
+
+<!--15.3 - записаться. если пользователь авторизован-->
+<div class="popup" id="popupRequestCompare" style="display: none">
+  <div class="popup-title">Записаться к мастерам</div>
+  <div class="account-name icon"><i></i>Петрова Вера <a href="#">Выйти</a></div>
+  <form method="post">
+   <div class="form-str">
+       <p class="bold">Вы выбрали мастера/салон:</p>
+       <div class="form-list-master">
+          <div class="avatar-small-name">
+            <img class="border-beige" src="/php/pic.php?w=27&h=27&file=/themes/sapota/img/ex/img02.jpg" alt="" />
+            <span>Елена Иванова</span>
+          </div>
+          <div class="avatar-small-name">
+            <img class="border-beige" src="/php/pic.php?w=27&h=27&file=/themes/sapota/img/ex/img02.jpg" alt="" />
+            <span>Елена Иванова</span>
+          </div>
+          <div class="avatar-small-name">
+            <img class="border-beige" src="/php/pic.php?w=27&h=27&file=/themes/sapota/img/ex/img02.jpg" alt="" />
+            <span>Елена Иванова</span>
+          </div>
+          <div class="avatar-small-name">
+            <img class="border-beige" src="/php/pic.php?w=27&h=27&file=/themes/sapota/img/ex/img02.jpg" alt="" />
+            <span>Елена Иванова</span>
+          </div>
+       </div>
+    </div>
+    <div class="bold form-str">
+    Необходимые услуги:
+    <textarea class="big-textarea"></textarea>
+    </div>
+    <div class="wrapper-btn align-center">
+      <button type="submit" class="red-btn middle-red-btn wide-red-btn">Отправить</button>
+    </div>
+  </form>
+</div>

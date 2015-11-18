@@ -14,7 +14,7 @@
     <table class="comparison" id="tableComparison">
       <tr>
         <td class="comparison-info"><div class="comparison-amount"> <span class="comparison-amount-h">Выбрано:</span> <span id="amountMaster"><i>8</i></span> красоты </div>
-          <a href="#" class="red-btn middle-red-btn">Связаться со всеми</a> <a href="#" class="str-btn-3">очистить список</a>
+          <a href="#" class="red-btn middle-red-btn send-request-compare">Связаться со всеми</a> <a href="#" class="str-btn-3">очистить список</a>
           <div class="comparison-tabs"> <span>Показать параметры:</span>
             <ul>
               <li class="selected"><a class="selected" href="#all">Все</a></li>
@@ -26,56 +26,56 @@
           <a class="master-name" href="master-card.php">Тумбочкин Василий</a> 
           <span class="master-position" href="master-card.php">Косметолог</span>
           <div class="master-avatar clear"> <a href="master-card.php"><img src="/php/pic.php?w=80&h=80&file=/themes/sapota/img/ex/img02.jpg" alt="" /></a></div>
-          <a href="#" class="red-btn middle-red-btn">Записаться</a> 
+          <a href="#" class="red-btn middle-red-btn send-request">Записаться</a> 
           <a href="#" class="str-btn-2">убрать из списка</a>
         </td>
         <td>
           <a class="master-name" href="master-card.php">Тумбочкин Василий</a> 
           <span class="master-position" href="master-card.php">Косметолог</span>
           <div class="master-avatar clear"> <a href="master-card.php"><img src="/php/pic.php?w=80&h=80&file=/themes/sapota/img/ex/img02.jpg" alt="" /></a></div>
-          <a href="#" class="red-btn middle-red-btn">Записаться</a> 
+          <a href="#" class="red-btn middle-red-btn send-request">Записаться</a> 
           <a href="#" class="str-btn-2">убрать из списка</a>
         </td>
         <td>
           <a class="master-name" href="master-card.php">Тумбочкин Василий</a> 
           <span class="master-position" href="master-card.php">Косметолог</span>
           <div class="master-avatar clear"> <a href="master-card.php"><img src="/php/pic.php?w=80&h=80&file=/themes/sapota/img/ex/img02.jpg" alt="" /></a></div>
-          <a href="#" class="red-btn middle-red-btn">Записаться</a> 
+          <a href="#" class="red-btn middle-red-btn send-request">Записаться</a> 
           <a href="#" class="str-btn-2">убрать из списка</a>
         </td>
         <td>
           <a class="master-name" href="master-card.php">Тумбочкин Василий</a> 
           <span class="master-position" href="master-card.php">Косметолог</span>
           <div class="master-avatar clear"> <a href="master-card.php"><img src="/php/pic.php?w=80&h=80&file=/themes/sapota/img/ex/img02.jpg" alt="" /></a></div>
-          <a href="#" class="red-btn middle-red-btn">Записаться</a> 
+          <a href="#" class="red-btn middle-red-btn send-request">Записаться</a> 
           <a href="#" class="str-btn-2">убрать из списка</a>
         </td>
         <td>
           <a class="master-name" href="master-card.php">Тумбочкин Василий</a> 
           <span class="master-position" href="master-card.php">Косметолог</span>
           <div class="master-avatar clear"> <a href="master-card.php"><img src="/php/pic.php?w=80&h=80&file=/themes/sapota/img/ex/img02.jpg" alt="" /></a></div>
-          <a href="#" class="red-btn middle-red-btn">Записаться</a> 
+          <a href="#" class="red-btn middle-red-btn send-request">Записаться</a> 
           <a href="#" class="str-btn-2">убрать из списка</a>
         </td>
         <td>
           <a class="master-name" href="master-card.php">Тумбочкин Василий</a> 
           <span class="master-position" href="master-card.php">Косметолог</span>
           <div class="master-avatar clear"> <a href="master-card.php"><img src="/php/pic.php?w=80&h=80&file=/themes/sapota/img/ex/img02.jpg" alt="" /></a></div>
-          <a href="#" class="red-btn middle-red-btn">Записаться</a> 
+          <a href="#" class="red-btn middle-red-btn send-request">Записаться</a> 
           <a href="#" class="str-btn-2">убрать из списка</a>
         </td>
         <td>
           <a class="master-name" href="master-card.php">Тумбочкин Василий</a> 
           <span class="master-position" href="master-card.php">Косметолог</span>
           <div class="master-avatar clear"> <a href="master-card.php"><img src="/php/pic.php?w=80&h=80&file=/themes/sapota/img/ex/img02.jpg" alt="" /></a></div>
-          <a href="#" class="red-btn middle-red-btn">Записаться</a> 
+          <a href="#" class="red-btn middle-red-btn send-request">Записаться</a> 
           <a href="#" class="str-btn-2">убрать из списка</a>
         </td>
         <td>
           <a class="master-name" href="master-card.php">Тумбочкин Василий</a> 
           <span class="master-position" href="master-card.php">Косметолог</span>
           <div class="master-avatar clear"> <a href="master-card.php"><img src="/php/pic.php?w=80&h=80&file=/themes/sapota/img/ex/img02.jpg" alt="" /></a></div>
-          <a href="#" class="red-btn middle-red-btn">Записаться</a> 
+          <a href="#" class="red-btn middle-red-btn send-request">Записаться</a> 
           <a href="#" class="str-btn-2">убрать из списка</a>
         </td>
       </tr>
@@ -92,14 +92,78 @@
       </tr>
       <tr>
         <td>рейтинг</td>
-        <td><div class="rating"><span>3</span><i class="star star-3"></i></div></td>
-        <td><div class="rating"><span>3</span><i class="star star-3"></i></div></td>
-        <td><div class="rating"><span>3</span><i class="star star-3"></i></div></td>
-        <td><div class="rating"><span>3</span><i class="star star-3"></i></div></td>
-        <td><div class="rating"><span>3</span><i class="star star-3"></i></div></td>
-        <td><div class="rating"><span>3</span><i class="star star-3"></i></div></td>
-        <td><div class="rating"><span>3</span><i class="star star-3"></i></div></td>
-        <td><div class="rating"><span>3</span><i class="star star-3"></i></div></td>
+        <td>        
+           <div class="rating-box" data-rating="2.7">
+              <span class="rating-number"></span>
+              <div class="rating-stars-color stars-type-one">
+                <span class="stars-beige"></span>
+                <span class="stars-red"></span>
+              </div>
+           </div>
+        </td>
+        <td>        
+           <div class="rating-box" data-rating="2.7">
+              <span class="rating-number"></span>
+              <div class="rating-stars-color stars-type-one">
+                <span class="stars-beige"></span>
+                <span class="stars-red"></span>
+              </div>
+           </div>
+        </td>
+        <td>        
+           <div class="rating-box" data-rating="2.7">
+              <span class="rating-number"></span>
+              <div class="rating-stars-color stars-type-one">
+                <span class="stars-beige"></span>
+                <span class="stars-red"></span>
+              </div>
+           </div>
+        </td>
+        <td>        
+           <div class="rating-box" data-rating="2.7">
+              <span class="rating-number"></span>
+              <div class="rating-stars-color stars-type-one">
+                <span class="stars-beige"></span>
+                <span class="stars-red"></span>
+              </div>
+           </div>
+        </td>
+        <td>        
+           <div class="rating-box" data-rating="2.7">
+              <span class="rating-number"></span>
+              <div class="rating-stars-color stars-type-one">
+                <span class="stars-beige"></span>
+                <span class="stars-red"></span>
+              </div>
+           </div>
+        </td>
+        <td>        
+           <div class="rating-box" data-rating="2.7">
+              <span class="rating-number"></span>
+              <div class="rating-stars-color stars-type-one">
+                <span class="stars-beige"></span>
+                <span class="stars-red"></span>
+              </div>
+           </div>
+        </td>
+        <td>        
+           <div class="rating-box" data-rating="2.7">
+              <span class="rating-number"></span>
+              <div class="rating-stars-color stars-type-one">
+                <span class="stars-beige"></span>
+                <span class="stars-red"></span>
+              </div>
+           </div>
+        </td>
+        <td>        
+           <div class="rating-box" data-rating="2.7">
+              <span class="rating-number"></span>
+              <div class="rating-stars-color stars-type-one">
+                <span class="stars-beige"></span>
+                <span class="stars-red"></span>
+              </div>
+           </div>
+        </td>
       </tr>
       <tr>
         <td>отзывы</td>
@@ -194,5 +258,6 @@
   <div class="link-back"><a href="#"><i></i> Вернуться к поиску</a></div>
 </div>
 <?php include ("blocks/footer.html");?>
+<?php include ("blocks/popup.html");?>
 </body>
 </html>

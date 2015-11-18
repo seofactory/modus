@@ -191,10 +191,12 @@
         <div class="h5">Длинное длинное название длинное длиннющее</div>
         <div class="red-big">от <strong>9999</strong> р.</div>
         <div><strong>Вася Помидоркина</strong></div>
-
-        <!--6 вариаций звездности задаются классами .star-0, star-1 и т.д.-->
-        <div class="star star-5"></div>
-        
+        <div class="rating-box" data-rating="5">
+           <div class="rating-stars-color stars-type-one">
+             <span class="stars-beige"></span>
+             <span class="stars-red"></span>
+           </div>
+        </div>
       </div>
       <!--скрытая часть информации-->
       <div class="master-info-spoiler">
@@ -208,7 +210,12 @@
         <div class="h5">Длинное длинное название длинное длиннющее</div>
         <div class="red-big">от <strong>9999</strong> р.</div>
         <div class="master-name">Вася Помидоркина</div>
-        <span class="star"></span>
+        <div class="rating-box" data-rating="2.7">
+           <div class="rating-stars-color stars-type-one">
+             <span class="stars-beige"></span>
+             <span class="stars-red"></span>
+           </div>
+        </div>
       </div>
       <!--скрытая часть информации-->
       <div class="master-info-spoiler">
@@ -222,7 +229,12 @@
         <div class="h5">Длинное длинное название длинное длиннющее</div>
         <div class="red-big">от <strong>9999</strong> р.</div>
         <div class="master-name">Вася Помидоркина</div>
-        <span class="star"></span>
+        <div class="rating-box" data-rating="3">
+           <div class="rating-stars-color stars-type-one">
+             <span class="stars-beige"></span>
+             <span class="stars-red"></span>
+           </div>
+        </div>
       </div>
       <!--скрытая часть информации-->
       <div class="master-info-spoiler">
@@ -236,7 +248,12 @@
         <div class="h5">Длинное длинное название длинное длиннющее</div>
         <div class="red-big">от <strong>9999</strong> р.</div>
         <div class="master-name">Вася Помидоркина</div>
-        <span class="star"></span>
+        <div class="rating-box" data-rating="1.5">
+           <div class="rating-stars-color stars-type-one">
+             <span class="stars-beige"></span>
+             <span class="stars-red"></span>
+           </div>
+        </div>
       </div>
       <!--скрытая часть информации-->
       <div class="master-info-spoiler">
@@ -250,7 +267,12 @@
         <div class="h5">Длинное длинное название длинное длиннющее</div>
         <div class="red-big">от <strong>9999</strong> р.</div>
         <div class="master-name">Вася Помидоркина</div>
-        <span class="star"></span>
+        <div class="rating-box" data-rating="3">
+           <div class="rating-stars-color stars-type-one">
+             <span class="stars-beige"></span>
+             <span class="stars-red"></span>
+           </div>
+        </div>
       </div>
       <!--скрытая часть информации-->
       <div class="master-info-spoiler">
@@ -264,7 +286,12 @@
         <div class="h5">Длинное длинное название длинное длиннющее</div>
         <div class="red-big">от <strong>9999</strong> р.</div>
         <div class="master-name">Вася Помидоркина</div>
-        <span class="star"></span>
+        <div class="rating-box" data-rating="2">
+           <div class="rating-stars-color stars-type-one">
+             <span class="stars-beige"></span>
+             <span class="stars-red"></span>
+           </div>
+        </div>
       </div>
       <!--скрытая часть информации-->
       <div class="master-info-spoiler">

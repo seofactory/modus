@@ -127,12 +127,18 @@
           <!--МАСТЕР В ФИЛЬТРЕ-->
           <div class="master-box-filter container"> 
             <!--инфа о мастере слева-->
-            <div class="grid-210 master-box-filter-left"> <a class="master-name" href="master-card.php">Тумбочкин Василий</a>
-              <div class="master-avatar clear"> <a href="master-card.php"><img src="/php/pic.php?w=80&h=80&file=/themes/sapota/img/ex/img02.jpg" alt="" /></a>
+            <div class="grid-210 master-box-filter-left"> <a class="master-name" href="page-master.php">Тумбочкин Василий</a>
+              <div class="master-avatar clear"> <a href="page-master.php"><img src="/php/pic.php?w=80&h=80&file=/themes/sapota/img/ex/img02.jpg" alt="" /></a>
                 <ul>
                   <li>опыт: <span>5 лет</span></li>
-                  <li>рейтинг: <span>3</span>
-                    <div class="star star-3"></div>
+                  <li>
+                   <div class="rating-box" data-rating="3">
+                       <span>рейтинг: <span class="bold rating-number"></span></span>
+                       <div class="rating-stars-color stars-type-one">
+                         <span class="stars-beige"></span>
+                         <span class="stars-red"></span>
+                       </div>
+                   </div>
                   </li>
                   <li>отзывы: <span>7</span></li>
                 </ul>
@@ -148,7 +154,7 @@
                   <li>сб-вс <span>06:00-22:00</span></li>
                 </ul>
               </div>
-              <div class="master-portfolio"><span>Портфолио:</span> <a id="amountPortfolio" href="master-card.php#portfolio">35</a></div>
+              <div class="master-portfolio"><span>Портфолио:</span> <a id="amountPortfolio" href="page-master.php">35</a></div>
               <!--/.master-box-filter-left--> 
             </div>
             <!--инфа справа-->
@@ -173,7 +179,7 @@
                 </tr>
               </table>
             </div>
-            <div class="grid-160 master-box-filter-links"> <a href="#" class="red-btn entry-link">Записаться</a> 
+            <div class="grid-160 master-box-filter-links"> <a href="#" class="red-btn entry-link send-request">Записаться</a> 
               <!--под вопросом--> 
               <a href="#">Добавить к сравнению</a> <a href="#">Добавить в избранное</a> </div>
             <div class="grid-510">
@@ -189,12 +195,18 @@
           <!--МАСТЕР В ФИЛЬТРЕ-->
           <div class="master-box-filter container"> 
             <!--инфа о мастере слева-->
-            <div class="grid-210 master-box-filter-left"> <a class="master-name" href="master-card.php">Тумбочкин Василий</a>
-              <div class="master-avatar clear"> <a href="master-card.php"><img src="/php/pic.php?w=80&h=80&file=/themes/sapota/img/ex/img02.jpg" alt="" /></a>
+            <div class="grid-210 master-box-filter-left"> <a class="master-name" href="page-master.php">Тумбочкин Василий</a>
+              <div class="master-avatar clear"> <a href="page-master.php"><img src="/php/pic.php?w=80&h=80&file=/themes/sapota/img/ex/img02.jpg" alt="" /></a>
                 <ul>
                   <li>опыт: <span>5 лет</span></li>
-                  <li>рейтинг: <span>3</span>
-                    <div class="star star-3"></div>
+                  <li>
+                   <div class="rating-box" data-rating="3">
+                       <span>рейтинг: <span class="bold rating-number"></span></span>
+                       <div class="rating-stars-color stars-type-one">
+                         <span class="stars-beige"></span>
+                         <span class="stars-red"></span>
+                       </div>
+                   </div>
                   </li>
                   <li>отзывы: <span>7</span></li>
                 </ul>
@@ -210,7 +222,7 @@
                   <li>сб-вс <span>06:00-22:00</span></li>
                 </ul>
               </div>
-              <div class="master-portfolio"><span>Портфолио:</span> <a id="amountPortfolio" href="master-card.php#portfolio">35</a></div>
+              <div class="master-portfolio"><span>Портфолио:</span> <a id="amountPortfolio" href="page-master.php">35</a></div>
               <!--/.master-box-filter-left--> 
             </div>
             <!--инфа справа-->
@@ -235,7 +247,7 @@
                 </tr>
               </table>
             </div>
-            <div class="grid-160 master-box-filter-links"> <a href="#" class="red-btn entry-link">Записаться</a> 
+            <div class="grid-160 master-box-filter-links"> <a href="#" class="red-btn entry-link send-request">Записаться</a> 
               <!--под вопросом--> 
               <a href="#">Добавить к сравнению</a> <a href="#">Добавить в избранное</a> </div>
             <div class="grid-510">
@@ -251,12 +263,18 @@
           <!--МАСТЕР В ФИЛЬТРЕ-->
           <div class="master-box-filter container"> 
             <!--инфа о мастере слева-->
-            <div class="grid-210 master-box-filter-left"> <a class="master-name" href="master-card.php">Тумбочкин Василий</a>
-              <div class="master-avatar clear"> <a href="master-card.php"><img src="/php/pic.php?w=80&h=80&file=/themes/sapota/img/ex/img02.jpg" alt="" /></a>
+            <div class="grid-210 master-box-filter-left"> <a class="master-name" href="page-master.php">Тумбочкин Василий</a>
+              <div class="master-avatar clear"> <a href="page-master.php"><img src="/php/pic.php?w=80&h=80&file=/themes/sapota/img/ex/img02.jpg" alt="" /></a>
                 <ul>
                   <li>опыт: <span>5 лет</span></li>
-                  <li>рейтинг: <span>3</span>
-                    <div class="star star-3"></div>
+                  <li>
+                   <div class="rating-box" data-rating="3">
+                       <span>рейтинг: <span class="bold rating-number"></span></span>
+                       <div class="rating-stars-color stars-type-one">
+                         <span class="stars-beige"></span>
+                         <span class="stars-red"></span>
+                       </div>
+                   </div>
                   </li>
                   <li>отзывы: <span>7</span></li>
                 </ul>
@@ -272,7 +290,7 @@
                   <li>сб-вс <span>06:00-22:00</span></li>
                 </ul>
               </div>
-              <div class="master-portfolio"><span>Портфолио:</span> <a id="amountPortfolio" href="master-card.php#portfolio">35</a></div>
+              <div class="master-portfolio"><span>Портфолио:</span> <a id="amountPortfolio" href="page-master.php">35</a></div>
               <!--/.master-box-filter-left--> 
             </div>
             <!--инфа справа-->
@@ -297,7 +315,7 @@
                 </tr>
               </table>
             </div>
-            <div class="grid-160 master-box-filter-links"> <a href="#" class="red-btn entry-link">Записаться</a> 
+            <div class="grid-160 master-box-filter-links"> <a href="#" class="red-btn entry-link send-request">Записаться</a> 
               <!--под вопросом--> 
               <a href="#">Добавить к сравнению</a> <a href="#">Добавить в избранное</a> </div>
             <div class="grid-510">
@@ -313,12 +331,18 @@
           <!--МАСТЕР В ФИЛЬТРЕ-->
           <div class="master-box-filter container"> 
             <!--инфа о мастере слева-->
-            <div class="grid-210 master-box-filter-left"> <a class="master-name" href="master-card.php">Тумбочкин Василий</a>
-              <div class="master-avatar clear"> <a href="master-card.php"><img src="/php/pic.php?w=80&h=80&file=/themes/sapota/img/ex/img02.jpg" alt="" /></a>
+            <div class="grid-210 master-box-filter-left"> <a class="master-name" href="page-master.php">Тумбочкин Василий</a>
+              <div class="master-avatar clear"> <a href="page-master.php"><img src="/php/pic.php?w=80&h=80&file=/themes/sapota/img/ex/img02.jpg" alt="" /></a>
                 <ul>
                   <li>опыт: <span>5 лет</span></li>
-                  <li>рейтинг: <span>3</span>
-                    <div class="star star-3"></div>
+                  <li>
+                   <div class="rating-box" data-rating="3">
+                       <span>рейтинг: <span class="bold rating-number"></span></span>
+                       <div class="rating-stars-color stars-type-one">
+                         <span class="stars-beige"></span>
+                         <span class="stars-red"></span>
+                       </div>
+                   </div>
                   </li>
                   <li>отзывы: <span>7</span></li>
                 </ul>
@@ -334,7 +358,7 @@
                   <li>сб-вс <span>06:00-22:00</span></li>
                 </ul>
               </div>
-              <div class="master-portfolio"><span>Портфолио:</span> <a id="amountPortfolio" href="master-card.php#portfolio">35</a></div>
+              <div class="master-portfolio"><span>Портфолио:</span> <a id="amountPortfolio" href="page-master.php">35</a></div>
               <!--/.master-box-filter-left--> 
             </div>
             <!--инфа справа-->
@@ -359,7 +383,7 @@
                 </tr>
               </table>
             </div>
-            <div class="grid-160 master-box-filter-links"> <a href="#" class="red-btn entry-link">Записаться</a> 
+            <div class="grid-160 master-box-filter-links"> <a href="#" class="red-btn entry-link send-request">Записаться</a> 
               <!--под вопросом--> 
               <a href="#">Добавить к сравнению</a> <a href="#">Добавить в избранное</a> </div>
             <div class="grid-510">
@@ -573,5 +597,6 @@
   </form>
 </div>
 <?php include ("blocks/footer.html");?>
+<?php include ("blocks/popup.html");?>
 </body>
 </html>

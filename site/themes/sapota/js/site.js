@@ -16,7 +16,7 @@ $(document).ready(function(){
 	   });
 	$(".ul-dropfree li:not(:has(strong))").children("ul").slideUp(400);
 	$(".ul-dropfree li:not(:has(strong))").removeClass('open');
-});
+   });
 
 $(function() {
    
@@ -60,7 +60,7 @@ $(function() {
        return false;
     });
 
-    /*табы*/
+    //табы - вот через этот js только на главной, дальше везде табы формируются через ui tabs, на главной не факт что они вообще будут, поэтому не трогаю пока
     var tabContainers = $('div.tabs .search-tabs > div');
     tabContainers.hide().filter(':first').show();
     $('div.tabs ul.tab-nav a').click(function() {
@@ -71,11 +71,112 @@ $(function() {
         return false;
     }).filter(':first').click();
 
+    $("#tabs").tabs();
+    
+    //тоггл
+    $('.toggler-title').click(function(){
+    var $this = $(this),
+        content = $this.closest('.toggler').find('.toggler-content');
+        content.toggle();
+        if (content.css('display') === 'none') {
+          $this.addClass('close');
+        }
+        else {
+          $this.removeClass('close');
+        }
+        return false;
+    }); 
+    
+    //типовой тогглер
+    $('.toggler-simple').find('.toggler-content').hide();
+    $('.toggler-simple').addClass('close');
+    $('.toggler-simple .toggler-link').each(function() {
+      $(this).attr('title', $(this).html());
+    });
+    $('.toggler-simple .toggler-link').click(function(){
+    var $this = $(this),
+        html = $this.attr('title'),
+        parent = $this.closest('.toggler-simple'),
+        content = parent.find('.toggler-content');
+        if (content.css('display') === 'none') {
+            parent.removeClass('close');          
+            if(content.hasClass('no-animation')) {
+              content.slideDown(0);  
+            }
+            else {
+              content.slideDown(300);  
+            }
+            $this.empty().html('Скрыть');
+        }
+        else {
+            parent.addClass('close');
+            if(content.hasClass('no-animation')) {
+              content.slideUp(0);
+            }
+            else {
+              content.slideUp(300);
+            }
+            $this.empty().html(html);
+        }
+        return false;
+    }); 
+    
+    //во вкладке 'прайс' в 'салоне' сворачиваем все, кроме первых дпвух
+    $('#salon-price').find('.toggler').not('.toggler:lt(2)').find('.toggler-content').hide();
+    //обработка кнопки 'развернуть все'
+    $('.all-toggler').click(function(){
+      var $this = $(this),
+          togglerTitle = $('.toggler-title');
+      $this.toggleClass('open');
+      if($this.hasClass('open')) {
+        $('.toggler-content').show();
+        $this.empty().html('Свернуть все');
+        togglerTitle.removeClass('close');
+      }
+      else {
+        $('.toggler-content').hide();
+        $this.empty().html('Развернуть все');
+        togglerTitle.addClass('close');
+      }
+      return false;
+    });
+    
     //стилизация элементов формы
     $('input, select').styler();
     
+    //маски в форме
+    $('input.phone').mask('+7 (999) 999-99-99');
+    
     //подключаем фэнсибокс
     $(".fancybox").fancybox();
+    
+    //попапы
+    var popupParams = {
+            closeBtn: true, 
+            autoSize: false,
+            fitToView: false,
+            margin: 0,
+            padding: 0,
+            width: 'auto',
+            height: "inherit",
+            autoHeight: true
+    };
+    
+    //оставить отзыв
+    $('.send-review').click(function() {
+      $.fancybox($('#popupReview'), popupParams);
+    return false;
+    });
+    //записаться
+    $('.send-request').click(function() {
+      $.fancybox($('#popupRequest'), popupParams);
+    return false;
+    });
+    //записаться из сравнения
+    $('.send-request-compare').click(function() {
+      $.fancybox($('#popupRequestCompare'), popupParams);
+    return false;
+    });
     
     //подсвечиваем название у чекбокса при его выборке
     $("input[type=checkbox]").change(function() {
@@ -107,8 +208,77 @@ $(function() {
       }
     });
     
-    //В ФОРМАХ ПОИСКА
-    
+    //показать номер телефона
+    $('.show-phone-number').on('click', function(){
+      $(this).hide();
+      $(this).parents('.phone-box').find('.phone-number').show();
+      return false;
+    });
+
+   //РЕЙТИНГ 
+   $(".rating-box").each(function() {         
+      var $this = $(this);
+          ratingNumber = $this.attr("data-rating"),
+          ratingNumber = parseFloat(ratingNumber),
+          ratingNumber = ratingNumber.toFixed(1),
+          lengthI = $this.find(".rating-stars-color").width(),
+          ratingLength = (ratingNumber * lengthI)/5,
+          redStars = $this.find(".stars-red"),
+          ratingText = $this.find(".rating-number");
+      if (ratingLength <= lengthI) {
+          redStars.width(ratingLength);
+      } else {
+          redStars.width(lengthI);
+      }
+      if(ratingText) {
+         ratingText.append(ratingNumber)
+      }
+   });
+   
+    //РЕЙТИНГ В ФОРМЕ ДЛЯ ОТЗЫВА
+    //если мышка в блоке со звездами, меняем ширину заполненных звезд за мышкой
+    $(".rating-stars-color-link").mousemove(function(e){
+       var $this = $(this),
+           fullStars = $this.find(".stars-red"), 
+           left = Math.round(e.pageX - $this.offset().left);
+           fullStars.width(left);
+       return false;
+    });
+    //при клике перезаписываем значение рейтинга
+    $(".rating-stars-color-link").click(function(e){
+       var $this = $(this),
+           fullStars = $this.find(".stars-red"),   
+           length = $this.width(),
+           left = Math.round(e.pageX - $this.offset().left),
+           ratingNumber = parseFloat(left / (length / 5)),
+           ratingNumber = ratingNumber.toFixed(1);
+           fullStars.width(left);
+           $this.closest('.rating-box').attr('data-rating', ratingNumber);
+       return false;
+    });
+    //при выходе мышки, выставляем значение рейтинга
+    $(".rating-stars-color-link").mouseleave(function(){
+       var $this = $(this),
+           ratingNumber = parseFloat($this.closest('.rating-box').attr("data-rating")),
+           ratingNumber = ratingNumber.toFixed(1),
+           length = $this.width(),
+           ratingLength = Math.round((ratingNumber * length)/5),
+           fullStars = $this.find(".stars-red");
+           fullStars.width(ratingLength);
+       return false;  
+    });
+        
+    //В ФОРМАХ 
+
+    //в группе only-one-checked выбор чекбокса ограничиваем до одного
+    $(".only-one-checked input[type=checkbox]").change(function() {
+      var thisLabel = $(this).closest('.check'),
+          thisOnlyOneCheked = $(this).closest(".only-one-checked");
+          thisLabel.addClass('selected');
+          thisOnlyOneCheked.find(".check").not(thisLabel).removeClass('selected');
+          thisOnlyOneCheked.find("input[type=checkbox]").not(this).prop('checked', false).trigger('refresh');
+    });
+     
     //окончание подстраиваем при выводе количества мастеров и салонов
     function declOfNum(selector, titles) {  
       var number = selector.find('i').html();

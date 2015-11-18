@@ -1,0 +1,4 @@
+@charset "UTF-8";
+
+.master-box-filter-work li a:before, .master-box-filter-work li a:after { display: none; }
+.master-box-filter-work li { margin-right: 9px; }
