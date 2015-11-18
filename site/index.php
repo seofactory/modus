@@ -1,6 +1,6 @@
 ﻿<!doctype html> 
 <html>
-<?php include ("blocks/head.html");?>
+<?php include ("blocks/head.html");?> 
 <body>
   <?php include ("blocks/header-main.html");?>
   <div class="layout layout-main-page"> 
