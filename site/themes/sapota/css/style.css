@@ -139,6 +139,9 @@ a:hover { text-decoration: none; color: #f14b00; }
 
 .volume-btn:hover:after { background-position: -20px -37px; }
 
+@-moz-document url-prefix() { button.volume-btn:after, button.volume-btn:before { top: 1px; }
+  button.volume-btn:after { right: 3px; }
+  button.volume-btn:before { left: 3px; } }
 /*красная кнопка*/
 .red-btn { -webkit-transition: all 150ms ease-in-out; -moz-transition: all 150ms ease-in-out; -ms-transition: all 150ms ease-in-out; -o-transition: all 150ms ease-in-out; transition: all 150ms ease-in-out; -webkit-box-shadow: 0 0 0 2px #f5e2c0; -moz-box-shadow: 0 0 0 2px #f5e2c0; box-shadow: 0 0 0 2px #f5e2c0; background-color: #f14b00; color: #fdf6d6; text-decoration: none; font-size: 14px; line-height: 26px; height: 24px; display: inline-block; text-align: center; padding: 0 40px; -webkit-border-radius: 4px; border-radius: 4px; border: 1px solid #f14b00; border-bottom-color: #8b2b00; outline: none; cursor: pointer; }
 
@@ -832,7 +835,7 @@ input:required, textarea:required { background-image: url(../img/required.svg); 
 
 .city-field { position: relative; display: block; }
 
-.city-field i { display: block; right: 8px; top: 7px; width: 21px; height: 20px; position: absolute; background: url(../img/sprite.svg) no-repeat -77px 0px; }
+.city-field i { display: block; right: 8px; top: 13px; width: 22px; height: 20px; position: absolute; background: url(../img/sprite.svg) no-repeat -76px 0px; }
 
 .form-block { margin-bottom: 17px; }
 

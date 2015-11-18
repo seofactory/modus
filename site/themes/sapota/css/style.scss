@@ -151,6 +151,14 @@ a:hover { text-decoration: none; color: $red; }
 .volume-btn:hover:before { background-position: 0 -37px; }
 .volume-btn:hover:after { background-position: -20px -37px; }
 
+@-moz-document url-prefix() 
+{ 
+  button.volume-btn:after, button.volume-btn:before { top: 1px; } 
+  button.volume-btn:after { right: 3px; }
+  button.volume-btn:before { left: 3px; }
+}
+
+
 /*красная кнопка*/
 .red-btn { @include transition (all 150ms ease-in-out); @include box-shadow(0 0 0 2px rgba(245,226,192,1)); background-color: $red; color: #fdf6d6; text-decoration: none; font-size: 14px; line-height: 26px; height: 24px; display: inline-block; text-align: center; padding: 0 40px; @include border-radius(4px); border: 1px solid $red; border-bottom-color: #8b2b00; outline: none; cursor: pointer; }
 .red-btn:hover { background-color: #be3b00; border-color: #be3b00; color: #fdf6d6; border-bottom-color: #8b2b00; }
@@ -557,7 +565,7 @@ input:required, textarea:required { background-image: url(../img/required.svg); 
 //.required-sign { font-size: 12px; padding: 2px 0 0 27px; height: 18px; background-image: url(../img/required.svg); background-repeat: no-repeat; background-position: left top; } 
 
 .city-field { position: relative; display: block; }
-.city-field i { display: block; right: 8px; top: 7px; width: 21px; height: 20px; position: absolute; background: url(../img/sprite.svg) no-repeat -77px 0px; }
+.city-field i { display: block; right: 8px; top: 13px; width: 22px; height: 20px; position: absolute; background: url(../img/sprite.svg) no-repeat -76px 0px; }
 .form-block { margin-bottom: 17px; }
 .form-block-type-1 .for-input { display: block; width: 100%; margin-bottom: 7px; }
 .form-block-type-1 input, .form-block-type-1 textarea { width: 100%; }
@@ -638,6 +646,7 @@ ul.ul-dropfree .first-category.open > span > i.arrow { background-position: -47p
 .toggler-title.close i { background-position: -47px 7px; }
 .all-toggler { color: $red; text-decoration: underline; padding-left: 50px; }
 .toggler-link { color: $red !important; text-decoration: underline; display: inline-block; }
+
 /***************************************/
 /***************СРАВНЕНИЕ***************/
 /***************************************/
