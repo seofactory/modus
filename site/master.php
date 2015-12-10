@@ -579,7 +579,7 @@
                   </li>
                   <li>
                     <label class="check">
-                      <input type="checkbox">
+                      <input disabled type="checkbox">
                       <span class="check-name">пункт</span> </label>
                   </li>
                 </ul>
@@ -591,6 +591,11 @@
             <button type="submit" class="volume-btn"><span>Найти</span></button>
             <input type="reset" class="str-btn-2" value="Сброс всех фильтров">
           </div>
+        </div>
+        <!--всплывашка-->
+        <div class="sorting-prompt">
+          Выбрано мастеров: <span id="amountSorting">0</span>. 
+          <button class="sorting-submit" type="submit">Показать</button>
         </div>
       </div>
     </div>

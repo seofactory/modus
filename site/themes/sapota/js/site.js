@@ -343,5 +343,35 @@ $(function() {
       }
       $("#slider").slider("values", 1, value2);
     });
+    
+    //обработка кнопки сброса в боковом фильтре (сбрасываем диапозон цен)
+    $('.vertical-form').click(function(){
+      slider.slider({
+        min: 0,
+        max: maxValueSlider,
+        values: [0, maxValueSlider]
+      });
+    $('#ui-tooltip-0').css('left', -30);
+    $('#ui-tooltip-1').css('left', 169);
+    $('#ui-tooltip-0 .ui-tooltip-content').html(0);
+    $('#ui-tooltip-1 .ui-tooltip-content').html(maxValueSlider);
+    $('.sorting-prompt').removeClass('active'); 
+    });
 
+    //всплывашка в боковом фильтре
+    $('.vertical-form input:checkbox').change(function(){
+      if($('.vertical-form input:checkbox:checked').length >= 1){
+        var top = $(this).offset().top - $('.vertical-form').offset().top,
+            sortingPrompt = $('.sorting-prompt');
+        sortingPrompt.addClass('active').css('top', top);
+        sortingPrompt.find('button').click(function(){
+          $('.sorting-prompt').removeClass('active'); 
+          return false;
+        });
+      }
+      else {
+        $('.sorting-prompt').removeClass('active'); 
+      }
+    });
+    
 });

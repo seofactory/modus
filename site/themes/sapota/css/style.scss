@@ -471,7 +471,7 @@ ul.tab-nav li a:focus { outline: 0; }
 /***************************************/
 
 .horizon-form .container-tabs { width: 700px; }
-.btn-right .str-btn-2 { margin-bottom: 3px; margin-top: 2px; margin-right: 5px; }
+.btn-right .str-btn-2 { margin-bottom: 3px; margin-top: 2px; padding-right: 5px; text-align: right; }
 .master-box-filter-left { padding-left: 4px; }
 .master-box-filter { @extend .dashed; padding-bottom: 23px; margin-bottom: 20px; }
 .master-name { margin-bottom: 18px; text-transform: none; line-height: 120%; display: block; font-size: 14px; text-decoration: none; font-weight: bold; color: $mainTextColor; }
@@ -542,6 +542,14 @@ a.master-name:hover { color: $red; }
 .sorting a.active.bottom i { background-position: 0 -92px !important; }
 
 /*ВЕРТИКАЛЬНАЯ ФОРМА ФИЛЬТР*/
+
+/*всплывашка, под вопросом*/
+.sorting-prompt button { cursor: pointer; @include transition(background 150ms ease-in-out); outline: 0; border: 1px solid #ffefcf; background-color: #994f2a; color: #fdf6d6; text-decoration: none; font-size: 14px; line-height: 25px; height: 28px; padding-left: 8px; padding-right: 8px; left: -3px; top: 0; bottom: 0; position: absolute; margin: 0; @include border-radius(3px 0 0 3px); }
+.sorting-prompt button:hover { background: #be3b00; }
+.sorting-prompt { color: #994f2a; margin-top: -5px; background: #ffefcf; @include transition(top 150ms ease-in-out); @include box-shadow (0 0 13px 3px rgba(0,0,0,0.2)); padding-left: 85px; height: 28px; line-height: 27px; position: absolute; display: none; width: 145px; left: -230px; z-index: 199; }
+.sorting-prompt.active { display: block; }
+.sorting-prompt:after { border-left: 14px solid #ffefcf; content: ''; top: 0; right: -14px; position: absolute; width: 0; height: 0; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+
 .vertical-form-inner { padding: 11px 17px 7px 17px; }
 .vertical-form { @extend .bg-middle; }
 .vertical-form-title { @extend .h4; text-decoration: underline; text-align: center; margin-bottom: 10px; }
