@@ -2,10 +2,10 @@
 	Class: prettyPhoto
 	Use: Lightbox clone for jQuery
 	Author: Stephane Caron (http://www.no-margin-for-errors.com)
-	Version: 3.1.6
+	Version: 3.1.5
 ------------------------------------------------------------------------- */
 (function($) {
-	$.prettyPhoto = {version: '3.1.6'};
+	$.prettyPhoto = {version: '3.1.5'};
 	
 	$.fn.prettyPhoto = function(pp_settings) {
 		pp_settings = jQuery.extend({
@@ -14,15 +14,15 @@
 			ajaxcallback: function() {},
 			slideshow: 5000, /* false OR interval time in ms */
 			autoplay_slideshow: false, /* true/false */
-			opacity: 0.50, /* Value between 0 and 1 *//*--------------------------было 20---------------------------*/
+			opacity: 0.80, /* Value between 0 and 1 */
 			show_title: true, /* true/false */
-			allow_resize: true, /* Resize the photos bigger than viewport. true/false */
+			allow_resize: false, /* Resize the photos bigger than viewport. true/false (изменение размера изображения в зависимости от размера экрана)*/
 			allow_expand: true, /* Allow the user to expand a resized image. true/false */
-			default_width: 500,
+			default_width: 1500,
 			default_height: 344,
 			counter_separator_label: '/', /* The separator for the gallery counter 1 "of" 2 */
 			theme: 'pp_default', /* light_rounded / dark_rounded / light_square / dark_square / facebook */
-			horizontal_padding: 5, /* The padding on each side of the picture *//*--------------------------было 20---------------------------*/
+			horizontal_padding: 5, /* The padding on each side of the picture */
 			hideflash: false, /* Hides all the flash object on a page, set to TRUE if flash appears over prettyPhoto */
 			wmode: 'opaque', /* Set the flash wmode attribute */
 			autoplay: true, /* Automatically start videos: True/False */
@@ -35,7 +35,7 @@
 			callback: function(){}, /* Called when prettyPhoto is closed */
 			ie6_fallback: true,
 			markup: '<div class="pp_pic_holder"> \
-						<!--div class="ppt">&nbsp;</div--> \
+						<div class="ppt">&nbsp;</div> \
 						<div class="pp_top"> \
 							<div class="pp_left"></div> \
 							<div class="pp_middle"></div> \
@@ -47,19 +47,55 @@
 								<div class="pp_content"> \
 									<div class="pp_loaderIcon"></div> \
 									<div class="pp_fade"> \
-										<a href="#" class="pp_expand" title="Expand the image">Expand</a> \
+										<!--a href="#" class="pp_expand" title="Expand the image">Expand</a--> \
 										<div class="pp_hoverContainer"> \
 											<a class="pp_next" href="#">next</a> \
 											<a class="pp_previous" href="#">previous</a> \
 										</div> \
 										<div id="pp_full_res"></div> \
 										<div class="pp_details"> \
-											<div class="pp_nav"> \
-												<a href="#" class="pp_arrow_previous">Previous</a> \
-												<p class="currentTextHolder">0/0</p> \
-												<a href="#" class="pp_arrow_next">Next</a> \
+											<div class="contentPhotoPopUpWrapper"> \
+												<div class="descPortfolioPopUp"> \
+													<div class="photoMasterForPopUp"> \
+														<img src="themes/sapota/img/photo_master.jpg" alt=""> \
+													</div> \
+													<div class="descMasterForPopUp"> \
+														<p class="descMasterNamePopUp">Елена Иванова</p> \
+														<p>Свадебный маникюр</p> \
+														<p class="costDescMasterForPopUpWrapp">от <span class="costDescMasterForPopUp">600 руб.</span></p> \
+													</div> \
+													<div class="nextPrevPhotos"> \
+														<div class="pp_nav"> \
+															<i class="fa fa-angle-left pp_arrow_previous"></i> \
+															<div></div> \
+															<i class="fa fa-angle-right pp_arrow_next"></i> \
+															<!--a href="#" class="pp_arrow_previous">Previous</a> \
+															<p class="currentTextHolder">0/0</p> \
+															<a href="#" class="pp_arrow_next">Next</a--> \
+														</div> \
+													</div> \
+												</div> \
+												<div class="textPortfolioPopUp"> \
+													Классический маникюр, покрытие шеллаком, дизайн одного ногтя. \
+													Итоговая стоимость работы 1200 рублей. \
+												</div> \
+												<div class="wantAlso"> \
+													<button>Хочу так же!</button> \
+													<script type="text/javascript">$(".wantAlso button").on("click", function(){$(this).addClass("buttonClick");$(".formWantAlsoWrapper").slideDown("slow");});</script> \
+												</div> \
+												<div class="formWantAlsoWrapper" style="display:none;"> \
+													<div class="borderBox"></div> \
+													<div class="formWantAlso"> \
+														<h2 class="boldtext">Ваши личные данные:</h2> \
+														<span><input type="text" placeholder="Имя" /></span> \
+														<span><input type="text" id="phoneFormNonReg" placeholder="Телефон" /></span> \
+														<span><input type="text" placeholder="E-mail" /></span> \
+														<h2 class="boldtext comments">Комментарии:</h2> \
+														<textarea></textarea> \
+														<button class="messClaim">Отправить заявку</button> \
+													</div> \
+												</div> \
 											</div> \
-											<p class="pp_description"></p> \
 											<div class="pp_social">{pp_social}</div> \
 											<a class="pp_close" href="#">Close</a> \
 										</div> \
@@ -109,7 +145,6 @@
 	
 		// Window/Keyboard events
 		$(window).unbind('resize.prettyphoto').bind('resize.prettyphoto',function(){ _center_overlay(); _resize_overlay(); });
-		
 		if(pp_settings.keyboard_shortcuts) {
 			$(document).unbind('keydown.prettyphoto').bind('keydown.prettyphoto',function(e){
 				if(typeof $pp_pic_holder != 'undefined'){
@@ -151,9 +186,9 @@
 			
 			// Put the SRCs, TITLEs, ALTs into an array.
 			pp_images = (isSet) ? jQuery.map(matchedObjects, function(n, i){ if($(n).attr(settings.hook).indexOf(theRel) != -1) return $(n).attr('href'); }) : $.makeArray($(this).attr('href'));
-			pp_titles = (isSet) ? jQuery.map(matchedObjects, function(n, i){ if($(n).attr(settings.hook).indexOf(theRel) != -1) return ($(n).find('div.description').html()) ? $(n).find('div.description').html() : ""; }) : $.makeArray($(this).find('div.description').html());
-			pp_descriptions = (isSet) ? jQuery.map(matchedObjects, function(n, i){ if($(n).attr(settings.hook).indexOf(theRel) != -1) return ($(n).find('div.title').html()) ? $(n).find('div.title').html() : ""; }) : $.makeArray($(this).find('div.title').html());
-			
+			pp_titles = (isSet) ? jQuery.map(matchedObjects, function(n, i){ if($(n).attr(settings.hook).indexOf(theRel) != -1) return ($(n).find('img').attr('alt')) ? $(n).find('img').attr('alt') : ""; }) : $.makeArray($(this).find('img').attr('alt'));
+			pp_descriptions = (isSet) ? jQuery.map(matchedObjects, function(n, i){ if($(n).attr(settings.hook).indexOf(theRel) != -1) return ($(n).attr('title')) ? $(n).attr('title') : ""; }) : $.makeArray($(this).attr('title'));
+
 			if(pp_images.length > settings.overlay_gallery_max) settings.overlay_gallery = false;
 			
 			set_position = jQuery.inArray($(this).attr('href'), pp_images); // Define where in the array the clicked item is positionned
@@ -187,7 +222,7 @@
 				set_position = (arguments[3])? arguments[3]: 0;
 				_build_overlay(event.target); // Build the overlay {this} being the caller
 			}
-			
+
 			if(settings.hideflash) $('object,embed,iframe[src*=youtube],iframe[src*=vimeo]').css('visibility','hidden'); // Hide the flash
 
 			_checkPosition($(pp_images).size()); // Hide the next/previous links if on first or last images.
@@ -220,7 +255,7 @@
 			// Get the dimensions
 			movie_width = ( parseFloat(getParam('width',pp_images[set_position])) ) ? getParam('width',pp_images[set_position]) : settings.default_width.toString();
 			movie_height = ( parseFloat(getParam('height',pp_images[set_position])) ) ? getParam('height',pp_images[set_position]) : settings.default_height.toString();
-			
+
 			// If the size is % based, calculate according to window dimensions
 			percentBased=false;
 			if(movie_height.indexOf('%') != -1) { movie_height = parseFloat(($(window).height() * parseFloat(movie_height) / 100) - 150); percentBased = true; }
@@ -250,7 +285,6 @@
 						imgPreloader.onload = function(){
 							// Fit item to viewport
 							pp_dimensions = _fitToViewport(imgPreloader.width,imgPreloader.height);
-
 							_showContent();
 						};
 
@@ -372,14 +406,14 @@
 			return false;
 		};
 
-	
+
 		/**
 		* Change page in the prettyPhoto modal box
 		* @param direction {String} Direction of the paging, previous or next.
 		*/
 		$.prettyPhoto.changePage = function(direction){
 			currentGalleryPage = 0;
-			
+
 			if(direction == 'previous') {
 				set_position--;
 				if (set_position < 0) set_position = $(pp_images).size()-1;
@@ -486,7 +520,7 @@
 				delete settings;
 			});
 		};
-	
+
 		/**
 		* Set the proper sizes on the containers and animate the content in.
 		*/
@@ -885,7 +919,7 @@
 	function getHashtag(){
 		var url = location.href;
 		hashtag = (url.indexOf('#prettyPhoto') !== -1) ? decodeURI(url.substring(url.indexOf('#prettyPhoto')+1,url.length)) : false;
-		if(hashtag){  hashtag = hashtag.replace(/<|>/g,''); }
+
 		return hashtag;
 	};
 	
@@ -905,7 +939,7 @@
 	  var results = regex.exec( url );
 	  return ( results == null ) ? "" : results[1];
 	}
-	
+
 })(jQuery);
 
 var pp_alreadyInitialized = false; // Used for the deep linking to make sure not to call the same function several times.

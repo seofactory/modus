@@ -2,7 +2,14 @@
 /*основной цвет текста - #5e2a00*/
 /*цвет для картинок и текста по hover - #f55205*/
 /*цвет активной ссылки - #f14b00*/
-
+.clear{
+	clear: both;
+}
+input,
+textarea,
+button{
+    outline: none;
+}
 /*header*/
 .inner {
     width: 980px;
@@ -56,9 +63,6 @@
     font-weight: normal;
     color: #5e2a00;
 }
-.rating {
-    margin-top: 5px;
-}
 .ratingStars ,
 .ratingStarsOneStar{
 	position: relative;
@@ -66,27 +70,18 @@
     display: inline-block;
     width: 20px;
     height: 19px;
-    background: url('../img/spriteStars.png')no-repeat;
+    /*background: url('../img/spriteStars.png')no-repeat;*/
 }
-/*стили для звездочек рейтинга*/
-.zero{
-    background-position:  0 0;
+.ratingStarsOneStar{
+    overflow: hidden;
 }
-.one{
-    background-position: -22px 0;
+.balanceRatingBlock .ratingMasterBox {
+    margin-top: 5px;
+    margin-left: 0;
+    font-size: 0.875em;
+    font-weight: bold;
 }
-.two{
-    background-position: -44px 0;
-}
-.three{
-    background-position: -66px 0;
-}
-.four{
-    background-position: -88px 0;
-}
-.five{
-    background-position: -109px 0;
-}
+
 .balanceRatingBlock .exit{
 	display:inline-block;
 	padding: 12px 35px;
@@ -108,6 +103,9 @@
 }
 
 /*обертка главного блока*/
+.wrapper {
+    width: 980px;
+}
 .wrapperOnMainPage.lk {
     top: -25px;
     margin-bottom: 0;
@@ -176,6 +174,22 @@
 	-o-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
 	-webkit-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
     box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+}
+.status_desc_wrapper:after {
+    content: '';
+    position: absolute;
+    right: 100%;
+    top: 10px;
+    border: 8px solid transparent;
+    border-right: 8px solid #ffefcf;
+}
+.status_desc_wrapper:before {
+    content: '';
+    position: absolute;
+    right: 100%;
+    top: 13px;
+    border: 8px solid transparent;
+    border-right: 8px solid rgba(0,0,0,.15);
 }
 .status_desc {
 	font-size: 1em;
@@ -325,6 +339,10 @@ ul.tabNavigation li a.rulesCooperation.selected {
 .personalData p{
     font-weight: bold;
 }
+.personalData span{
+    margin-bottom: 5px;
+    /*display: block;*/
+}
 .personalData p{
 	margin-bottom: 5px;
 }
@@ -352,7 +370,6 @@ ul.tabNavigation li a.rulesCooperation.selected {
     color: #5e2a00;
     font-size: .875em;
     padding: 7px 5px;
-	margin-top: 10px;
 }
 .personalData .blockPersonalInfo {
 	margin-bottom: 20px;
@@ -365,7 +382,8 @@ ul.tabNavigation li a.rulesCooperation.selected {
 	font-size: .875em;
 }
 .personalFoto p {
-	margin-bottom: 10px;	
+	margin-bottom: 10px;
+    line-height: 130%;
 }
 .personalFoto > p {
 	font-size: .85em;
@@ -412,6 +430,43 @@ ul.tabNavigation li a.rulesCooperation.selected {
 .maleFemale  label.female{
     margin-right: 30px;
 }
+.review_salon_wrap{
+    width: 519px;
+    height: auto;
+    float: left;
+    padding: 0px 0px 0 30px;
+    box-sizing: border-box;
+    font-size: .875em;
+    color: #5e2a00;
+}
+.review_salon span{
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+.review_salon_wrap textarea {
+    width: 100%;
+    height: 70px;
+    resize: none;
+    box-sizing: border-box;
+    padding: 5px;
+    background-color: #ffefcf;
+    border: 1px solid #fff6e8;
+    border-radius: 2px;
+    box-shadow: inset 0px 0px 6px rgb(230,204,164);
+    font-family: Tahoma, Geneva, sans-serif;
+    color: #5e2a00;
+    font-size: .875em;
+}
+.specialization_salon_wrap {
+    width: 519px;
+    height: auto;
+    float: left;
+    padding: 0px 0px 0 30px;
+    box-sizing: border-box;
+    font-size: .875em;
+    color: #5e2a00;
+}
 .saveBtn {
     position: relative;
     background: none;
@@ -454,6 +509,7 @@ ul.tabNavigation li a.rulesCooperation.selected {
 .tab_conteiner {
 	display: block;
 	position: relative;
+    height: 100%;
 }
 .border_artWrapper{
 	background: url(../img/border_img_body.png)no-repeat;
@@ -687,8 +743,8 @@ span.value {
 }
 
 /*регистрационная форма*/
-	.registrationFormWrapper,
-	.registrationClientFormWrapper{
+	.registrationForm_wrap,
+	.registrationClientForm_wrap{
 		position: absolute;
 		z-index: 999;
 		width: 100%;
@@ -837,9 +893,8 @@ span.value {
 	}
 	.description .h2{
 		display: block;
-		font-family: 'Segoe Script';
-		font-size: 1.125em;
-		font-weight: bold;
+		font-family: 'Marck Script', sans-serif;
+		font-size: 1.7em;
 		color: #f14b00;
 		margin-bottom: 8px;
 	}
@@ -1157,7 +1212,7 @@ footer {
 }
 .activMyServButton{
 	position: relative;
-    top: -18px;
+    top: -5px;
 	height: 23px;
 	border: 1px solid #f2dcbc;
     background: url(../img/bodyBgDark.jpg) repeat;
@@ -1184,7 +1239,7 @@ footer {
 .personalData input.showCostInput{
     width: 70px;
     position: relative;
-    top: -19px;
+    top: -5px;
     background-color: #FFF8EA;
     padding: 5px;
     text-align: right;
@@ -1268,9 +1323,12 @@ span.checkk.redChecked.checked {
 
 /*---------------------------------------------------------добавил после 14.10.15--------------------------------*/
 /*войти на сайт*/
-.intoSiteFormWrapperAll,
+.intoSiteFormWrapper_wrap,
 .intoNonRegSiteFormWrapperAll,
-.portfolioPhotoPopUpWrapper {
+.portfolioPhotoPopUpWrapper,
+.writing_to_master_reg_wrap,
+.writing_to_master_non_reg_wrap,
+.forget_password_popup_wrap {
     position: absolute;
     z-index: 999;
     width: 100%;
@@ -1279,7 +1337,10 @@ span.checkk.redChecked.checked {
 }
 .intoSiteFormWrapper,
 .intoNonRegSiteFormWrapper,
-.portfolioPhotoPopUp{
+.portfolioPhotoPopUp,
+.writing_to_master_reg,
+.writing_to_master_non_reg,
+.forget_password_popup {
 	background-color: #ffefcf;
     padding: 3px;
     box-shadow: 0px 0px 15px rgba(0,0,0,.5);
@@ -1305,17 +1366,22 @@ span.checkk.redChecked.checked {
 .intoNonRegSiteForm_content{
 	padding: 30px;
 }
-.intoSiteForm .close_button,
+.intoSiteFormWrapper .close_button,
 .intoNonRegSiteForm .close_button,
-.portfolioPhotoPopUpForm .close_button{
+.portfolioPhotoPopUpForm .close_button,
+.non_reg_opinion_popup .close_button,
+.reg_opinion_popup .close_button,
+.thank_opinion_popup .close_button,
+.writing_to_master_reg .close_button,
+.writing_to_master_non_reg .close_button,
+.forget_password_popup .close_button {
 	right: -20px;
     top: -16px;
 }
 .headerIntoSite{
-	font-family: 'Segoe Script';
-	text-align: center;
-	font-size: 1.125em;
-    font-weight: bold;
+    font-family: 'Marck Script', sans-serif;
+    text-align: center;
+    font-size: 1.7em;
 }
 .bodyIntoSite {
 	text-align: center;
@@ -1353,6 +1419,7 @@ span.checkk.redChecked.checked {
 	position: relative;
 }
 .intoBlock input[type='text'],
+.intoBlock input[type='password'],
 .formWantAlso input[type='text'] {
     width: 210px;
     background-color: #ffefcf;
@@ -1485,7 +1552,14 @@ span.checkk.redChecked.checked {
 .nextPrevPhotos .fa:hover {
     color: #f55205;
 }
-.nextPrevPhotos div {
+/*.nextPrevPhotos div {
+    width: 1px;
+    display: inline-block;
+    background-color: #5e2a00;
+    height: 14px;
+	margin: 0 5px 0 5px;
+}*/
+.pp_nav > div {
     width: 1px;
     display: inline-block;
     background-color: #5e2a00;
@@ -1549,6 +1623,7 @@ span.checkk.redChecked.checked {
 }
 .needServices{
 	margin-top: 15px;
+    display: block;
 }
 .needServices textarea,
 .formWantAlso textarea {
@@ -1593,6 +1668,467 @@ span.checkk.redChecked.checked {
 }
 /*END войти на сайт*/
 
+/*-----вкладка Кошелек, на главной странице-----*/
+.purse{
+	padding: 25px 15px;
+	position: relative;
+}
+.moneyToPurse{
+	font-size: .875em;
+	font-weight: normal;
+	margin-bottom: 20px;
+}
+.moneyToPurse span{
+	font-weight: bold;
+}
+.purseMenu{
+	list-style: none;
+}
+.purseMenu li {
+    margin-bottom: 12px;
+}
+.purseMenu a {
+    font-size: 0.875em;
+    color: #5e2a00;
+    text-decoration: none;
+}
+.purseMenu a.active {
+    font-weight: bold;
+}
+.mainContentPurseWrapper {
+    width: 82%;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+    padding: 0 20px;
+}
+.tablePurseHistoryWrap{
+	text-align: center;
+}
+.tablePurseHistoryWrap .pagination{
+	display: inline-block;
+	margin-top: 10px;
+}
+.tablePurseHistoryWrap,
+.tablePurseService{
+	display: table;
+	width: 100%;
+	font-size: .875em;
+}
+.tablePurseHistory,
+.purseServiceHeader,
+.increaseWrapper{
+	margin-top: 20px;
+}
+.purseServiceHeader{
+	font-size: .875em;
+}
+.mainContentPurseWrapper .row{
+	display: table-row;
+}
+/*перебиваем стили*/
+table.dataTable.no-footer {
+    border-bottom: none;
+}
+table.dataTable thead th,
+table.dataTable thead td {
+    border-bottom: none;
+}
+table.dataTable tbody tr {
+    background-color: inherit;
+}
+table.dataTable tbody tr td {
+    border-bottom: 1px solid #482000;
+}
+.dataTables_length .selectbox {
+    margin-top: 0;
+	vertical-align: middle;
+}
+.dataTables_length .selectbox .select{
+	width: 50px;
+	height: 20px;
+    line-height: 20px;
+}
+.dataTables_length .selectbox .trigger {
+    right: 10px;
+}
+.selectbox .dropdown {
+    width: 85px;
+	border-radius: 2px;
+	top: 22px!important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current{
+    background: url(../img/bodyBgLight.jpg) repeat;
+    border: 1px solid #fff6e8;
+    box-shadow: inset 0px 0px 6px rgb(230,204,164);
+    color: #482000 !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+    background: inherit;
+    background-color: #FFF8EA;
+    border: 1px solid #fff6e8;
+    box-shadow: inset 0px 0px 6px rgb(230,204,164);
+    color: #482000 !important;
+}
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #fff6e8;
+    border-radius: 2px;
+    box-shadow: inset 0px 0px 6px rgb(230,204,164);
+	background-color: #FFF8EA;
+    color: #5e2a00;
+}
+input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+}
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper .dataTables_paginate,
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+    color: #482000!important;
+}
+/*./перебиваем стили*/
+table.tablePurseHistory{
+	padding-top: 10px;
+}
+.tablePurseHistory tbody tr:nth-child(even),
+.tablePurseService .row:nth-child(even),
+.increasePurseTable .row:nth-child(even),
+.increasePayServiceTable .row:nth-child(even) {
+	background-color: rgba(0,0,0,.05);
+}
+.tablePurseHistory .header,
+.purseServiceHeader,
+.increasePurseHeader,
+.increasePayServiceHeader{
+	font-weight: bold;
+    background-color: rgba(193,122,23,.25);	
+}
+.mainContentPurseWrapper .row > div{
+	display: table-cell;
+	text-align: center;
+	border-bottom: 1px solid #482000;
+	padding: 5px 0;
+}
+.tablePurseHistory tbody td{
+	text-align: center;
+	padding: 5px 0;
+}
+.tablePurseHistory .header th,
+.purseServiceHeader,
+.increasePurseHeader,
+.increasePayServiceHeader{
+	padding: 8px 0;
+}
+.dateHistory,
+.fitHistory,
+.rateHistory{
+	width: 20%!important;
+}
+.nameHistory{
+	width: 40%!important;
+}
+.mainContentPurseWrapper .row.header > div{
+	border: none;
+}
+.purseServiceHeader{
+	padding-left: 20px;
+}
+.checkService{
+	width: 6%;
+	vertical-align: middle;
+}
+.makeService{
+	width: 60%;
+}
+.descService{
+	width: 34%;
+	position: relative;
+}
+.mainContentPurseWrapper .row > div.makeService,
+.mainContentPurseWrapper .row > div.descService,
+.mainContentPurseWrapper .row > div.onlinePay{
+	text-align: left;
+	vertical-align: middle;
+}
+.mainContentPurseWrapper .row > div.onlinePay{
+	padding-left: 20px;
+}
+.mainContentPurseWrapper .row > div.makeService{
+	padding-left: 10px;
+	width: 50%;
+}
+.tablePurseService .check,
+.increasePurseTable .check,
+.increasePayServiceTable .check{
+	width: 19px;
+    height: 19px;
+	position: static;
+    display: inline-block;
+    cursor: pointer;
+    background: url(../img/check.png) no-repeat;
+}
+.tablePurseService .check.checked,
+.increasePurseTable .check.checked,
+.increasePayServiceTable .check.checked{
+    background-position: 0px -49px;
+}
+.service_addDesc{
+	display: block;
+	color: #a27560;
+	font-size: .9375em;
+	text-decoration: none;
+}
+.fullDescService {
+    position: absolute;
+    /*width: 100%;*/
+    width: 300px;
+    right: 0;
+    top: 100%;
+    padding: 10px;
+    background: url(../img/bodyBgDark.jpg) repeat;
+    box-shadow: 0px 2px 4px rgba(0,0,0,.4);
+    z-index: 2;
+	font-size: .875em;
+}
+.fullDescService h3{
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+.serviceDescriptionText{
+	margin-bottom: 10px;
+}
+.serviceCost span{
+    font-size: .875em;
+    font-weight: bold;
+}
+.keepOnBtn,
+.payOnBtn,
+.addMoneyButton,
+.payOnBtn_paySystem{
+    position: relative;
+    z-index: 1;
+    background: none;
+    padding: 0 18px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #994f2a;
+    height: 34px;
+    font-family: 'Marck Script';
+    font-size: 1.25em;
+}
+.keepOnBtn {
+	margin-top: 12px;
+	display: inline-block;
+}
+.payOnBtn,
+.addMoneyButton{
+    margin-top: 15px;
+}
+.keepOnBtn span,
+.payOnBtn span,
+.addMoneyButton span,
+.payOnBtn_paySystem span{
+    background: url(../img/btnBgRepeat.png) repeat-x;
+    display: block;
+    height: 34px;
+    line-height: 34px;
+}
+.keepOnBtn:after, .keepOnBtn:before,
+.payOnBtn:after, .payOnBtn:before,
+.addMoneyButton:after, .addMoneyButton:before,
+.payOnBtn_paySystem:after, .payOnBtn_paySystem:before{
+    content: '';
+    display: block;
+    background: url(../img/spriteBtn.png) no-repeat;
+    width: 18px;
+    height: 34px;
+    position: absolute;
+    top: 0;
+}
+.keepOnBtn:before,
+.payOnBtn:before,
+.addMoneyButton:before,
+.payOnBtn_paySystem:before{
+    background-position: 0 0;
+    left: 0;
+}
+.keepOnBtn:after,
+.payOnBtn:after,
+.addMoneyButton:after,
+.payOnBtn_paySystem:after{
+    background-position: -20px 0;
+    right: 0;
+}
+.increaseWrapper {
+    font-size: 0;
+}
+.increaseWrapper > div{
+	display: inline-block;
+	vertical-align: top;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+.increasePurseWrapper {
+    width: 35%;
+}
+.increasePayServiceWrapper {
+    width: 65%;
+}
+.increasePurseWrapper{
+    padding-right: 1%;
+}
+.increasePayServiceWrapper {
+    padding-left: 1%;
+}
+.increasePurseHeader,
+.increasePayServiceHeader{
+	text-align: center;
+}
+.increasePurseTable,
+.increasePayServiceTable{
+    display: table;
+    width: 100%;
+}
+.mainContentPurseWrapper .increaseWrapper .row > div.checkService{
+	width: 10%;
+    text-align: left;
+}
+.mainContentPurseWrapper .increaseWrapper .increasePayServiceWrapper  .row > div.checkService{
+	width: 5%;
+}
+.onlinePay span{
+	vertical-align: middle;
+	display: inline-block;
+}
+.paysistem{
+	width: 48px;
+	height: 34px;
+	background: url(../img/pay_system/pay_systems_sprite.png) no-repeat;
+}
+.webmoney{
+	background-position: -48px 0;
+}
+.qiwi{
+	background-position: -96px 0;
+}
+.paypal{
+	background-position: -144px 0;
+}
+.robokassa{
+	background-position: -192px 0;
+}
+.mastercard{
+	background-position: -240px 0;
+}
+.visa{
+	background-position: -288px 0;
+}
+.buttonWrap{
+    position: relative;
+    margin-top: 10px;
+}
+.buttonInfoPopup{
+    position: absolute;
+    z-index: 2;
+    top: -100%;
+    width: auto;
+    background-color: #ffefcf;
+    padding: 15px 30px;
+    border-radius: 5px;
+    -moz-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+    -o-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+    -webkit-box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+    box-shadow: 2px 2px 4px rgba(0,0,0,.3);
+    font-size: .75em;
+    text-align: center;
+}
+.buttonInfoPopup::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 60px;
+    border: 8px solid transparent;
+    border-top: 8px solid #ffefcf;
+}
+.increasePayServiceWrapper .buttonInfoPopup{
+    font-size: .875em;
+}
+.noMoneyPayService,
+.payChooseService {
+    font-size: .875em;
+    padding-top: 20px;
+}
+.navNoMoneyDiv {
+    font-size: 0;
+}
+.returnChooseService,
+.goAddMoney{
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 14px;
+    margin-top: 20px;
+}
+.goAddMoney{
+    text-align: right;
+}
+.returnChooseService a,
+.goAddMoney a,
+.returnChoosePaySystem a{
+    font-size: .875em;
+    color: #5e2a00;
+}
+.returnChooseService a:hover,
+.goAddMoney a:hover,
+.returnChoosePaySystem a:hover{
+    text-decoration: none;
+    color: #f14b00;
+}
+.valueSum,
+.nameServicesText,
+.namePaySystemText{
+    font-weight: bold;
+}
+.namePaySystemLink{
+    color: #5e2a00;
+}
+.namePaySystemLink:hover{
+    text-decoration: none;
+}
+.returnChoosePaySystem {
+    margin-top: 20px;
+}
+.sum_pay_label{
+    display: block;
+    margin-top: 10px;
+}
+input.sum_pay {
+    border: 1px solid #fff6e8;
+    border-radius: 2px;
+    box-shadow: inset 0px 0px 6px rgb(230,204,164);
+    background-color: #FFF8EA;
+    color: #5e2a00;
+}
+.namePaySys,
+.valueSum_paySystem,
+.nameServicesText_paySystem{
+    font-weight: bold;
+}
+.payOnBtnWrap_paySystem {
+    margin-top: 15px;
+}
+.payService_paySystem p{
+    margin-bottom: 5px;
+}
+/*-----./вкладка Кошелек, на главной странице-----*/
+
 /*----------стили для анкеты мастера, как её видят клиенты----------*/
 .viewAnketaMasterWrapper{
 	font-size: 14px;
@@ -1632,6 +2168,22 @@ span.checkk.redChecked.checked {
     max-width: 415px;
 	padding: 10px 15px;
 }
+.popUpViewAnketa:after {
+    content: '';
+    position: absolute;
+    left: 80px;
+    top: 100%;
+    border: 10px solid transparent;
+    border-top: 10px solid #ffefcf;
+}
+.popUpViewAnketa:before {
+    content: '';
+    position: absolute;
+    left: 82px;
+    top: 105%;
+    border: 10px solid transparent;
+    border-top: 10px solid rgba(0,0,0,.15);
+}
 .popUpViewAnketa img{
 	position: absolute;
 	left: 80px;
@@ -1664,11 +2216,14 @@ span.checkk.redChecked.checked {
     margin-left: 0;
 }
 .ratingMasterBox .ratingStarsColor,
-.clientDateOpinion .ratingStarsColor {
+.clientDateOpinion .ratingStarsColor,
+.middleRateWrapper .ratingStarsColor {
     display: inline-block;
     background-color: #f14b00;
     font-size: 0;
     line-height: 0;
+}
+.masterPhotoRating .ratingStarsColor{
     margin-top: 5px;
 }
 .salon .ratingStarsColor{
@@ -1678,6 +2233,26 @@ span.checkk.redChecked.checked {
     display: inline-block;
 	margin-top: 0;
 	margin-bottom: 15px;
+}
+.salon .ratingStarsOneStar .ratingStarsColor {
+    top: 0px;
+    left: 0px;
+}
+.ratingStarsColorWrap {
+    width: 100px;
+    display: inline-block;
+    font-size: 0;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+.salon .ratingStarsColorWrap {
+    left: 5px;
+    top: 3px;
+}
+.salon .ratingStarsColorWrap .ratingStarsColor{
+    top: 0;
+    left: 0;
 }
 .photoMasterBox,
 .salon .photoMasterBox {
@@ -1718,6 +2293,9 @@ span.checkk.redChecked.checked {
 .masterPhone p span{
 	display: table-cell;
 }
+.masterPhone p span.countPhotosWork{
+    display: inherit;
+}
 .masterPhone i.fa {
     width: 20px;
 }
@@ -1750,6 +2328,11 @@ span.checkk.redChecked.checked {
 	font-size: .857em;
 	color: #f55205;
 }
+.infoMasterAnketa .mainJob a{
+	font-size: 1em;
+	color: #482000;
+}
+.mainJob a:hover,
 .infoMasterAnketa a:hover {
     text-decoration: none;
 }
@@ -1859,14 +2442,19 @@ span.checkk.redChecked.checked {
 	display: inline-block;
 	vertical-align: top;
 }
+.photosPortfolio {
+    /*height: 105px;
+    overflow: hidden;*/
+}
 .countPortfolio {
     width: 21%;
 	font-size: .857em;
 }
 .photosPortfolio{
 	width: 78.3%;
-	/*height: 110px;
-    overflow: hidden;*/
+    font-size: 0;
+    line-height: 0;
+    margin-left: -9px;
 }/*
 .allPhotosShow{
 	height: 100%;
@@ -1947,12 +2535,15 @@ span.checkk.redChecked.checked {
     display: block;
     height: 34px;
     line-height: 34px;
-    margin-left: 18px;
     font-family: 'Marck Script';
     font-size: 1.33em;
 }
+.opinionStayBtn_block{
+    position: relative;
+    display: inline-block;
+    margin-left: 18px;
+}
 .opinionStayBtn{
-	position: relative;
     background: none;
     padding: 0;
     outline: none;
@@ -1967,13 +2558,14 @@ span.checkk.redChecked.checked {
 }
 .opinionStayBtn:after,
 .opinionStayBtn:before {
-    content: '';
+    content: ' ';
     display: block;
     background: url(../img/spriteBtn.png) no-repeat;
     width: 18px;
     height: 34px;	
     position: absolute;	 
 	top: 0;
+    z-index:1;
 }
 .opinionStayBtn:before {
     background-position: 0 0;
@@ -2072,9 +2664,13 @@ span.checkk.redChecked.checked {
 }
 .examplePortfolioMasterSalonWrapper {
     margin-top: 30px;
+    margin-left: -8px;
+    line-height: 0;
+    font-size: 0;
 }
-.examplePortfolioMasterSalonWrapper span {
-	margin: 0 3px 3px 0;
+.examplePortfolioMasterSalonWrapper a,
+.examplePortfolioMasterSalonWrapper .hidePhotosBlock a {
+    margin: 0 0 10px 7.5px;
     display: inline-block;
     font-size: 0;
     line-height: 0;
@@ -2083,9 +2679,6 @@ span.checkk.redChecked.checked {
 }
 .examplePortfolioMasterSalonWrapper img{
 	cursor: pointer;
-}
-.examplePortfolioMasterSalonWrapper span:last-child {
-	margin-right: 0;
 }
 
 /*прайс-лист салона*/
@@ -2160,7 +2753,7 @@ span.checkk.redChecked.checked {
 
 /*отзывы о салоне*/
 .middleRateWrapper {
-    margin-top: 10px;
+    margin: 5px 0 10px 0;
 }
 .middleRate {
     padding-left: 5px;
@@ -2178,19 +2771,64 @@ span.checkk.redChecked.checked {
 .howMatchRatingWrapper{
 	padding-right: 10px;
 }
-.howMatchRatingOne {
+.howMatchRating {
     position: relative;
     top: 3px;
     display: inline-block;
-    width: 20px;
+    width: 100px;
     height: 19px;
-    background: url('../img/spriteStars.png')no-repeat;
-	background-position: -109px 0;
+    background: url(../img/review_stars.png) no-repeat;
+}
+.howMatchRating.two{
+    background-position: 0 -21px;
+}
+.howMatchRating.three{
+    background-position: 0 -42px;
+}
+.howMatchRating.four{
+    background-position: 0 -63px;
+}
+.howMatchRating.five{
+    background-position: 0 -84px;
+}
+.showAllOpinionBlock {
+    width: 100%;
+    padding: 15px 0 0 40%;
+}
+.showAllOpinionBlock a {
+    font-size: .75em;
+	color: #994f2a;
+}
+.showAllOpinionBlock span{
+	background: url(../img/arrow_show_all_opinion.png) no-repeat;
+	display: inline-block;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 4px;
+    right: 5px;	
+}
+.showAllOpinionBlock span.clickShowOpinionArrow{
+	background-position: 0 -16px;
 }
 /*END отзывы о салоне*/
 /*----------END анкета салона, как её видят клиенты----------*/
 
 /*PrettyPhoto*/
+a.gallery,
+a.gallery1,
+a.gallery4,
+a.gallery_master {
+    display: inline-block;
+    width: auto;
+    height: 105px;
+    border-radius: 8px;
+    margin: 0 5px 5px 0;
+    overflow: hidden;
+}
+a.gallery_master {
+    margin: 0 0 10px 8.5px;
+}
 .gallery.clearfix li{
 	float: left;
 }
@@ -2218,6 +2856,589 @@ a.pp_close {
     right: -12px!important;
     top: -19px!important;
 }
+div.design .pp_arrow_previous {
+    background: none;
+}
+div.design .pp_arrow_next {
+    background: none;
+}
+div.design .pp_nav {
+    margin: 0px 10px 0 0;
+}
+div.design .pp_nav .pp_play {
+    background: url(../img/pretty_photo_sprite.png) -1px -99px no-repeat;
+    height: 17px;
+}
+div.design .pp_nav .pp_pause {
+    background: url(../img/pretty_photo_sprite.png) -24px -99px no-repeat;
+    height: 17px;
+}
+div.pp_pic_holder {
+    border-radius: 5px;
+    background: #f1d9b1;
+}
+div.pp_pic_holder .formWantAlsoWrapper {
+    padding: 6px 0px 20px 0px;
+}
+.pp_top .pp_left{
+	border-radius: 5px 0 0 0;
+}
+.pp_top .pp_right{
+	border-radius: 0 5px 0 0;
+}
+.pp_bottom .pp_right{
+	border-radius: 0 0 5px 0;
+}
+.pp_bottom .pp_left{
+	border-radius: 0 0 0 5px;
+}
+#fullResImage{
+	border-radius: 3px;
+}
+#pp_full_res img{
+	width: 410px;
+	height: auto;
+}
+div.ppt {
+    height: 0;
+    margin: 0;
+    /*padding: 0;
+    font-size: 0;
+    line-height: 0;
+    opacity: 0!important;*/
+}
 /*END PrettyPhoto*/
 /*----------END стили для анкеты мастера, как её видят клиенты----------*/
 /*---------------------------------------------------------END добавил после 14.10.15--------------------------------*/
+
+/*----------хлебные крошки----------*/
+.bread_crumbs{
+	margin-top: 10px;
+	font-size: .6875em;
+}
+.bread_crumbs a{
+	color: #f55205;
+}
+.bread_crumbs a:hover{
+	text-decoration: none;
+}
+/*----------/.хлебные крошки----------*/
+
+/*-----стили для блока сравнение мастеров-----*/
+.compareMastersWrapper{
+	margin: 0;
+	padding: 0;
+	width: 980px;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+.compareMastersWrapper h2{
+	font-family: 'Marck Script';
+    font-size: 1.5em;
+    color: #5e2a00;
+	display: inline-block;
+    border-bottom: 2px solid #5e2a00;
+}
+.compareMastersWrapperHeader{
+	margin: 20px 0;
+}
+.compareMasters{
+	overflow: hidden;
+	    
+}  
+.chooseBlock,
+.compareMasters > div{
+	float: left;
+	
+}
+.chooseBlock{
+	width: 23%;
+	position: relative;
+	box-sizing: border-box;
+	padding-top: 10px;
+}
+.masterBlock{
+	width: 15.4%;
+	position: relative;
+	box-sizing: border-box;
+	padding: 10px 10px 20px;
+}
+.compare_masterPersonalData {
+    margin-bottom: 10px;
+}
+.compare_masterChoose,
+.compare_masterBody{
+	font-size: .875em;
+}
+.compare_masterChoose{
+	text-transform: uppercase;
+}
+.compare_masterBody{
+	color: #000000;
+}
+.cols.masterBlock{
+	padding: 0 10px 0 13px;
+}
+.compare_masterMainInfo{
+	height: 220px;
+}
+.compare_masterName{
+	font-size: .875em;
+	font-weight: bold;
+}
+.compare_masterJob{
+	font-size: .6875em;
+	text-transform: uppercase;
+}
+.chooseBlock.second{
+	vertical-align: top;
+}
+.contactAllMastersButton{
+	padding: 5px 22px;
+    margin-bottom: 5px;
+	background-color: #f14b00;
+    border: 2px solid #f5e2c0;
+    border-radius: 8px;
+    box-shadow: inset 0px -1px 1px rgba(0,0,0,0.5);
+    cursor: pointer;
+	color: #fdf6d6;
+    font-size: .875em;
+}
+.compare_masterShowParameters{
+	margin-top: 30px;
+}
+.compare_masterShowData{
+	font-size: .75em;
+	color: #000000;
+}
+.compare_masterShowDataChoose{
+	list-style: none;
+	display: inline-block;
+	overflow: hidden;
+	border-radius: 10px;
+    border: 1px solid #f2dcbc;
+    -moz-box-shadow: inset 0px 0px 6px rgb(197,172,131);
+    -o-box-shadow: inset 0px 0px 6px rgb(197,172,131);
+    -webkit-box-shadow: inset 0px 0px 6px rgb(197,172,131);
+    box-shadow: inset 0px 0px 6px rgb(197,172,131);
+}
+.compare_masterShowDataChoose li{
+	float: left;
+    padding: 10px 18px;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: .6875em;
+    font-weight: normal;
+    color: #994f2a;
+}
+.compare_masterShowDataChoose .activePoits {
+    background-color: rgba(0,0,0,0.06);
+}
+.compare_masterShowDataChoose .activePoits a {
+    color: #f14b00;
+}
+.compare_masterShowDataChoose li a{
+	color: #5e2a00;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+.compare_masterShowDataChoose li a.active{
+	color: #f55205;
+}
+.compare_masterPhoto {
+    margin: 0 0 10px 0;
+}
+.compare_masterPhoto img{
+	height: 80px;
+	width: auto;
+}
+.compare_photoWrapper{
+	display: inline-block;
+    font-size: 0;
+    line-height: 0;
+	background-color: #ffffff;
+	padding: 2px;
+}
+.compareMastersWrapper .signUpMasterButton {
+    padding: 5px 22px;
+	margin-bottom: 5px;
+    color: #fdf6d6;
+    font-size: .875em;
+}
+.compare_masterDelete a,
+.compare_masterDeleteOrder a{
+	font-family: 'Marck Script';
+    font-size: 1em;
+    color: #5e2a00;
+}
+.compare_masterData,
+.compare_masterServiceCost{
+	list-style: none;
+	font-size: .75em;
+	line-height: 200%;
+}
+.compare_masterData {
+    margin-top: 15px;
+}
+.chooseBlock .compare_masterData,
+.chooseBlock .compare_masterServiceCost{
+	font-weight: bold;
+}
+.chooseBlock .compare_masterServiceCost ul {
+    padding-left: 10px;
+}
+.chooseBlock .compare_masterServiceCostInside{
+	color: #000000;
+	font-weight: normal;
+}
+.compare_masterData a,
+.compare_masterViewProfile a{
+	color: #f55205;
+}
+.compare_masterViewProfile a{
+	font-size: .75em;
+}
+.compare_masterDelete a:hover,
+.compare_masterData a:hover,
+.compare_masterViewProfile a:hover,
+.compare_masterDeleteOrder a:hover{
+	text-decoration: none;
+}
+.compareMasterBorder {
+    position: absolute;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    top: 0;
+    background: url(../img/border_img_body.png) repeat-y;
+}
+.compareMasterBorder .border_art div{
+	background: url(../img/bodyBg.jpg) repeat;
+	position: absolute;	
+}
+.compareMasterBorder .border_art_top{
+	top: 0;
+}
+.compareMasterBorder .border_art .border_art_bottom{
+	bottom: 8px;
+}
+.returnToOrder{
+	text-align: center;
+	margin-top: 25px;
+}
+.returnToOrder span{
+	background: url(../img/arrow_show_all_opinion.png) no-repeat;
+	background-position: 0 -48px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 2px;
+    right: 5px;
+}
+.returnToOrder a{
+	text-decoration: none;
+	font-size: .875em;
+	font-style: italic;
+	color: #994f2a;
+}
+/*-----/.стили для блока сравнение мастеров-----*/
+
+/*-----отзывы-----*/
+/*незарегистрированный пользователь*/
+.non_reg_opinion_popup_wrap,
+.reg_opinion_popup_wrap,
+.thank_opinion_popup_wrap {
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,.5);
+}
+.non_reg_opinion_popup,
+.reg_opinion_popup,
+.thank_opinion_popup {
+    background-color: #ffefcf;
+    padding: 3px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,.5);
+    border-radius: 5px;
+    width: 410px;
+    height: auto;
+    position: absolute;
+    top: 100px;
+    left: 400px;
+    z-index: 12;
+    font-size: 16px;
+}
+.non_reg_opinion_form,
+.reg_opinion_form,
+.thank_opinion_form,
+.writing_to_master_reg_form,
+.writing_to_master_non_reg_form,
+.forget_password_form {
+    background-color: #f1d9b1;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    position: relative;
+}
+.non_reg_stay_opinion,
+.thank_you_to_opinion{
+    font-family: "Marck Script", sans-serif;
+    font-size: 1.7em;
+    margin-bottom: 20px;
+}
+.non_reg_want_stay_opinion{
+    margin-bottom: 30px;
+}
+.non_reg_stay_opinion_Registration{
+    font-size: 1.14em;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+.non_reg_stay_opinion_Registration a{
+    color: #f14b00;
+}
+
+/*зарегистрированный пользователь*/
+.reg_opinion_form .bodyIntoSite_add,
+.writing_to_master_reg_wrap .bodyIntoSite{
+    text-align: left;
+}
+.reg_opinion_form .bodyIntoSite_add p {
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.reg_opinion_form .bodyIntoSite_add textarea{
+    width: 100%;
+    height: 110px;
+    box-sizing: border-box;
+    background-color: #ffefcf;
+    border: 2px solid #ffefcf;
+    border-radius: 3px;
+    box-shadow: 0 0 4px 2px rgba(0,0,0,.07), inset 0 0 1px rgba(0,0,0,.5);
+    resize: none;
+    padding: 5px;
+}
+.reg_opinion_form .intoButtonBlock,
+.forget_password_popup_wrap .intoButtonBlock {
+    margin-top: 20px;
+}
+.reg_opinion_form .inputWithValue{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    font-weight: normal;
+    margin-left: 5px;
+}
+.who_opinion_stay .fa,
+.who_opinion_stay span{
+    vertical-align: middle;
+}
+.who_opinion_stay a,
+.evaluation_master_salon span{
+    font-weight: normal;
+    margin-left: 10px;
+}
+.fa.fa-user{
+    color: #b59269;
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+.evaluation_master_salon{
+    margin-top:-10px;
+}
+.evaluation_master_salon img,
+.evaluation_master_salon span,
+.evaluation_service img,
+.evaluation_service span{
+    vertical-align: middle;
+}
+.evaluation_master_salon img{
+    border: 1px solid #ffefcf;
+}
+.rating_stars_block{
+    display: inline-block;
+    position: relative;
+}
+.reg_opinion_form .intoSiteForm_content {
+    padding: 28px;
+}
+
+/*спасибо за отзыв*/
+.thank_opinion_popup .close_button,
+.non_reg_opinion_popup_wrap .close_button,
+.reg_opinion_popup_wrap .close_button,
+.intoSiteFormWrapper .close_button,
+.writing_to_master_reg .close_button,
+.writing_to_master_non_reg .close_button,
+.forget_password_popup .close_button{
+    z-index: 13;
+}
+.thank_you_to_opinion{
+    margin-bottom: 10px;
+}
+.thank_opinion_form p{
+    line-height: 125%;
+}
+/*-----./отзывы-----*/
+
+.writing_to_master_reg_wrap .photoMaster,
+.writing_to_master_non_reg_wrap .photoMaster{
+    width: auto;
+}
+.writing_to_master_reg_wrap .needServices textarea {
+    height: 160px;
+}
+
+/*-----Яндекс.карты-----*/
+#map{
+    width: 235px;
+    height: 110px;
+    border: 3px solid #fff;
+    position: relative;
+}
+.map_metka {
+    font-family: Tahoma, sans-serif;
+    font-size: .875em;
+    color: #9A3634;
+    font-weight: bold;
+}
+/*-----./Яндекс.карты-----*/
+
+.forget_password_text{
+    margin-top: 15px;
+    text-align: left;
+    line-height: 130%;
+}
+.false_password{
+    display: none;
+    width: 250px;
+    background-color: #ffefcf;
+    padding: 15px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,.5);
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 10;
+}
+
+/*-----информация о мастерах в ЛК во вкладке Мастера-----*/
+.listMasters {
+    width: 76%;
+}
+.master_profile,
+.add_new_master_wrap {
+    background: url(../img/bodyBgLight.jpg) repeat;
+    border: 1px solid #fff6e8;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 6px rgb(230,204,164);
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    color: #5e2a00;
+}
+.master_profile .fa{
+    color: #5e2a00;
+    margin-left: 5px;
+    text-decoration: none;
+}
+.master_profile .fa:hover{
+    color: #f55205;
+}
+.master_name{
+    font-weight: bold;
+}
+.show_full_short_info_master {
+    float: right;
+    font-size: .75em;
+    color: #5e2a00;
+}
+.show_full_short_info_master:hover {
+    text-decoration: none;
+}
+.full_info_master{
+    margin-top: 15px;
+}
+.block_photo_and_specialization,
+.specialization_block_content {
+    display: table;
+}
+.block_photo_and_specialization{
+    margin-bottom: 15px;
+}
+.block_photo_and_specialization img{
+    width: 118px;
+    height: auto;
+}
+.block_photo_and_specialization > div,
+.specialization_block_content > div{
+    display: table-cell;
+    vertical-align: top;
+}
+.specialization_block_content > div{
+    width: 50%;
+}
+.specialization_block,
+.specialization_block_content{
+    width: 100%;
+}
+.specialization_block_content {
+    margin-top: 7px;
+}
+.specialization_block{
+    padding-left: 10px;
+}
+.specialization_block_title,
+.inner_specialization_block_title{
+    font-size: .857em;
+    font-weight: bold;
+}
+.inner_specialization_block ul{
+    list-style: disc;
+    font-size: .857em;
+    padding-left: 16px;
+}
+a.gallery4 {
+    display: inline-block;
+    width: 81px;
+    height: auto;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 0;
+    margin: 0 10px 0 0;
+    overflow: hidden;
+    line-height: 0;
+}
+.add_new_master_wrap{
+    margin: 25px 0 0;
+}
+.add_new_master_wrap h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.add_new_master_wrap > div{
+    display: inline-block;
+    vertical-align: top;
+}
+.personalData .add_new_master_wrap input[type='text'] {
+    border: 1px solid rgba(0,0,0,.15);
+    font-weight: normal;
+}
+.add_new_master_form_l{
+    width: 35%;
+}
+.add_new_master_form_l label{
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.add_new_master_form_l li label {
+    margin: 0px 0 2px 0;
+}
+.inner_list_master_salon_specializations{
+    margin-left: 20px;
+    display: none;
+}
+/*-----./информация о мастерах в ЛК во вкладке Мастера-----*/

@@ -1,0 +1,1329 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+
+<!--link href='http://fonts.googleapis.com/css?family=Play&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'-->
+<link href='http://fonts.googleapis.com/css?family=Marck+Script&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+<!--link rel="shortcut icon" href="favicon.ico" type="image/x-icon"-->
+<!--link rel="stylesheet" type="text/css" href="themes/sapota/css/bootstrap.min.css"-->
+<link rel="stylesheet" type="text/css" href="themes/sapota/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="themes/sapota/css/reset.css">
+<link rel="stylesheet" type="text/css" href="themes/sapota/css/template.css">
+<link rel="stylesheet" type="text/css" href="themes/sapota/css/prettyPhoto.css">
+<link rel="stylesheet" type="text/css" href="themes/sapota/css/lk_style.css">
+
+<!--script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script-->
+<script src="themes/sapota/js/jquery.js"></script>
+<!--script src="themes/sapota/js/bootstrap.min.js"></script-->
+
+<!--галлерея-->
+<script src="themes/sapota/js/jquery.prettyPhoto.js"></script>
+<!--маска для телефона-->
+<script src="themes/sapota/js/jquery.maskedinput.min.js"></script>
+<!--чекбоксы-->
+<script src="themes/sapota/js/check.js"></script>
+<!--селекты-->
+<script src="themes/sapota/js/jquery.selectbox.js"></script>
+<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script src="themes/sapota/js/ymaps.js"></script>
+<!--общий-->
+<script src="themes/sapota/js/site.js"></script>
+
+<!--[if IE]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<link rel="stylesheet" type="text/css" href="themes/sapota/css/font_ie.css">
+<script src="themes/sapota/js/selectivizr-min.js"></script>
+<![endif]-->
+
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="themes/sapota/css/ie.css">
+<![endif]-->
+
+<script type="text/javascript">
+  jQuery(function($) {
+      $('#phone').mask('9 (999) 999-99-99');
+      $('#phoneRegSalon').mask('9 (999) 999-99-99');
+      $('#phoneFormNonReg').mask('9 (999) 999-99-99');
+  });
+</script>
+
+</head>
+<body>
+<div class="layout">
+  <header class="headerMain">
+  
+  <!--/-----------------Войти на сайт добавил после 14.10.15--------------------------/-->
+  <div class="intoSiteFormWrapper_wrap" style="display:none;">
+      <div class="intoSiteFormWrapper">
+          <img class="close_button" src="themes/sapota/img/close_button.png" />
+          <div class="intoSiteForm">
+              <!--/----------простой вход на сайт----------/-->
+              <div class="intoSiteForm_content">
+                  <div class="bodyIntoSite">
+                      <div class="intoBlock">
+                          <h2 class="boldtext">Войти на сайт</h2>
+                          <span><input type="text" placeholder="Логин" /></span>
+                          <div class="passwordBlock">
+                            <span>
+                                <input type="password" class="password_input" placeholder="Пароль" />
+                                <div class="false_password">
+                                    Пароль неверный. <a href="#" title="">Напомнить пароль?</a>
+                                </div>
+                            </span>
+                            <span class="forgotPassword"><a href="#">Напомнить пароль</a></span>
+                          </div>
+                      </div>
+                      <div class="intoButtonBlock">
+                          <button>Войти</button>
+                      </div>
+                      <div class="socialIn">
+                            <span class="social_text">Войти через:</span>
+                            <a href="#"><span class="social vk"></span></a>
+                            <a href="#"><span class="social f"></span></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--/----------END простой вход на сайт----------/-->
+
+  <!--забыл пароль-->
+  <div class="forget_password_popup_wrap" style="display:none;">
+      <div class="forget_password_popup">
+          <img class="close_button" src="themes/sapota/img/close_button.png" />
+          <form method="POST" action="" name="forget_password_form" class="forget_password_form">
+              <div class="intoSiteForm_content">
+                  <div class="bodyIntoSite">
+                      <div class="intoBlock">
+                          <h2 class="boldtext">Забыли пароль</h2>
+                          <span>
+                              <input type="text" placeholder="E-mail" />
+                          </span>
+                          <div class="forget_password_text">
+                              Введите Ваш e-mail.<br />
+                              Вам будут высланы инструкции по восстановлению пароля.
+                          </div>
+                      </div>
+                      <div class="intoButtonBlock">
+                          <button>Восстановить</button>
+                      </div>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+  <!--./забыл пароль-->
+              
+  <!--/----------записаться к мастеру----------/-->
+  <div class="writing_to_master_reg_wrap" style="display:none;">
+      <div class="writing_to_master_reg">
+          <img class="close_button" src="themes/sapota/img/close_button.png" />
+          <form method="POST" action="" name="writing_to_master_reg_form" class="writing_to_master_reg_form">
+              <div class="intoSiteForm_content toMaster">
+                  <div class="headerIntoSite">
+                      Записаться к мастеру
+                  </div>
+                  <div class="bodyIntoSite">
+                      <p class="who_opinion_stay">
+                          <i class="fa fa-user"></i>
+                          <span>
+                              Ирина Иванова
+                              <a href="#" title="Выход">Выйти</a>
+                          </span>
+                      </p>
+                      <div class="needServices">
+                          <h2 class="boldtext">Вы выбрали мастера/салон:</h2>
+                          <div class="infoMaster">
+                              <span class="photoMaster">
+                                  <img src="themes/sapota/img/photoMaster.png" alt="" />
+                              </span>
+                              <span>Елена Иванова</span>
+                          </div>
+                      </div>
+                      <label class="needServices">
+                          <h2 class="boldtext">Необходимые услуги:</h2>
+                          <textarea></textarea>
+                      </label>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+  <!--/----------END записаться к мастеру----------/-->
+
+  <!--/----------записаться к мастеру без регистрации----------/-->
+  <div class="writing_to_master_non_reg_wrap" style="display:none;">
+      <div class="writing_to_master_non_reg">
+          <img class="close_button" src="themes/sapota/img/close_button.png" />
+          <form method="POST" action="" name="writing_to_master_non_reg_form" class="writing_to_master_non_reg_form">
+              <div class="intoNonRegSiteForm_content">
+                  <div class="headerIntoSite">
+                      Записаться к мастеру
+                  </div>
+                  <div class="bodyIntoSite">
+                      <p class="infoBodyText">
+                          <span>Пожалуйста, авторизуйтесь, если Вы уже являетесь нашим пользователем.</span>
+                          <button>Войти</button>
+                      </p>
+                      <div class="needServices">
+                          <h2 class="boldtext">Вы выбрали мастера/салон:</h2>
+                          <div class="infoMaster">
+                              <span class="photoMaster">
+                                  <img src="themes/sapota/img/photoMaster.png" alt="" />
+                              </span>
+                              <span>Елена Иванова</span>
+                          </div>
+                      </div>
+                      <label class="needServices">
+                          <h2 class="boldtext">Необходимые услуги:</h2>
+                          <textarea></textarea>
+                      </label>
+                      <div class="intoBlock">
+                          <h2 class="boldtext">Ваши личные данные:</h2>
+                          <span><input type="text" placeholder="Имя" /></span>
+                          <span><input type="text" id="phoneFormNonReg" placeholder="Телефон" /></span>
+                          <span><input type="text" placeholder="E-mail" /></span>
+                      </div>
+                      <div class="intoButtonBlock">
+                          <button>Записаться без регистрации</button>
+                      </div>
+                      <div class="socialIn">
+                          <span><a href="#" title="">Зарегистрироваться</a></span>
+                          <span class="social_text">Войти через:</span>
+                          <a href="#"><span class="social vk"></span></a>
+                          <a href="#"><span class="social f"></span></a>
+                      </div>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+  <!--/----------END записаться к мастеру без регистрации----------/-->
+
+  <!--отзывы-->
+      <!--отзыв не залогинен-->
+        <div class="non_reg_opinion_popup_wrap" style="display:none;"><!---->
+            <div class="non_reg_opinion_popup">
+                <img class="close_button" src="themes/sapota/img/close_button.png">
+                <form method="POST" action="" name="non_reg_opinion_form" class="non_reg_opinion_form">
+                    <div class="intoSiteForm_content">
+                        <div class="bodyIntoSite">
+                            <p class="non_reg_stay_opinion">Оставить отзыв</p>
+                            <p class="non_reg_want_stay_opinion">Чтобы оставить отзыв, Вы должны быть зарегистрированным пользователем</p>
+                            <p class="non_reg_stay_opinion_Registration">
+                                Нет аккаунта?
+                                <a href="" title="Регистрация">Зарегистрироваться</a>
+                            </p>
+                            <div class="intoBlock">
+                                <h2 class="boldtext">Войти на сайт</h2>
+                                <span><input type="text" placeholder="Логин"></span>
+                                <div class="passwordBlock">
+                        <span>
+                            <input type="text" placeholder="Пароль">
+                        </span>
+                                    <span class="forgotPassword"><a href="#">Напомнить пароль</a></span>
+                                </div>
+                            </div>
+                            <div class="intoButtonBlock">
+                                <button>Войти</button>
+                            </div>
+                            <div class="socialIn">
+                                <span class="social_text">Войти через:</span>
+                                <a href="#"><span class="social vk"></span></a>
+                                <a href="#"><span class="social f"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+      <!--./отзыв не залогинен-->
+
+      <!--отзыв зарегистрированного пользователя-->
+      <div class="reg_opinion_popup_wrap" style="display:none;"><!---->
+          <div class="reg_opinion_popup">
+              <img class="close_button" src="themes/sapota/img/close_button.png">
+              <form method="POST" action="" name="reg_opinion_form" class="reg_opinion_form">
+                  <div class="intoSiteForm_content">
+                      <div class="bodyIntoSite">
+                          <p class="non_reg_stay_opinion">Оставить отзыв</p>
+                          <div class="bodyIntoSite_add">
+                              <p class="who_opinion_stay">
+                                  <i class="fa fa-user"></i>
+                                  <span>
+                                      Ирина Иванова
+                                      <a href="#" title="Выход">Выйти</a>
+                                  </span>
+                              </p>
+                              <p>Вы хотите оценить мастера/салон:</p>
+                              <p class="evaluation_master_salon">
+                                  <img src="themes/sapota/img/reg_opinion_img.jpg" alt="" />
+                                  <span>Елена Иванова</span>
+                              </p>
+                              <p class="evaluation_service">
+                                  <span>Оцените качество обслуживания:</span>
+                                  <span class="rating_stars_block" data-evaluation_service="">
+                                      <img src="themes/sapota/img/ratingStars_opinion.png" alt="" />
+                                  </span>
+                              </p>
+                              <p>
+                                  Вы обратитесь к мастеру снова?
+                                  <label class="inputWithValue">
+                                      <span class="check redChecked"></span>
+                                      <span class="value">да</span>
+                                  </label>
+                                  <label class="inputWithValue">
+                                      <span class="check redChecked"></span>
+                                      <span class="value">нет</span>
+                                  </label>
+                              </p>
+                              <label>
+                                  <p>Ваш комментарий:</p>
+                                  <textarea class="your_comment"></textarea>
+                              </label>
+                          </div>
+                          <div class="intoButtonBlock">
+                              <button>Отправить</button>
+                          </div>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+      <!--./отзыв зарегистрированного пользователя-->
+
+      <!--спасибо за отзыв-->
+      <div class="thank_opinion_popup_wrap" style="display:none;"><!-- style="display:none;"-->
+          <div class="thank_opinion_popup">
+              <img class="close_button" src="themes/sapota/img/close_button.png">
+              <div class="thank_opinion_form">
+                  <div class="intoSiteForm_content">
+                      <div class="bodyIntoSite">
+                          <p class="thank_you_to_opinion">Спасибо за отзыв!</p>
+                          <p>Ваш отзыв будет опубликован после проверки модератором.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!--./спасибо за отзыв-->
+  <!--./отзывы-->
+  
+  <!--форма регистрации, клиенты-->
+  <div class="registrationClientForm_wrap" style="display:none;">
+      <div class="registrationClientForm">
+          <img class="close_button" src="themes/sapota/img/close_button.png" />
+          <div class="headerClientReg">
+              Найдите лучшего специалиста для себя
+          </div>
+          <div class="fasterReg">
+              <span>Быстрая регистрация через:</span>
+              <div class="fasterRegSocialIcon">
+                <a href="#"><span class="social_big vk"></span></a>
+                <a href="#"><span class="social_big f"></span></a>
+              </div>
+              <span>или по элекронной почте</span>
+          </div>
+          <form class="formClientReg">
+              <div class="inputRegBlock">
+                <span><input type="text" placeholder="Ваше имя" /></span>
+                <span><input type="text" placeholder="E-mail" /></span>
+                <input type="text" placeholder="Город" />
+            </div>
+            <div class="readyRegBlock">
+              <label class="inputWithValue">
+                <span class="check redChecked"></span>
+                <span class="value">Подписаться на новости проекта</span>
+                <!--input type="checkbox" name="main_prof[]" value="1" style="display: none;"-->
+              </label>
+              <label class="inputWithValue">
+                <span class="check redChecked"></span>
+                <span class="value">Присылать уведомления о появлении<br /> новых мастеров в Вашем городе</span>
+                <!--input type="checkbox" name="main_prof[]" value="1" style="display: none;"-->
+              </label>
+              <button>
+                Зарегистрироваться
+              </button>
+            </div>
+            <div class="go">
+              Уже зарегистрированы? 
+              <a href="#">Войти</a>
+            </div>
+        </form>
+      </div>
+  </div>
+  <!--END форма регистрации, клиенты-->
+  
+  <!--форма регистрации, мастера, салоны-->
+  <div class="registrationForm_wrap" style="display:none;">
+      <div class="registrationForm">
+          <img class="close_button" src="themes/sapota/img/close_button.png" />
+          <div class="headerRegBlock">
+              <span>Тысячи клиентов ждут тебя!</span>
+              Мастер Модус - место, где салоны красоты и мастера находят своих клиентов.
+          </div>
+          <div class="clear"></div>
+          <div class="form_block">
+              <span>Регистрация</span>
+              <form>
+                  <div class="changeMasterSalon">
+                    <span>Вы</span>
+                    <label class="inputWithValue">
+                        <span class="check redChecked"></span>
+                        <span class="value">мастер</span>
+                        <!--input type="checkbox" name="main_prof[]" value="1" style="display: none;"-->
+                      </label>
+                      <label class="inputWithValue">
+                        <span class="check redChecked checked"></span>
+                        <span class="value red">салон красоты</span>
+                        <!--input type="checkbox" name="main_prof[]" value="1" style="display: none;"-->
+                      </label>
+                    </div>
+                    <div class="inputRegBlock">
+                        <span><input type="text" placeholder="Название салона" class="master_salon_name" /></span>
+                        <span><input type="text" placeholder="E-mail" /></span>
+                        <span><input type="text" id="phoneRegSalon" placeholder="Телефон" /></span>
+                        <input type="text" placeholder="Город" />
+                    </div>
+                    <div class="readyRegBlock">
+                        <label class="inputWithValue">
+                          <span class="check redChecked"></span>
+                          <span class="value">Я принимаю условия <a href="#">договора оферты</a></span>
+                          <!--input type="checkbox" name="main_prof[]" value="1" style="display: none;"-->
+                        </label>
+                        <button>
+                            Зарегистрироваться
+                        </button>
+                    </div>
+                    <div class="socialIn">
+                        <span class="social_text">Войти через:</span>
+                        <a href="#"><span class="social vk"></span></a>
+                        <a href="#"><span class="social f"></span></a>
+                    </div>
+                    <div class="go">
+                        Уже зарегистрированы? 
+                        <a href="#">Войти</a>
+                    </div>
+              </form>
+          </div>
+          <div class="description">
+              <div class="descHeader">
+                  <span class="whatWeOffered active">Что мы предлагаем?</span>
+                  <span class="howThisWork">Как это работает?</span>
+              </div>
+              <div class="descBody_offered">
+                  <p>
+                      <img class="v_img" src="themes/sapota/img/v_img.png" alt="" />
+                      <span class="h2">Новые клиенты</span>
+                      Ежедневно более 245 записей в салоны красоты и к частным мастерам по всей Москве и Московской области.
+                  </p>
+                  <p>
+                      <img class="v_img" src="themes/sapota/img/v_img.png" alt="" />
+                      <span class="h2">Управление и контроль</span>
+                      С помощью личного кабинета Вы можете без труда планировать свое расписание, принимать заявки и следить за их статусами.
+                  </p>
+                  <p>
+                      <img class="v_img" src="themes/sapota/img/v_img.png" alt="" />
+                      <span class="h2">Работа только за результат</span>
+                      Оплата производится только за клиента, который воспользовался Вашими услугами.
+                  </p>
+              </div>
+              <div class="descBody_work" style="display:none;">
+                  <ul style="list-style:none;">
+                    <li><span class="numberOrder">1.</span> <span>Вы регистрируетесь на нашем портале.</span></li>
+                    <li><span class="numberOrder">2.</span> <span>Заполняете свою персональную анкету.</span></li>
+                    <li><span class="numberOrder">3.</span> <span>Потенциальный клиента выбирает Вас на нашем сайте.</span></li>
+                    <li><span class="numberOrder">4.</span> <span>Оставляет online-заявку.</span></li>
+                    <li><span class="numberOrder">5.</span> <span>Заявка отражается в Личном кабинете.</span></li>
+                    <li><span class="numberOrder">6.</span> <span>Вы связываетесь с клиентом и договариваетесь о дате и времени приема.</span></li>
+                    <li><span class="numberOrder">7.</span> <span>Клиент приходит к Вам на прием.</span></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--END форма регистрации, мастера, салоны-->
+
+  <div class="inner"> 
+    <!--логин, телефон, лого-->
+    <div class="logoPhoneLoginLeft">
+      <div class="phone">+7 (495) <span>324-65-78</span></div>
+      <a class="logo" href="/"><img src="themes/sapota/img/logo.png" alt="" /></a>
+      <!--/.logoPhoneLogin--> 
+    </div>
+    <!--статистика-->
+    <div class="statisticsBlock statisticsWizard"> <i class="inlineBlock"></i>
+      <div>99 999 999</div>
+      мастеров 
+    </div>
+    <div class="statisticsBlock statisticsCity"> <i class="inlineBlock"></i>
+      <div>999</div>
+      городов 
+    </div>
+    <div class="statisticsBlock statisticsCountry"> <i class="inlineBlock"></i>
+      <div>9</div>
+      стран
+    </div>
+    <div class="balanceRatingBlock">
+        <div class="nameMaster">Мария Машкова</div>
+        <div class="balance">
+          Ваш баланс: 200 руб.
+          <div>
+              <a href="#">пополнить баланс?</a>
+          </div>
+        </div>
+        <div class="ratingMasterBox">
+            <p>Ваш рейтинг:
+                <span class="boldtext ratingNumber" data-rating="3">4,5</span>
+                <span class="ratingStarsOneStar">
+                    <span class="ratingStarsColor">
+                        <img src="themes/sapota/img/ratingStars.png" alt="">
+                    </span>
+                </span>
+            </p>
+        </div>
+        <button class="exit">
+            выход
+        </button>
+    </div>
+    <div class="statis_block">
+        <div class="status_text red">
+            <span style="display:none;">Ваш статус для клиентов "В отпуске"</span><!--статус "В отпуске-->
+            <span style="color: #0d8705;">Ваша анкета активна</span><!--статус "Анкета активна-->
+            <span style="display:none;">Ваша анкета проверяется модератором</span><!--статус "Модератор-->
+        </div><!--если статус "в отпуске" или "анкета активна"-->
+          <div class="button status_master">
+                <!--работаю-->
+                в отпуске
+              <div class="popupWrapper" style="display:none;">
+                <div class="status_desc_wrapper">
+                    <div class="status_desc">
+                      <!--если статус "В отпуске"-->
+                      <span style="display:none;">
+                        Сейчас клиенты не видят вашу анкету.<br />
+                        Нажмите на кнопку "Работаю", чтобы вновь сделать её активной.
+                      </span>
+                      <!--если статус "Ваша анкета активна"-->
+                      <span>
+                        На время отсутствия включите режим "в отпуске"<br />
+                        во избежании заказов от клиентов в этот период.
+                      </span>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <!--если статус "Ваша анкета проверяется модератором"-->
+          <div class="moderator" style="display:none;">
+              <a href="mailto:info@modus.ru" class="mail_link_info">info@modus.ru</a> | 8(800) 888-90-90 | <a href="#">Онлайн-консультант</a>
+          </div>
+    </div>
+    <!--/.inner--> 
+  </div>
+</header>
+
+<div class="wrapper wrapperOnMainPage lk">
+<div class="body_lk_wrapper wrapper">
+    <div class="fasterFindClient">
+        <span>Найдите клиента быстрее</span>
+        <div>
+          <div class="wrapper_mini_block premium">
+              <a href="#">
+                <span class="icon_bonus_block"></span>
+                <span>СДЕЛАТЬ ПРЕМИУМ</span>
+              </a>
+          </div>
+        </div>
+        <div>
+          <div class="wrapper_mini_block vip">
+              <a href="#">
+                  <span class="icon_bonus_block"></span>
+                  <span>СДЕЛАТЬ VIP</span>
+              </a>
+          </div>    
+        </div>
+        <div>
+          <div class="wrapper_mini_block eliminate">
+              <a href="#">
+                  <span class="icon_bonus_block"></span>
+                  <span>ВЫДЕЛИТЬ</span>
+              </a>
+          </div>
+        </div>
+        <div>
+          <div class="wrapper_mini_block liftToFind">
+              <a href="#">
+                <span class="icon_bonus_block"></span>
+                <span>ПОДНЯТЬ В ПОИСКЕ</span>
+              </a>
+          </div>
+        </div>
+        <div>
+          <div class="wrapper_mini_block makePackeg">
+              <a href="#">
+                <span class="icon_bonus_block"></span>
+                <span>ПРИМЕНИТЬ ПАКЕТ УСЛУГ</span>
+              </a>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapperSerchFormWithTabs"> 
+      
+      <!------------------------------------> 
+      <!--АНКЕТА, ПРАВИЛА, ЗАКАЗЫ, КОШЕЛЕК--> 
+      <!------------------------------------>
+      
+     <form>
+		<!--/--------Так видят Вашу анкету клиенты (салон)--------/-->
+		<div class="viewAnketaMasterWrapper salon"><!-- style="display:none;"-->
+			<div class="infoMasterWrapper">
+                <div class="photoMaster">
+                    <div class="popUpViewAnketaWrapper">
+                        <div class="popUpViewAnketa">
+                            Так видят Вашу анкету клиенты. <a href="" title="">Вернуться к редактированию профиля</a>
+                        </div>
+                    </div>
+                    <div class="masterName">Angel Salon & Spa</div>
+                    <div class="masterPhotoRating">
+                        <div class="photoMasterBox">
+                            <img src="themes/sapota/img/salonLogo.jpg" alt="" />
+                        </div>
+                    </div>
+                    <div class="masterMessage">
+                        <button class="signUpMasterButton">Записаться</button>
+                        <a onclick=" location.href='file:///Z:/!Харитонов Андрей/Модус/git/modus/Личный кабинет/compare_masters.html'" href="#" title="" class="addCompare">добавить к сравнению</a>
+                    </div>
+                    <div class="masterPhone">
+                        <p class="phoneBox">
+                            <i class="fa fa-phone"></i>
+                            <span class="phoneNumberMaster" style="display:none;">+7 (800) 800-90-90</span>
+                            <span class="showPhoneNumberMaster">Показать номер телефона</span>
+                        </p>
+                        <p class="workClockBox">
+                            <i class="fa fa-clock-o"></i>
+                            <span>
+                                пн-пт 9:00-18:00<br />
+                                сб-вс 6:00-21:00
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="infoMasterAnketa">
+                    <h1>Салон красоты</h1>
+                    <div class="ratingMasterBox">
+						<p>рейтинг: <span class="boldtext ratingNumber" data-rating="2.3">4,5</span>
+							<span class="ratingStarsColorWrap">
+                                <span class="ratingStarsColor">
+                                    <img src="themes/sapota/img/ratingStars.png" alt="" />
+                                </span>
+                            </span>
+						</p>
+					</div>
+					<p class="mainJob">
+                        <span class="boldtext">Основные направления: </span>
+                        маникюр, дизайн ногтей, прически, окрашивание, уход за волосами, макияж, наращивание ресниц, татуаж,
+						косметология лица, укладка волос, стрижка, массаж, эпиляция, косметология тела, татуировки, уход за ногтями.
+                    </p>
+                    <h2>О себе:</h2>
+                    <p class="oneself_salon">
+                        Мы ежедневно ждем вас в салоне красоты ANGEL SALON & SPA!<br />
+						Благодаря нашим совместным усилиям вы всегда будете обворожительно красивы и наполнены положительной энергией. Станьте неотразимы вместе с нами!<br />
+						Все, что нужно для вашей красоты!
+                    </p>
+                    <div class="borderBox"></div><!--разделительная линия-->
+                    <h1>Стоимость основных услуг</h1>
+                    <div class="costServiceBox">
+                        <div>
+                            Свадебная прическа и макияж + репетиция
+                            <span>13 000</span>
+                        </div>
+                        <div>
+                            Свадебная прическа и макияж + репетиция
+                            <span>13 000</span>
+                        </div>
+                        <div>
+                            Свадебная прическа и макияж + репетиция
+                            <span>13 000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="addressMaster">
+                    <!--div class="mapBlock">
+                        <img src="themes/sapota/img/map_example.jpg" alt="map">
+                    </div-->
+                    <div id="map"></div>
+                    <div class="addressBox">
+                        <i class="fa fa-map-o"></i>
+                        <div class="addressMasterTextWrapper">
+                            <div class="addressMasterText">
+                                <div>
+                                    <span class="boldtext">город:</span><span>Москва</span>
+                                </div>
+                                <div style="display:none;">
+                                    <span class="boldtext">район:</span><span class="areaName">Тушинский</span><!--/--------------Если район выезда--------------/-->
+                                </div>
+                                <div>
+                                    <span class="boldtext">метро:</span><span class="undergroundNameandImage"><img src="themes/sapota/img/underground.png" alt="" />Кожуховская</span><!--/-------Если метро выезда------/-->
+                                </div>
+                                <div>
+                                    <span class="boldtext">адрес:</span><span>2-й Южнопортовый проезд, д.18, стр.1</span>
+                                </div>
+                                <div class="exitToClient">
+                                    <i class="fa fa-car"></i>
+                                    <span class="boldtext">выезд к клиенту:</span><span>возможен</span>
+                                </div>
+                            </div>
+                            <div class="regionExit" style="display:none;"><!--/--------------Если район выезда--------------/-->
+                                <span class="boldtext ">район выезда</span>
+                                <span class="areaExit">(5)</span>: 
+                                <div>ЮВАО</div>
+                                <div>ВАО</div>
+                                <div class="lastVisibleArea">ЮАО</div>
+                                <div style="display:none;">ЗАО</div>
+                                <div style="display:none;">ЮЗАО</div>
+                                <a href="#" title="" class="showAllArea">Показать все</a>
+                            </div>
+                            <div class="undergroundExit"><!--/-------Если метро выезда------/-->
+                                <img src="themes/sapota/img/underground.png" alt="" />
+                                <span class="boldtext ">станции выезда</span>
+                                <span class="areaExit">(5)</span>: 
+                                <div>Бабушкинская</div>
+                                <div>Пушкинская</div>
+                                <div class="lastVisibleArea">Спортивная</div>
+                                <div style="display:none;">Лужники</div>
+                                <div style="display:none;">Марьина роща</div>
+                                <a href="#" title="" class="showAllArea">Показать все</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+			<!--меню салона-->
+			<div class="menuSalonBlock">
+				<ul class="menuSalonBlockPoints">
+					<li class="menuSalonPrice activePoits">Прайс-лист</li>
+					<li class="menuSalonMasters">Мастера (<span></span>)</li>
+					<li class="menuSalonPortfolio">Портфолио (<span></span>)</li>
+					<li class="menuSalonOpinions">Отзывы (<span></span>)</li>
+				</ul>
+			</div>
+			<!--END меню салона-->
+			
+			<div class="salonDataMenuWrapper">
+				<!--/----------прайс-лист----------/-->
+				<div class="salonPriceListWrapper">
+					<div class="salonPriceList">
+						<a href="" title="" class="showAllPricesSalon">развернуть все</a>
+						<div class="costServiceBox">
+							<h1>
+								Маникюр
+								<b class="trigger"><i class="arrow"></i></b>
+							</h1>
+							<div class="costServiceMinBox">
+								<div>
+									Покрытие Vinylux
+									<span>1 300</span>
+								</div>
+								<div>
+									Классический маникюр (обрезной)
+									<span>1 000</span>
+								</div>
+								<div>
+									Европейский маникюр (необрезной)
+									<span>2 000</span>
+								</div>
+								<div>
+									Покрытие "Shellac" (цветное)
+									<span>3 000</span>
+								</div>
+								<div>
+									Покрытие Shellac French
+									<span>1 300</span>
+								</div>
+								<div>
+									Покрытие био-гелем (цветное)
+									<span>1 000</span>
+								</div>
+								<div>
+									Покрытие био-гелем French
+									<span>2 000</span>
+								</div>
+								<div>
+									Покрытие лаком для ногтей (основа+лак+закрепитель)
+									<span>3 000</span>
+								</div>
+								<div>
+									Покрытие лаком "французский маникюр"
+									<span>1 300</span>
+								</div>
+								<div>
+									Мужской маникюр
+									<span>1 000</span>
+								</div>
+								<div>
+									Детский маникюр
+									<span>2 000</span>
+								</div>
+							</div>
+							<div class="borderBox"></div><!--разделительная линия-->
+						</div>
+						
+						<div class="costServiceBox">						
+							<h1>
+								Прически
+								<b class="trigger"><i class="arrow"></i></b>
+							</h1>
+							<div class="costServiceMinBox">
+								<div>
+									Вечерние прически
+									<span>1 300</span>
+								</div>
+								<div>
+									Свадебные прически
+									<span>1 000</span>
+								</div>
+								<div>
+									Прически из кос
+									<span>2 000</span>
+								</div>
+								<div>
+									Прически на короткие волосы
+									<span>3 000</span>
+								</div>
+								<div>
+									Прически на средние волосы
+									<span>1 300</span>
+								</div>
+								<div>
+									Прически на длинные волосы
+									<span>1 000</span>
+								</div>
+							</div>
+							<div class="borderBox"></div><!--разделительная линия-->
+						</div>
+						
+						<div class="costServiceBox">
+							<h1>
+								Массаж
+								<b class="trigger"><i class="arrow"></i></b>
+							</h1>
+							<div class="costServiceMinBox">
+								<div>
+									Общий массаж
+									<span>1 300</span>
+								</div>
+								<div>
+									Лечебно-оздоровительный массаж
+									<span>1 000</span>
+								</div>
+								<div>
+									Точечный массаж
+									<span>2 000</span>
+								</div>
+								<div>
+									Спортивный массаж
+									<span>3 000</span>
+								</div>
+								<div>
+									Антицеллюлитный массаж
+									<span>1 300</span>
+								</div>
+								<div>
+									Вакуумно-роликовый lpg массаж
+									<span>1 000</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--/----------END прайс-лист----------/-->
+				
+				<!--/----------мастера----------/-->
+				<div class="salonMasterAllWrapper" style="display:none;">
+					<!--первый мастер-->
+					<div class="infoMasterWrapper salonMaster">
+						<div class="photoMaster">
+							<div class="masterName">Елена Иванова</div>
+							<div class="masterPhotoRating">
+								<div class="photoMasterBox">
+									<img src="themes/sapota/img/photo_master.jpg" alt="" />
+								</div>
+								<div class="ratingMasterBox">
+									<p>опыт: <span class="boldtext">5 лет</span></p>
+									<p>рейтинг:
+                                        <span class="boldtext ratingNumber" data-rating="3">4,5</span>
+                                        <span class="ratingStarsOneStar">
+                                            <span class="ratingStarsColor">
+                                                <img src="themes/sapota/img/ratingStars.png" alt="">
+                                            </span>
+                                        </span>
+                                    </p>
+									<p class="countSignUp">отзывы: <span class="boldtext">7</span></p>
+								</div>
+							</div>
+							<div class="masterPhone">
+								<p class="exitYesNo">
+									выезд: <span class="boldtext">возможен</span>
+								</p>
+								<p class="workClockBox">
+									<i class="fa fa-clock-o"></i>
+									<span>
+										пн-пт 9:00-18:00<br />
+										сб-вс 6:00-21:00
+									</span>
+								</p>
+								<p class="countPortfolioMasterSalon">Портфолио: <a href="" title=""><span class="countPhotosWork"></span></a></p>
+							</div>
+						</div>
+						<div class="infoMasterAnketa">
+							<h1>Свадебный стилист</h1>
+							<div class="costServiceBox">
+								<div>
+									Свадебная прическа и макияж + репетиция
+									<span>13 000</span>
+								</div>
+								<div>
+									Свадебная прическа и макияж + репетиция
+									<span>13 000</span>
+								</div>
+								<div>
+									Свадебная прическа и макияж + репетиция
+									<span>13 000</span>
+								</div>
+							</div>
+							<div class="examplePortfolioMasterSalonWrapper">
+                                <a href="themes/sapota/img/gallery_big_photos/portfolio1.jpg" rel="prettyPhoto[gallery3]" class="gallery3"><img src="themes/sapota/img/portfolio1.jpg" alt="" /></a>
+                                <a href="themes/sapota/img/gallery_big_photos/portfolio2.jpg" rel="prettyPhoto[gallery3]" class="gallery3"><img src="themes/sapota/img/portfolio2.jpg" alt="" /></a>
+                                <a href="themes/sapota/img/gallery_big_photos/portfolio3.jpg" rel="prettyPhoto[gallery3]" class="gallery3"><img src="themes/sapota/img/portfolio3.jpg" alt="" /></a>
+                                <a href="themes/sapota/img/gallery_big_photos/portfolio1.jpg" rel="prettyPhoto[gallery3]" class="gallery3"><img src="themes/sapota/img/portfolio1.jpg" alt="" /></a>
+                                <a href="themes/sapota/img/gallery_big_photos/portfolio2.jpg" rel="prettyPhoto[gallery3]" class="gallery3"><img src="themes/sapota/img/portfolio2.jpg" alt="" /></a>
+                                <a href="themes/sapota/img/gallery_big_photos/portfolio3.jpg" rel="prettyPhoto[gallery3]" class="gallery3"><img src="themes/sapota/img/portfolio3.jpg" alt="" /></a>
+                                <a href="themes/sapota/img/gallery_big_photos/portfolio1.jpg" rel="prettyPhoto[gallery3]" class="gallery3"><img src="themes/sapota/img/portfolio1.jpg" alt="" /></a>
+                                <a href="themes/sapota/img/gallery_big_photos/portfolio2.jpg" rel="prettyPhoto[gallery3]" class="gallery3"><img src="themes/sapota/img/portfolio2.jpg" alt="" /></a>
+                                <a href="themes/sapota/img/gallery_big_photos/portfolio3.jpg" rel="prettyPhoto[gallery3]" class="gallery3"><img src="themes/sapota/img/portfolio3.jpg" alt="" /></a>
+                                <a href="themes/sapota/img/gallery_big_photos/portfolio1.jpg" rel="prettyPhoto[gallery3]" class="gallery3"><img src="themes/sapota/img/portfolio1.jpg" alt="" /></a>
+							</div>
+						</div>
+						<div class="addressMaster">
+							<div class="masterNameSalon">
+								Мастер салона <span class="nameSalonInMaster">ANGEL SALON & SPA</span>
+							</div>
+							<div class="addressBox">
+								<i class="fa fa-map-o"></i>
+								<div class="addressMasterTextWrapper">
+									<div class="addressMasterText">
+										<div>
+											<span class="boldtext">город:</span><span>Москва</span>
+										</div>
+										<div style="display:none;">
+											<span class="boldtext">район:</span><span class="areaName">Тушинский</span><!--/--------------Если район выезда--------------/-->
+										</div>
+										<div>
+											<span class="boldtext">метро:</span><span class="undergroundNameandImage"><img src="themes/sapota/img/underground.png" alt="" />Кожуховская</span><!--/-------Если метро выезда------/-->
+										</div>
+										<div>
+											<span class="boldtext">адрес:</span><span>2-й Южнопортовый проезд, д.18, стр.1</span>
+										</div>	
+									</div>
+								</div>	
+							</div>
+							<div class="signUpBlock">
+								<button class="signUpMasterButton">Записаться</button>
+								<a onclick=" location.href='file:///Z:/!Харитонов Андрей/Модус/git/modus/Личный кабинет/compare_masters.html'" href="#" title="" class="addToChange">добавить к сравнению</a>
+							</div>
+						</div>
+						<div class="borderBox"></div><!--разделительная линия-->
+					</div>	
+					
+					<!--второй мастер-->
+					<div class="infoMasterWrapper salonMaster">
+						<div class="photoMaster">
+							<div class="masterName">Елена Иванова</div>
+							<div class="masterPhotoRating">
+								<div class="photoMasterBox">
+									<img src="themes/sapota/img/photo_master.jpg" alt="" />
+								</div>
+								<div class="ratingMasterBox">
+									<p>опыт: <span class="boldtext">5 лет</span></p>
+									<p>рейтинг:
+                                        <span class="boldtext ratingNumber" data-rating="4,2">4,5</span>
+                                        <span class="ratingStarsOneStar">
+                                            <span class="ratingStarsColor">
+                                                <img src="themes/sapota/img/ratingStars.png" alt="">
+                                            </span>
+                                        </span>
+                                    </p>
+									<p class="countSignUp">отзывы: <span class="boldtext">7</span></p>
+								</div>
+							</div>
+							<div class="masterPhone">
+								<p class="exitYesNo">
+									выезд: <span class="boldtext">возможен</span>
+								</p>
+								<p class="workClockBox">
+									<i class="fa fa-clock-o"></i>
+									<span>
+										пн-пт 9:00-18:00<br />
+										сб-вс 6:00-21:00
+									</span>
+								</p>
+								<p class="countPortfolioMasterSalon">Портфолио: <a href="" title=""><span class="countPhotosWork"></span></a></p>
+							</div>
+						</div>
+						<div class="infoMasterAnketa">
+							<h1>Свадебный стилист</h1>
+							<div class="costServiceBox">
+								<div>
+									Свадебная прическа и макияж + репетиция
+									<span>13 000</span>
+								</div>
+								<div>
+									Свадебная прическа и макияж + репетиция
+									<span>13 000</span>
+								</div>
+								<div>
+									Свадебная прическа и макияж + репетиция
+									<span>13 000</span>
+								</div>
+							</div>
+							<div class="examplePortfolioMasterSalonWrapper">
+                                <a href="themes/sapota/img/gallery_big_photos/portfolio1.jpg" rel="prettyPhoto[gallery2]" class="gallery2"><img src="themes/sapota/img/portfolio1.jpg" alt="" /></a>
+                                <a href="themes/sapota/img/gallery_big_photos/portfolio2.jpg" rel="prettyPhoto[gallery2]" class="gallery2"><img src="themes/sapota/img/portfolio2.jpg" alt="" /></a>
+                                <a href="themes/sapota/img/gallery_big_photos/portfolio3.jpg" rel="prettyPhoto[gallery2]" class="gallery2"><img src="themes/sapota/img/portfolio3.jpg" alt="" /></a>
+							</div>
+						</div>
+						<div class="addressMaster">
+							<div class="masterNameSalon">
+								Мастер салона <span class="nameSalonInMaster">ANGEL SALON & SPA</span>
+							</div>
+							<div class="addressBox">
+								<i class="fa fa-map-o"></i>
+								<div class="addressMasterTextWrapper">
+									<div class="addressMasterText">
+										<div>
+											<span class="boldtext">город:</span><span>Москва</span>
+										</div>
+										<div style="display:none;">
+											<span class="boldtext">район:</span><span class="areaName">Тушинский</span><!--/--------------Если район выезда--------------/-->
+										</div>
+										<div>
+											<span class="boldtext">метро:</span><span class="undergroundNameandImage"><img src="themes/sapota/img/underground.png" alt="" />Кожуховская</span><!--/-------Если метро выезда------/-->
+										</div>
+										<div>
+											<span class="boldtext">адрес:</span><span>2-й Южнопортовый проезд, д.18, стр.1</span>
+										</div>	
+									</div>
+								</div>	
+							</div>
+							<div class="signUpBlock">
+								<button class="signUpMasterButton">Записаться</button>
+								<a onclick=" location.href='file:///Z:/!Харитонов Андрей/Модус/git/modus/Личный кабинет/compare_masters.html'" href="#" title="" class="addToChange">добавить к сравнению</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--/----------END мастера----------/-->
+				
+				<!--/----------портфолио салона----------/-->
+				<div class="salonPortfolioWrapper" style="display:none;">
+					<div class="salonPortfolioPhotos">
+						<div class="salonPortfolioPhotosCount">
+							Фотографии салона (<span></span>)
+						</div>
+						<div class="salonPortfolioPhotosBlock">
+							<a href="themes/sapota/img/gallery_big_photos/portfolio3.jpg" rel="prettyPhoto[gallery1]" class="gallery1"><img src="themes/sapota/img/portfolio3.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio2.jpg" rel="prettyPhoto[gallery1]" class="gallery1"><img src="themes/sapota/img/portfolio2.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio1.jpg" rel="prettyPhoto[gallery1]" class="gallery1"><img src="themes/sapota/img/portfolio1.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio3.jpg" rel="prettyPhoto[gallery1]" class="gallery1"><img src="themes/sapota/img/portfolio3.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio2.jpg" rel="prettyPhoto[gallery1]" class="gallery1"><img src="themes/sapota/img/portfolio2.jpg" alt="" /></a>
+						</div>
+					</div>
+					<div class="mastersSalonPortfolioPhotos">
+						<div class="mastersSalonPortfolioPhotosCount">
+							Фотографии работ (<span></span>)
+						</div>
+						<div class="mastersSalonPortfolioPhotosBlock">
+							<a href="themes/sapota/img/gallery_big_photos/portfolio1.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio1.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio2.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio2.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio3.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio3.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio1.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio1.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio2.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio2.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio1.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio1.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio2.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio2.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio3.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio3.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio1.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio1.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio2.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio2.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio1.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio1.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio2.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio2.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio3.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio3.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio1.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio1.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio2.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio2.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio1.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio1.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio2.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio2.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio3.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio3.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio1.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio1.jpg" alt="" /></a>
+							<a href="themes/sapota/img/gallery_big_photos/portfolio2.jpg" rel="prettyPhoto[gallery]" class="gallery"><img src="themes/sapota/img/portfolio2.jpg" alt="" /></a>
+						</div>
+					</div>
+				</div>
+				<!--/----------END портфолио салона----------/-->
+				
+				<!--/----------отзывы о салоне----------/-->
+				<div class="salonOpinionsWrapper" style="display:none;">
+					<div class="opinionCount">
+						<div class="opinionCountText">Отзывы: <span></span></div>
+						<!--a href="#" title="" class="showAllOpinion">Показать все отзывы</a-->
+						<div class="middleRateWrapper">
+							Средняя оценка:<span class="middleRate" data-rating=""></span>
+                            <span class="ratingStarsOneStar">
+                                <span class="ratingStarsColor">
+                                    <img src="themes/sapota/img/ratingStars.png" alt="">
+                                </span>
+                            </span>
+						</div>
+						<div class="howMatchRatingOneTable">
+							<div class="howMatchRatingOneRow">
+								<div class="howMatchRatingWrapper">
+									<span class="howMatchRating one"></span>
+								</div>
+								<span class="raitingOneCount">1</span>
+							</div>
+							<div class="howMatchRatingOneRow">
+								<div class="howMatchRatingWrapper">
+									<span class="howMatchRating two"></span>
+								</div>
+								<span class="raitingTwoCount">2</span>
+							</div>
+							<div class="howMatchRatingOneRow">
+								<div class="howMatchRatingWrapper">
+									<span class="howMatchRating three"></span>
+								</div>
+								<span class="raitingThreeCount">3</span>
+							</div>
+							<div class="howMatchRatingOneRow">
+								<div class="howMatchRatingWrapper">
+									<span class="howMatchRating four"></span>
+								</div>
+								<span class="raitingFourCount">4</span>
+							</div>
+							<div class="howMatchRatingOneRow">
+								<div class="howMatchRatingWrapper">
+									<span class="howMatchRating five"></span>
+								</div>
+								<span class="raitingFiveCount">5</span>
+							</div>
+						</div>
+					</div>
+					<div class="opinionText">
+						<div class="opinionTextWrapper"><!--первый отзыв-->
+							<div class="clientNameOpinion">
+								<span class="boldtext">Ирина Константиновна</span>
+								<span>оценка: <span class="jobEvaluation" data-evaluation="3"></span></span>
+							</div>
+							<div class="clientDateOpinion">
+								<span>12.12.2012</span>
+								<div class="ratingStarsColor" data-rating="" style="width: 70px;">
+									<img src="themes/sapota/img/ratingStars.png" alt="">
+								</div>
+							</div>
+							<div class="clientTextOpinion">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna dolor, facilisis sed tempor dapibus, consequat eget felis.
+								Proin id justo tellus. Integer a urna tortor. Nulla nec massa sit amet odio tempus fringilla. Aenean eget urna non neque volutpat iaculis.
+								Aliquam lorem sapien, vehicula non lectus quis, ullamcorper pharetra libero.
+								Donec ornare, orci quis eleifend lobortis, mi ante vehicula quam, mollis luctus orci libero sit amet orci. Donec eget varius quam, egestas ullamcorper odio.
+								Aenean magna velit, fermentum eu pretium sit amet, tristique ac urna.
+							</div>
+						</div>
+						<div class="borderBox" style="display: none;"></div>
+						<div class="opinionTextWrapper" style="display: none;"><!--второй отзыв-->
+							<div class="clientNameOpinion">
+								<span class="boldtext">Ирина Константиновна</span>
+								<span>оценка: <span class="jobEvaluation" data-evaluation="2"></span></span>
+							</div>
+							<div class="clientDateOpinion">
+								<span>12.12.2012</span>
+								<div class="ratingStarsColor" data-rating="" style="width: 30px;">
+									<img src="themes/sapota/img/ratingStars.png" alt="">
+								</div>
+							</div>
+							<div class="clientTextOpinion">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna dolor, facilisis sed tempor dapibus, consequat eget felis.
+								Proin id justo tellus. Integer a urna tortor. Nulla nec massa sit amet odio tempus fringilla. Aenean eget urna non neque volutpat iaculis.
+								Aliquam lorem sapien, vehicula non lectus quis, ullamcorper pharetra libero.
+								Donec ornare, orci quis eleifend lobortis, mi ante vehicula quam, mollis luctus orci libero sit amet orci. Donec eget varius quam, egestas ullamcorper odio.
+								Aenean magna velit, fermentum eu pretium sit amet, tristique ac urna.
+							</div>
+						</div>
+						<div class="borderBox" style="display: none;"></div>
+						<div class="opinionTextWrapper" style="display: none;"><!--третий отзыв-->
+							<div class="clientNameOpinion">
+								<span class="boldtext">Ирина Константиновна</span>
+								<span>оценка: <span class="jobEvaluation" data-evaluation="4"></span></span>
+							</div>
+							<div class="clientDateOpinion">
+								<span>12.12.2012</span>
+								<div class="ratingStarsColor" data-rating="" style="width: 100px;">
+									<img src="themes/sapota/img/ratingStars.png" alt="">
+								</div>
+							</div>
+							<div class="clientTextOpinion">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna dolor, facilisis sed tempor dapibus, consequat eget felis.
+								Proin id justo tellus. Integer a urna tortor. Nulla nec massa sit amet odio tempus fringilla. Aenean eget urna non neque volutpat iaculis.
+								Aliquam lorem sapien, vehicula non lectus quis, ullamcorper pharetra libero.
+								Donec ornare, orci quis eleifend lobortis, mi ante vehicula quam, mollis luctus orci libero sit amet orci. Donec eget varius quam, egestas ullamcorper odio.
+								Aenean magna velit, fermentum eu pretium sit amet, tristique ac urna.
+							</div>
+						</div>
+                        <div class="borderBox" style="display: none;"></div>
+                        <div class="opinionTextWrapper" style="display: none;"><!--четвертый отзыв-->
+                            <div class="clientNameOpinion">
+                                <span class="boldtext">Ирина Константиновна</span>
+                                <span>оценка: <span class="jobEvaluation" data-evaluation="4"></span></span>
+                            </div>
+                            <div class="clientDateOpinion">
+                                <span>12.12.2012</span>
+                                <div class="ratingStarsColor" data-rating="" style="width: 100px;">
+                                    <img src="themes/sapota/img/ratingStars.png" alt="">
+                                </div>
+                            </div>
+                            <div class="clientTextOpinion">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna dolor, facilisis sed tempor dapibus, consequat eget felis.
+                                Proin id justo tellus. Integer a urna tortor. Nulla nec massa sit amet odio tempus fringilla. Aenean eget urna non neque volutpat iaculis.
+                                Aliquam lorem sapien, vehicula non lectus quis, ullamcorper pharetra libero.
+                                Donec ornare, orci quis eleifend lobortis, mi ante vehicula quam, mollis luctus orci libero sit amet orci. Donec eget varius quam, egestas ullamcorper odio.
+                                Aenean magna velit, fermentum eu pretium sit amet, tristique ac urna.
+                            </div>
+                        </div>
+                        <div class="borderBox" style="display: none;"></div>
+                        <div class="opinionTextWrapper" style="display: none;"><!--пятый отзыв-->
+                            <div class="clientNameOpinion">
+                                <span class="boldtext">Ирина Константиновна</span>
+                                <span>оценка: <span class="jobEvaluation" data-evaluation="1"></span></span>
+                            </div>
+                            <div class="clientDateOpinion">
+                                <span>12.12.2012</span>
+                                <div class="ratingStarsColor" data-rating="" style="width: 100px;">
+                                    <img src="themes/sapota/img/ratingStars.png" alt="">
+                                </div>
+                            </div>
+                            <div class="clientTextOpinion">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna dolor, facilisis sed tempor dapibus, consequat eget felis.
+                                Proin id justo tellus. Integer a urna tortor. Nulla nec massa sit amet odio tempus fringilla. Aenean eget urna non neque volutpat iaculis.
+                                Aliquam lorem sapien, vehicula non lectus quis, ullamcorper pharetra libero.
+                                Donec ornare, orci quis eleifend lobortis, mi ante vehicula quam, mollis luctus orci libero sit amet orci. Donec eget varius quam, egestas ullamcorper odio.
+                                Aenean magna velit, fermentum eu pretium sit amet, tristique ac urna.
+                            </div>
+                        </div>
+					</div>
+					<div class="opinionStay">
+						<div class="opinionStayBtn_block"><button class="opinionStayBtn">Оставить отзыв</button></div>
+						<div class="socialNetworks">
+							<span>Рекомендовать мастера</span>
+							<ul>
+							  <li class="vk"><a href="#"></a></li>
+							  <li class="fb"><a href="#"></a></li>
+							  <li class="odn"><a href="#"></a></li>
+							</ul>
+						</div>
+						<a href="#" title="">Пожаловаться</a>
+					</div>
+					<div class="showAllOpinionBlock">
+						<span></span>
+						<a href="#" title="" class="showAllOpinion">Показать ещё</a>
+					</div>
+				</div>
+				<!--/----------END отзывы о салоне----------/-->
+			</div>
+		</div>
+		<!--/--------END Так видят Вашу анкету клиенты (салон)--------/-->
+    </form>     
+  </div>
+</div>
+<div class="helperFooter"></div>
+<!--/.layout-->
+</div>
+
+<!--FOOTER-->
+<footer>
+  <div class="inner"> 
+    
+    <!--footerContactsBlock-->
+    <div class="footerContactsBlock"> <a href="/" class="footerLogo"><img src="themes/sapota/img/logoInFooter.png" alt="" /></a>
+      <div class="phone">+7 (495) <span>324-65-78</span></div>
+      <a href="mailto:info@master_modus.com" class="mail">info@master_modus.com</a>
+      <div class="socialNetworks">
+        <ul>
+          <li class="vk"><a href="#"></a></li>
+          <li class="fb"><a href="#"></a></li>
+          <li class="odn"><a href="#"></a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+      <div class="login"> 
+          <a class="getInto" href="#">Войти</a> | <a class="goRegistration" href="#">Зарегистрироваться</a> 
+          <div class="changeGetInto" style="display:none;">
+            <label class="inputWithValue client">
+              <span class="check redChecked"></span>
+              <span class="value">как клиент</span>
+              <!--input type="checkbox" name="main_prof[]" value="5" style="display: none;"-->
+            </label>
+            <label class="inputWithValue master">
+              <span class="check redChecked"></span>
+              <span class="value">как мастер/салон</span>
+              <!--input type="checkbox" name="main_prof[]" value="5" style="display: none;"-->
+            </label>
+            <div class="continueButton">
+              <button class="continue">
+                  Продолжить
+              </button>
+            </div>
+          </div>
+      </div>
+      <!--/.footerContactsBlock--> 
+    </div>
+    
+    <!--footerNavLeft-->
+    <nav class="footerNavLeft">
+      <ul>
+        <li><a href="#">О нас</a></li>
+        <li><a href="#">Форум</a></li>
+        <li><a href="#">Модные новости</a></li>
+        <li><a href="#">Часто задаваемые вопросы</a></li>
+        <li><a href="#">Правила сотрудничества</a></li>
+      </ul>
+      <!--/.footerNavLeft--> 
+    </nav>
+    <!--footerNavRight-->
+    <nav class="footerNavRight"> <a href="#" class="bigOrangeH txt13">Статьи</a>
+      <ul>
+        <li><a href="#">Длинный заголовок длинной длинной длинной длинной статьи</a></li>
+        <li><a href="#">Заголовок статьи</a></li>
+        <li><a href="#">Заголовок статьи</a></li>
+        <li><a href="#">Заголовок статьи</a></li>
+      </ul>
+      <a href="#" class="bigOrangeH txt11">Все статьи</a> 
+      <!--/.footerNavRight--> 
+    </nav>
+    <div class="clear"></div>
+    <!--/.inner--> 
+  </div>
+  <div class="footerBottom">
+    <!--inner-->
+    <div class="inner"> 
+    <a class="logoSF" href="http://www.seofactory.ru/" target="_blank">
+        <img src="themes/sapota/img/logoSeoFactory.png" alt="" />
+        <span>Создание и<br> продвижение сайтов</span>
+    </a>
+    <!--/.inner-->
+    </div>
+    <!--/.footerBottom--> 
+  </div>
+</footer>
+</body>
+</html>

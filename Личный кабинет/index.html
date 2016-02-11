@@ -10,15 +10,21 @@
 <!--link rel="shortcut icon" href="favicon.ico" type="image/x-icon"-->
 <!--link rel="stylesheet" type="text/css" href="themes/sapota/css/bootstrap.min.css"-->
 <link rel="stylesheet" type="text/css" href="themes/sapota/font-awesome/css/font-awesome.min.css">
+<!--link rel="stylesheet" type="text/css" href="themes/sapota/css/pagination.css"-->
+<link rel="stylesheet" type="text/css" href="themes/sapota/css/jquery.dataTables.css">
 <link rel="stylesheet" type="text/css" href="themes/sapota/css/reset.css">
 <link rel="stylesheet" type="text/css" href="themes/sapota/css/template.css">
-<link rel="stylesheet" type="text/css" href="themes/sapota/css/lk_style.css">
 <link rel="stylesheet" type="text/css" href="themes/sapota/css/prettyPhoto.css">
+<link rel="stylesheet" type="text/css" href="themes/sapota/css/lk_style.css">
 
 <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script-->
 <script src="themes/sapota/js/jquery.js"></script>
-<script src="themes/sapota/js/bootstrap.min.js"></script>
+<!--script src="themes/sapota/js/bootstrap.min.js"></script-->
 
+<!--постраничная пагинация-->
+<script src="themes/sapota/js/jquery.dataTables.js"></script>
+<!--script src="themes/sapota/js/jquery-migrate-1.2.1.js"></script>
+<script src="themes/sapota/js/pagination.js"></script-->
 <!--галлерея-->
 <script src="themes/sapota/js/jquery.prettyPhoto.js"></script>
 <!--маска для телефона-->
@@ -47,56 +53,81 @@
       $('#phoneRegSalon').mask('9 (999) 999-99-99');
       $('#phoneFormNonReg').mask('9 (999) 999-99-99');
   });
-</script> 
-
-<script>
- $(document).ready(function(){
-     $("a[rel^='prettyPhoto']").prettyPhoto({
-         animation_speed:'normal',//скорость анимации
-         theme:'design',//тема оформления
-         slideshow:3000,//время показа слайда
-         autoplay_slideshow: false//автоматический старт слайдшоу
-     });
- });
 </script>
 
 </head>
 <body>
 <div class="layout">
   <header class="headerMain">
-  
-  <!--/-----------------Войти на сайт добавил после 14.10.15--------------------------/-->
-  <div class="intoSiteFormWrapperAll" style="display:none;">
-      <div class="intoSiteFormWrapper">
-          <div class="intoSiteForm">
+
+      <!--/-----------------Войти на сайт добавил после 14.10.15--------------------------/-->
+      <div class="intoSiteFormWrapper_wrap" style="display:none;">
+          <div class="intoSiteFormWrapper">
               <img class="close_button" src="themes/sapota/img/close_button.png" />
-              <!--/----------простой вход на сайт----------/-->
-              <div class="intoSiteForm_content">
-                  <div class="bodyIntoSite">
-                      <div class="intoBlock">
-                          <h2 class="boldtext">Войти на сайт</h2>
-                          <span><input type="text" placeholder="Логин" /></span>
-                          <div class="passwordBlock">
+              <div class="intoSiteForm">
+                  <!--/----------простой вход на сайт----------/-->
+                  <div class="intoSiteForm_content">
+                      <div class="bodyIntoSite">
+                          <div class="intoBlock">
+                              <h2 class="boldtext">Войти на сайт</h2>
+                              <span><input type="text" placeholder="Логин" /></span>
+                              <div class="passwordBlock">
                             <span>
-                                <input type="text" placeholder="Пароль" />   
+                                <input type="password" class="password_input" placeholder="Пароль" />
+                                <div class="false_password">
+                                    Пароль неверный. <a href="#" title="">Напомнить пароль?</a>
+                                </div>   
                             </span>
-                            <span class="forgotPassword"><a href="#">Напомнить пароль</a></span>
+                                  <span class="forgotPassword"><a href="#">Напомнить пароль</a></span>
+                              </div>
                           </div>
-                      </div>
-                      <div class="intoButtonBlock">
-                          <button>Войти</button>
-                      </div>
-                      <div class="socialIn">
-                            <span class="social_text">Войти через:</span>
-                            <a href="#"><span class="social vk"></span></a>
-                            <a href="#"><span class="social f"></span></a>
+                          <div class="intoButtonBlock">
+                              <button>Войти</button>
+                          </div>
+                          <div class="socialIn">
+                              <span class="social_text">Войти через:</span>
+                              <a href="#"><span class="social vk"></span></a>
+                              <a href="#"><span class="social f"></span></a>
+                          </div>
                       </div>
                   </div>
               </div>
-              <!--/----------END простой вход на сайт----------/-->
-              
-              <!--/----------записаться к мастеру----------/-->
-              <div class="intoSiteForm_content toMaster" style="display:none;">
+          </div>
+      </div>
+      <!--/----------END простой вход на сайт----------/-->
+
+      <!--забыл пароль-->
+      <div class="forget_password_popup_wrap" style="display:none;">
+          <div class="forget_password_popup">
+              <img class="close_button" src="themes/sapota/img/close_button.png" />
+              <form method="POST" action="" name="forget_password_form" class="forget_password_form">
+                  <div class="intoSiteForm_content">
+                      <div class="bodyIntoSite">
+                          <div class="intoBlock">
+                              <h2 class="boldtext">Забыли пароль</h2>
+                              <span>
+                                  <input type="text" placeholder="E-mail" />
+                              </span>
+                              <div class="forget_password_text">
+                                  Введите Ваш e-mail.<br />
+                                  Вам будут высланы инструкции по восстановлению пароля.
+                              </div>
+                          </div>
+                          <div class="intoButtonBlock">
+                              <button>Восстановить</button>
+                          </div>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+      <!--./забыл пароль-->
+
+      <!--/----------записаться к мастеру----------/-->
+      <div class="writing_to_master_reg_wrap" style="display:none;">
+          <div class="writing_to_master_reg">
+              <img class="close_button" src="themes/sapota/img/close_button.png" />
+              <div class="intoSiteForm_content toMaster">
                   <div class="headerIntoSite">
                       Записаться к мастеру
                   </div>
@@ -112,26 +143,31 @@
                           <h2 class="boldtext">Войти на сайт</h2>
                           <span><input type="text" placeholder="Логин" /></span>
                           <div class="passwordBlock">
-                            <span>
-                                <input type="text" placeholder="Пароль" />   
-                            </span>
-                            <span class="forgotPassword"><a href="#">Напомнить пароль</a></span>
+                        <span>
+                            <input type="text" placeholder="Пароль" />
+                        </span>
+                              <span class="forgotPassword"><a href="#">Напомнить пароль</a></span>
                           </div>
                       </div>
                       <div class="intoButtonBlock">
                           <button>Войти</button>
                       </div>
                       <div class="socialIn">
-                            <span class="social_text">Войти через:</span>
-                            <a href="#"><span class="social vk"></span></a>
-                            <a href="#"><span class="social f"></span></a>
-                       </div>
+                          <span class="social_text">Войти через:</span>
+                          <a href="#"><span class="social vk"></span></a>
+                          <a href="#"><span class="social f"></span></a>
+                      </div>
                   </div>
               </div>
-              <!--/----------END записаться к мастеру----------/-->
-              
-              <!--/----------записаться к мастеру без регистрации----------/-->
-              <div class="intoNonRegSiteForm_content" style="display:none;">
+          </div>
+      </div>
+      <!--/----------END записаться к мастеру----------/-->
+
+      <!--/----------записаться к мастеру без регистрации----------/-->
+      <div class="writing_to_master_non_reg_wrap" style="display:none;">
+          <div class="writing_to_master_non_reg">
+              <img class="close_button" src="themes/sapota/img/close_button.png" />
+              <div class="intoNonRegSiteForm_content">
                   <div class="headerIntoSite">
                       Записаться к мастеру
                   </div>
@@ -143,9 +179,9 @@
                       <div class="needServices">
                           <h2 class="boldtext">Вы выбрали мастера/салон:</h2>
                           <div class="infoMaster">
-                              <span class="photoMaster">
-                                  <img src="themes/sapota/img/photoMaster.png" alt="" />
-                              </span>
+                          <span class="photoMaster">
+                              <img src="themes/sapota/img/photoMaster.png" alt="" />
+                          </span>
                               <span>Елена Иванова</span>
                           </div>
                       </div>
@@ -163,20 +199,19 @@
                           <button>Записаться без регистрации</button>
                       </div>
                       <div class="socialIn">
-                            <span><a href="#" title="">Зарегистрироваться</a></span>
-                            <span class="social_text">Войти через:</span>
-                            <a href="#"><span class="social vk"></span></a>
-                            <a href="#"><span class="social f"></span></a>
+                          <span><a href="#" title="">Зарегистрироваться</a></span>
+                          <span class="social_text">Войти через:</span>
+                          <a href="#"><span class="social vk"></span></a>
+                          <a href="#"><span class="social f"></span></a>
                       </div>
                   </div>
               </div>
-              <!--/----------END записаться к мастеру без регистрации----------/-->
           </div>
       </div>
-  </div>
+      <!--/----------END записаться к мастеру без регистрации----------/-->
   
   <!--/--------Попап при клике на фото в портфолио--------/-->
-  <div class="portfolioPhotoPopUpWrapper" style="display:none;">
+  <!--div class="portfolioPhotoPopUpWrapper" style="display:none;">
       <div class="portfolioPhotoPopUp">
           <div class="portfolioPhotoPopUpForm">
               <img class="close_button" src="themes/sapota/img/close_button.png" />
@@ -226,7 +261,7 @@
   <!--/-----------------END Войти на сайт добавил после 14.10.15--------------------------/-->
   
   <!--форма регистрации, клиенты-->
-  <div class="registrationClientFormWrapper" style="display:none;">
+  <div class="registrationClientForm_wrap" style="display:none;">
       <div class="registrationClientForm">
           <img class="close_button" src="themes/sapota/img/close_button.png" />
           <div class="headerClientReg">
@@ -271,7 +306,7 @@
   <!--END форма регистрации, клиенты-->
   
   <!--форма регистрации, мастера, салоны-->
-  <div class="registrationFormWrapper" style="display:none;">
+  <div class="registrationForm_wrap" style="display:none;">
       <div class="registrationForm">
           <img class="close_button" src="themes/sapota/img/close_button.png" />
           <div class="headerRegBlock">
@@ -359,6 +394,7 @@
       </div>
   </div>
   <!--END форма регистрации, мастера, салоны-->
+
   <div class="inner"> 
     <!--логин, телефон, лого-->
     <div class="logoPhoneLoginLeft">
@@ -387,9 +423,15 @@
               <a href="#">пополнить баланс?</a>
           </div>
         </div>
-        <div class="rating">
-            Ваш рейтинг: 4,5
-            <span class="ratingStars four"></span>
+        <div class="ratingMasterBox">
+            <p>Ваш рейтинг:
+                <span class="boldtext ratingNumber" data-rating="3">4,5</span>
+                <span class="ratingStarsOneStar">
+                    <span class="ratingStarsColor">
+                        <img src="themes/sapota/img/ratingStars.png" alt="">
+                    </span>
+                </span>
+            </p>
         </div>
         <button class="exit">
             выход
@@ -405,7 +447,6 @@
                 <!--работаю-->
                 в отпуске
               <div class="popupWrapper" style="display:none;">
-                <img src="themes/sapota/img/corner_popup.png" alt="corner" />
                 <div class="status_desc_wrapper">
                     <div class="status_desc">
                       <!--если статус "В отпуске"-->
@@ -486,14 +527,14 @@
       
       <form>
         <!--/--------блок с основной информацией (Анкета, Правила, Заказы, Кошелек)--------/-->
-        <div class="tabs" style="display:none;">
+        <div class="tabs">
         
         <!--НАВИГАЦИЯ ПО ВКЛАДКАМ-->
         <ul class="tabNavigation">
           <li><a class="selected" href="#anketa">Анкета</a></li>
           <li><a class="rulesCooperation" href="#problems">Правила сотрудничества</a></li>
           <li><a class="" href="#serveses">Заказы</a></li>
-          <li><a class="" href="#serveses">Кошелек</a></li>
+          <li><a class="" href="#purse">Кошелек</a></li>
         </ul>
         <div class="blockWithDarkBg bgInSerchFormWithTabs">
           <div class="innerSerchFormWithTabs"> 
@@ -527,9 +568,13 @@
                           <a href="#">Как видят мою анкету клиенты</a>
                       </li>
                   </ul>
-                  <div class="myServicesBlock" style="display:none;">
+                  
+				  <!--вкладка Прайс-лист, показывается когда мастер вводит стоимость своих услуг-->
+				  <div class="myServicesBlock" style="display:none;">
                       <span>Мои услуги:</span>
                   </div>
+				  <!--./вкладка Прайс-лист, показывается когда мастер вводит стоимость своих услуг-->
+				  
                   <div class="border_artWrapper">
                       <div class="border_art">
                           <div>
@@ -1367,32 +1412,1042 @@
                   </div>
                </div>
              </div>
-            </div>
-            <!--END вкладка Прайс-лист-->
-         </div>
-         <!--END вкладки с различной информацией-->
-                 
-                <div class="clear"></div>
-                <!--/#wizard--> 
-            </div>
-            
-            <!--ВКЛАДКА ВТОРАЯ. ПРАВИЛА СОТРУДНИЧЕСТВА-->
+            </div> 
+		</div>
+		<!--END вкладка Анкета-->
+		
+		<!--ВКЛАДКА ВТОРАЯ. ПРАВИЛА СОТРУДНИЧЕСТВА-->
             <div id="problems" class="tab_conteiner" style="display: none;">
                 <div class="colWidth150">
-
+					Правила сотрудничества
                 </div>                
                 <div class="clear"></div>
                 <!--/#problems--> 
             </div>
             
-            <!--ВКЛАДКА ТРЕТЬЯ. УСЛУГИ-->
+		<!--ВКЛАДКА ТРЕТЬЯ. ЗАКАЗЫ-->
             <div id="serveses" class="tab_conteiner" style="display: none;">
                 <div class="colWidth150">
-                
+					Заказы
                 </div> 
                 <div class="clear"></div>
                 <!--/#serveses--> 
             </div>
+			
+		<!--ВКЛАДКА ТРЕТЬЯ. КОШЕЛЕК-->
+            <div id="purse" class="tab_conteiner" style="display: none;">
+                <div class="colWidth150 purse">
+					<div class="moneyToPurse">
+						В кошельке<br />
+						<span>3000</span> руб.
+					</div>
+					<ul class="purseMenu">
+						<li><a href="#historyOperationWrap" title="" class="active">История операций</a></li>
+						<li><a href="#purseService" title="" class="purseMenuServices">Услуги</a></li>
+						<li><a href="#purseAddition" title="" class="purseMenuAddition">Пополнение</a></li>
+					</ul>
+					<div class="border_artWrapper">
+						<div class="border_art">
+							<div>
+								<img src="themes/sapota/img/border_img_top.png">
+							</div>
+							<div class="border_art_bottom">
+								<img src="themes/sapota/img/border_img_bottom.png">
+							</div>
+						</div>
+					</div>
+                </div> 
+				<div class="mainContentPurseWrapper">
+					<!--история операций-->
+					<div  class="tablePurseHistoryWrap" id="historyOperationWrap">
+						<table class="tablePurseHistory" id="historyOperation">
+							<thead class="header">
+								<tr>
+									<th class="dateHistory">Дата</th>
+									<th class="fitHistory">Приход</th>
+									<th class="rateHistory">Расход</th>
+									<th class="nameHistory">Название</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+								<tr>
+									<td>01.06.2015</td>
+									<td>-</td>
+									<td>1 000</td>
+									<td>Пакет "VIP"</td>
+								</tr>
+								<tr>
+									<td>01.03.2015</td>
+									<td>10 000</td>
+									<td>-</td>
+									<td>Маникюр</td>
+								</tr>
+								<tr>
+									<td>02.03.2015</td>
+									<td>-</td>
+									<td>3 000</td>
+									<td>Пакет "Год"</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!--./история операций-->
+					
+					<!--услуги-->	
+					<div class="purseServiceWrap" id="purseService" style="display: none;">
+						<div class="purseServiceHeader">Хотитие продать свою услугу быстрее?</div>
+						<div class="tablePurseService">
+							<div class="row">
+								<div class="checkService">
+									<label>
+										<span class="check redChecked"></span>								
+									</label>
+								</div>
+								<div class="makeService">
+                                    <span class="nameService">Сделать Премиум</span>
+                                    <span class="service_addDesc">в 5 раз больше просмотров!</span>
+                                </div>
+								<div class="descService">
+									<p class="serviceCost">стоимость: <span>1000</span> руб.</p>
+									<a href="#" title="" class="service_addDesc">
+										<span>подробнее</span>
+									</a>
+									<div class="fullDescService" style="display:none;">
+										<h3>Описание услуги</h3>
+										<p class="serviceDescriptionText">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elementum viverra mattis.
+											Donec non fermentum urna. Phasellus eu malesuada ipsum. Nullam aliquam congue varius.
+											Nam condimentum magna eu libero ultrices, eu auctor purus scelerisque.
+											Suspendisse luctus diam ut nisl sollicitudin, id dictum sem eleifend.
+											Morbi gravida blandit dolor, id tristique metus laoreet scelerisque.
+											Curabitur malesuada efficitur metus, at vestibulum lacus volutpat in.
+											Fusce et nisi ultricies, fringilla ex nec, condimentum tortor.
+											Mauris eu orci nisl. Ut venenatis convallis orci nec elementum.
+										</p>
+										<p class="serviceCost">Стоимость услуги: <span>2000</span> руб.</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="checkService">
+									<label>
+										<span class="check redChecked"></span>								
+									</label>
+								</div>
+								<div class="makeService">
+                                    <span class="nameService">Сделать VIP</span>
+                                    <span class="service_addDesc">в 5 раз больше просмотров!</span>
+                                </div>
+								<div class="descService">
+                                    <p class="serviceCost">стоимость: <span>1500</span> руб.</p>
+									<a href="#" title="" class="service_addDesc">
+										<span>подробнее</span>
+									</a>
+									<div class="fullDescService" style="display:none;">
+										<h3>Описание услуги</h3>
+										<p class="serviceDescriptionText">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elementum viverra mattis.
+											Donec non fermentum urna. Phasellus eu malesuada ipsum. Nullam aliquam congue varius.
+											Nam condimentum magna eu libero ultrices, eu auctor purus scelerisque.
+											Suspendisse luctus diam ut nisl sollicitudin, id dictum sem eleifend.
+											Morbi gravida blandit dolor, id tristique metus laoreet scelerisque.
+											Curabitur malesuada efficitur metus, at vestibulum lacus volutpat in.
+											Fusce et nisi ultricies, fringilla ex nec, condimentum tortor.
+											Mauris eu orci nisl. Ut venenatis convallis orci nec elementum.
+										</p>
+										<p class="serviceCost">Стоимость услуги: <span>2000</span> руб.</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="checkService">
+									<label>
+										<span class="check redChecked"></span>								
+									</label>
+								</div>
+								<div class="makeService">
+                                    <span class="nameService">Выделить</span>
+                                    <span class="service_addDesc">в 5 раз больше просмотров!</span>
+                                </div>
+								<div class="descService">
+                                    <p class="serviceCost">стоимость: <span>2000</span> руб.</p>
+									<a href="#" title="" class="service_addDesc">
+										<span>подробнее</span>
+									</a>
+									<div class="fullDescService" style="display:none;">
+										<h3>Описание услуги</h3>
+										<p class="serviceDescriptionText">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elementum viverra mattis.
+											Donec non fermentum urna. Phasellus eu malesuada ipsum. Nullam aliquam congue varius.
+											Nam condimentum magna eu libero ultrices, eu auctor purus scelerisque.
+											Suspendisse luctus diam ut nisl sollicitudin, id dictum sem eleifend.
+											Morbi gravida blandit dolor, id tristique metus laoreet scelerisque.
+											Curabitur malesuada efficitur metus, at vestibulum lacus volutpat in.
+											Fusce et nisi ultricies, fringilla ex nec, condimentum tortor.
+											Mauris eu orci nisl. Ut venenatis convallis orci nec elementum.
+										</p>
+										<p class="serviceCost">Стоимость услуги: <span>2000</span> руб.</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="checkService">
+									<label>
+										<span class="check redChecked"></span>								
+									</label>
+								</div>
+								<div class="makeService">
+                                    <span class="nameService">Поднять в поиске</span>
+                                    <span class="service_addDesc">в 5 раз больше просмотров!</span>
+                                </div>
+								<div class="descService">
+                                    <p class="serviceCost">стоимость: <span>2500</span> руб.</p>
+									<a href="#" title="" class="service_addDesc">
+										<span>подробнее</span>
+									</a>
+									<div class="fullDescService" style="display:none;">
+										<h3>Описание услуги</h3>
+										<p class="serviceDescriptionText">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elementum viverra mattis.
+											Donec non fermentum urna. Phasellus eu malesuada ipsum. Nullam aliquam congue varius.
+											Nam condimentum magna eu libero ultrices, eu auctor purus scelerisque.
+											Suspendisse luctus diam ut nisl sollicitudin, id dictum sem eleifend.
+											Morbi gravida blandit dolor, id tristique metus laoreet scelerisque.
+											Curabitur malesuada efficitur metus, at vestibulum lacus volutpat in.
+											Fusce et nisi ultricies, fringilla ex nec, condimentum tortor.
+											Mauris eu orci nisl. Ut venenatis convallis orci nec elementum.
+										</p>
+										<p class="serviceCost">Стоимость услуги: <span>2000</span> руб.</p>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="checkService package">
+									<label>
+										<span class="check redChecked"></span>								
+									</label>
+								</div>
+								<div class="makeService">
+                                    <span class="nameService">Применить пакет услуг</span>
+                                    <span class="service_addDesc">в 5 раз больше просмотров!</span>
+                                </div>
+								<div class="descService">
+                                    <p class="serviceCost">стоимость: <span>5000</span> руб.</p>
+									<a href="#" title="" class="service_addDesc">
+										<span>подробнее</span>
+									</a>
+									<div class="fullDescService" style="display:none;">
+										<h3>Описание услуги</h3>
+										<p class="serviceDescriptionText">
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elementum viverra mattis.
+											Donec non fermentum urna. Phasellus eu malesuada ipsum. Nullam aliquam congue varius.
+											Nam condimentum magna eu libero ultrices, eu auctor purus scelerisque.
+											Suspendisse luctus diam ut nisl sollicitudin, id dictum sem eleifend.
+											Morbi gravida blandit dolor, id tristique metus laoreet scelerisque.
+											Curabitur malesuada efficitur metus, at vestibulum lacus volutpat in.
+											Fusce et nisi ultricies, fringilla ex nec, condimentum tortor.
+											Mauris eu orci nisl. Ut venenatis convallis orci nec elementum.
+										</p>
+										<p class="serviceCost">Стоимость услуги: <span>2000</span> руб.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+                        <div class="noMoneyPayService" style="display: none;">
+                            К сожалению, в вашем кошельке не достаточно средств для оплаты выбранной вами услуги.
+                            <div class="navNoMoneyDiv">
+                                <div class="returnChooseService">
+                                    <a href="#" title="">Вернуться к выбору услуг</a>
+                                </div>
+                                <div class="goAddMoney">
+                                    <a href="#" title="">Перейти к пополнению кошелька</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="payChooseService" style="display: none;">
+                            Вы выбрали услугу/услуги <span class="nameServicesText"></span>. Оплатить из кошелька <span class="valueSum"></span> руб.
+                            <div class="payOnBtnWrap">
+                                <button type="submit" class="payOnBtn"><span>Оплатить</span></button>
+                            </div>
+                            <div class="returnChooseService">
+                                <a href="#" title="">Вернуться к выбору услуг</a>
+                            </div>
+                        </div>
+                        <div class="buttonWrap">
+                            <div class="buttonInfoPopup" style="display:none;">
+                                Вы не выбрали ни одной услуги
+                            </div>
+                            <button type="submit" class="keepOnBtn"><span>Продолжить</span></button>
+                        </div>
+					</div>
+					<!--./услуги-->
+					
+					<!--Пополнение-->
+					<div class="increaseWrapper" id="purseAddition" style="display:none;">
+						<!--платежные системы-->
+                        <div class="increasePurseWrapper">
+							<div class="increasePurse">
+								<div class="increasePurseHeader">Пополнить кошелек</div>
+								<div class="increasePurseTable">
+									<div class="row">
+										<div class="checkService">
+											<label>
+												<span class="check redChecked"></span>
+											</label>
+										</div>
+										<div class="onlinePay">
+											<span class="paysistem yandex_m"></span>
+											<span class="namePaySystem">Яндекс.Деньги</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="checkService">
+											<label>
+												<span class="check redChecked"></span>								
+											</label>
+										</div>
+										<div class="onlinePay">
+											<span class="paysistem webmoney"></span>
+											<span class="namePaySystem">WebMoney</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="checkService">
+											<label>
+												<span class="check redChecked"></span>								
+											</label>
+										</div>
+										<div class="onlinePay">
+											<span class="paysistem qiwi"></span>
+											<span class="namePaySystem">QIWI</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="checkService">
+											<label>
+												<span class="check redChecked"></span>								
+											</label>
+										</div>
+										<div class="onlinePay">
+											<span class="paysistem paypal"></span>
+											<span class="namePaySystem">PayPal</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="checkService">
+											<label>
+												<span class="check redChecked"></span>								
+											</label>
+										</div>
+										<div class="onlinePay">
+											<span class="paysistem robokassa"></span>
+											<span class="namePaySystem">Robokassa</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="checkService">
+											<label>
+												<span class="check redChecked"></span>								
+											</label>
+										</div>
+										<div class="onlinePay">
+											<span class="paysistem mastercard"></span>
+											<span class="namePaySystem">MasterCard</span>
+										</div>
+									</div>
+									<div class="row">
+										<div class="checkService">
+											<label>
+												<span class="check redChecked"></span>								
+											</label>
+										</div>
+										<div class="onlinePay">
+											<span class="paysistem visa"></span>
+											<span class="namePaySystem">Visa</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                        <!--./платежные системы-->
+
+                        <!--услуги-->
+						<div class="increasePayServiceWrapper">
+							<div class="increasePayService">
+								<div class="increasePayServiceHeader">Оплатить услугу</div>
+								<div class="increasePayServiceTable">
+									<div class="row">
+										<div class="checkService">
+											<label>
+												<span class="check redChecked"></span>								
+											</label>
+										</div>
+										<div class="makeService"><span class="nameService">Сделать Премиум</span><span class="service_addDesc">в 5 раз больше просмотров!</span></div>
+										<div class="descService">
+                                            <p class="serviceCost">стоимость: <span>1000</span> руб.</p>
+											<a href="#" title="" class="service_addDesc">
+												<span>подробнее</span>
+											</a>
+											<div class="fullDescService" style="display:none;">
+												<h3>Описание услуги</h3>
+												<p class="serviceDescriptionText">
+													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elementum viverra mattis.
+													Donec non fermentum urna. Phasellus eu malesuada ipsum. Nullam aliquam congue varius.
+													Nam condimentum magna eu libero ultrices, eu auctor purus scelerisque.
+													Suspendisse luctus diam ut nisl sollicitudin, id dictum sem eleifend.
+													Morbi gravida blandit dolor, id tristique metus laoreet scelerisque.
+													Curabitur malesuada efficitur metus, at vestibulum lacus volutpat in.
+													Fusce et nisi ultricies, fringilla ex nec, condimentum tortor.
+													Mauris eu orci nisl. Ut venenatis convallis orci nec elementum.
+												</p>
+												<p class="serviceCost">Стоимость услуги: <span>2000 руб.</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="checkService">
+											<label>
+												<span class="check redChecked"></span>								
+											</label>
+										</div>
+										<div class="makeService"><span class="nameService">Сделать VIP</span><span class="service_addDesc">в 5 раз больше просмотров!</span></div>
+										<div class="descService">
+                                            <p class="serviceCost">стоимость: <span>1500</span> руб.</p>
+											<a href="#" title="" class="service_addDesc">
+												<span>подробнее</span>
+											</a>
+											<div class="fullDescService" style="display:none;">
+												<h3>Описание услуги</h3>
+												<p class="serviceDescriptionText">
+													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elementum viverra mattis.
+													Donec non fermentum urna. Phasellus eu malesuada ipsum. Nullam aliquam congue varius.
+													Nam condimentum magna eu libero ultrices, eu auctor purus scelerisque.
+													Suspendisse luctus diam ut nisl sollicitudin, id dictum sem eleifend.
+													Morbi gravida blandit dolor, id tristique metus laoreet scelerisque.
+													Curabitur malesuada efficitur metus, at vestibulum lacus volutpat in.
+													Fusce et nisi ultricies, fringilla ex nec, condimentum tortor.
+													Mauris eu orci nisl. Ut venenatis convallis orci nec elementum.
+												</p>
+												<p class="serviceCost">Стоимость услуги: <span>2000 руб.</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="checkService">
+											<label>
+												<span class="check redChecked"></span>								
+											</label>
+										</div>
+										<div class="makeService"><span class="nameService">Выделить</span><span class="service_addDesc">в 5 раз больше просмотров!</span></div>
+										<div class="descService">
+                                            <p class="serviceCost">стоимость: <span>2000</span> руб.</p>
+											<a href="#" title="" class="service_addDesc">
+												<span>подробнее</span>
+											</a>
+											<div class="fullDescService" style="display:none;">
+												<h3>Описание услуги</h3>
+												<p class="serviceDescriptionText">
+													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elementum viverra mattis.
+													Donec non fermentum urna. Phasellus eu malesuada ipsum. Nullam aliquam congue varius.
+													Nam condimentum magna eu libero ultrices, eu auctor purus scelerisque.
+													Suspendisse luctus diam ut nisl sollicitudin, id dictum sem eleifend.
+													Morbi gravida blandit dolor, id tristique metus laoreet scelerisque.
+													Curabitur malesuada efficitur metus, at vestibulum lacus volutpat in.
+													Fusce et nisi ultricies, fringilla ex nec, condimentum tortor.
+													Mauris eu orci nisl. Ut venenatis convallis orci nec elementum.
+												</p>
+												<p class="serviceCost">Стоимость услуги: <span>2000 руб.</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="checkService">
+											<label>
+												<span class="check redChecked"></span>								
+											</label>
+										</div>
+										<div class="makeService"><span class="nameService">Поднять в поиске</span><span class="service_addDesc">в 5 раз больше просмотров!</span></div>
+										<div class="descService">
+                                            <p class="serviceCost">стоимость: <span>2500</span> руб.</p>
+											<a href="#" title="" class="service_addDesc">
+												<span>подробнее</span>
+											</a>
+											<div class="fullDescService" style="display:none;">
+												<h3>Описание услуги</h3>
+												<p class="serviceDescriptionText">
+													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elementum viverra mattis.
+													Donec non fermentum urna. Phasellus eu malesuada ipsum. Nullam aliquam congue varius.
+													Nam condimentum magna eu libero ultrices, eu auctor purus scelerisque.
+													Suspendisse luctus diam ut nisl sollicitudin, id dictum sem eleifend.
+													Morbi gravida blandit dolor, id tristique metus laoreet scelerisque.
+													Curabitur malesuada efficitur metus, at vestibulum lacus volutpat in.
+													Fusce et nisi ultricies, fringilla ex nec, condimentum tortor.
+													Mauris eu orci nisl. Ut venenatis convallis orci nec elementum.
+												</p>
+												<p class="serviceCost">Стоимость услуги: <span>2000 руб.</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="checkService">
+											<label>
+												<span class="check redChecked"></span>								
+											</label>
+										</div>
+										<div class="makeService"><span class="nameService">Применить пакет услуг</span><span class="service_addDesc">в 5 раз больше просмотров!</span></div>
+										<div class="descService">
+                                            <p class="serviceCost">стоимость: <span>5000</span> руб.</p>
+											<a href="#" title="" class="service_addDesc">
+												<span>подробнее</span>
+											</a>
+											<div class="fullDescService" style="display:none;">
+												<h3>Описание услуги</h3>
+												<p class="serviceDescriptionText">
+													Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elementum viverra mattis.
+													Donec non fermentum urna. Phasellus eu malesuada ipsum. Nullam aliquam congue varius.
+													Nam condimentum magna eu libero ultrices, eu auctor purus scelerisque.
+													Suspendisse luctus diam ut nisl sollicitudin, id dictum sem eleifend.
+													Morbi gravida blandit dolor, id tristique metus laoreet scelerisque.
+													Curabitur malesuada efficitur metus, at vestibulum lacus volutpat in.
+													Fusce et nisi ultricies, fringilla ex nec, condimentum tortor.
+													Mauris eu orci nisl. Ut venenatis convallis orci nec elementum.
+												</p>
+												<p class="serviceCost">Стоимость услуги: <span>2000 руб.</span></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                            <div class="buttonWrap">
+                                <div class="buttonInfoPopup" style="display:none;">
+                                    Вы не выбрали ни одной платежной системы.
+                                </div>
+                                <button type="submit" class="keepOnBtn"><span>Продолжить</span></button>
+                            </div>
+						</div>
+                        <!--./услуги-->
+                        <div class="increasePayInfoText" style="display:none;">
+                            Вы хотите пополнить Кошелек через <a href="#" title="" target="_blank" class="namePaySystemLink"><span class="namePaySystemText"></span></a>?
+                            <label class="sum_pay_label">
+                                Введите сумму
+                                <input class="sum_pay" type="text" /> руб.
+                            </label>
+                            <div class="addMoneyWrap">
+                                <button type="submit" class="addMoneyButton"><span>Пополнить</span></button>
+                            </div>
+                            <div class="returnChoosePaySystem">
+                                <a href="#" title="">Вернуться к выбору платежной системы</a>
+                            </div>
+                        </div>
+                        <div class="payService_paySystem" style="display: none;">
+                            <p>Вы выбрали услугу/услуги <span class="nameServicesText_paySystem"></span>.<p>
+                            Оплатить через <a href="" title="" target="_blank" class="namePaySystemLink"><span class="namePaySys"></span></a> сумму <span class="valueSum_paySystem"></span> руб.?
+                            <div class="payOnBtnWrap_paySystem">
+                                <button type="submit" class="payOnBtn_paySystem"><span>Оплатить</span></button>
+                            </div>
+                            <div class="returnChoosePaySystem">
+                                <a href="#" title="">Вернуться к выбору платежной системы или услуг</a>
+                            </div>
+                        </div>
+					</div>
+					<!--./Пополнение-->
+				</div>
+                <div class="clear"></div>
+                <!--/#serveses--> 
+            </div>
+	 <!--END вкладки с различной информацией-->
+                 
+			<div class="clear"></div>
+                <!--/#wizard--> 
+            </div>
+            
+            
             
             <!--/.innerSerchFormWithTabs--> 
           </div>
@@ -1402,908 +2457,6 @@
         </div>
         <!--/.tabs-->
         <!--/--------END блок с основной информацией (Анкета, Правила, Заказы, Кошелек)--------/-->
-        
-        <!--/--------Так видят Вашу анкету клиенты (мастер)--------/-->
-        <div class="viewAnketaMasterWrapper" style="display:none;"><!---->
-            <div class="infoMasterWrapper">
-                <div class="photoMaster">
-                    <div class="popUpViewAnketaWrapper">
-                        <div class="popUpViewAnketa">
-                            <img src="themes/sapota/img/corner_popup_bottom.png" alt="corner">
-                            Так видят Вашу анкету клиенты. <a href="" title="">Вернуться к редактированию профиля</a>
-                        </div>
-                    </div>
-                    <div class="masterName">Елена Иванова</div>
-                    <div class="masterPhotoRating">
-                        <div class="photoMasterBox">
-                            <img src="themes/sapota/img/photo_master.jpg" alt="" />
-                        </div>
-                        <div class="ratingMasterBox">
-                            <p>опыт: <span class="boldtext">5 лет</span></p>
-                            <p>рейтинг: <span class="boldtext ratingNumber">4,5</span></p>
-                            <div class="ratingStarsColor">
-                                <img src="themes/sapota/img/ratingStars.png" alt="" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="masterMessage">
-                        <button class="messMasterButton">Связаться с мастером</button>
-                        <a href="#" title="" class="addCompare">добавить к сравнению</a>
-                    </div>
-                    <div class="masterPhone">
-                        <p class="phoneBox">
-                            <i class="fa fa-phone"></i>
-                            <span class="phoneNumberMaster" style="display:none;">+7 (800) 800-90-90</span>
-                            <span class="showPhoneNumberMaster">Показать номер телефона</span>
-                        </p>
-                        <p class="workClockBox">
-                            <i class="fa fa-clock-o"></i>
-                            <span>
-                                пн-пт 9:00-18:00<br />
-                                сб-вс 6:00-21:00
-                            </span>
-                        </p>
-                    </div>
-                </div>
-                <div class="infoMasterAnketa">
-                    <h1>Свадебный стилист</h1>
-                    <p class="mainJob">
-                        <span class="boldtext">Основные направления: </span>
-                        свадебная прическа, макияж, репетиция прически и макияжа, подбор стиля, вечерняя прическа, вечерний макияж.
-                    </p>
-                    <p class="addJob">
-                        <span class="boldtext">Дополнительное направление: </span>
-                        мастер татуировок
-                    </p>
-                    <h2>О себе:</h2>
-                    <p class="oneself" style="display:none;">
-                        Макияж, в моем восприятии - это средство самовыражения женщины.
-                        Макияж способен воспламенить ту индивидуальную искорку, которая живет внутри каждой женщины!
-                        И я с радостью помогаю женщинам раскрыться.<br />
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec dui a enim tincidunt facilisis. Mauris ut ullamcorper velit.
-                        Vivamus non sollicitudin quam. Morbi dapibus dolor quis leo tincidunt, ut posuere diam volutpat.
-                        Nulla tincidunt urna nulla, in varius tortor iaculis quis. Praesent viverra elit sed hendrerit pellentesque.
-                        Phasellus sed interdum quam. Donec sollicitudin odio nec ante finibus feugiat. Donec scelerisque scelerisque porta.
-                        Nulla facilisi. Nam sed fermentum purus. Vestibulum volutpat tempor ipsum. Ut blandit velit lorem, ac placerat diam vehicula ut.
-                        Nam orci est, consequat vel lobortis a, imperdiet eget velit.<br />
-                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam aliquet efficitur nunc a egestas.
-                        Integer et magna tincidunt, pharetra neque in, venenatis diam. Nam quis blandit dolor, sed placerat nisl.
-                        In eget mattis erat, eu mollis nisl. Aliquam fermentum, ante quis vulputate rhoncus, tellus magna blandit ex, et varius ante nisi id nulla.
-                        Integer tempus eu lectus a sagittis. Phasellus dui lacus, euismod sit amet risus sed, placerat pulvinar erat.
-                        Nullam sit amet ullamcorper felis, et ultrices libero. Vestibulum at varius mauris.
-                    </p>
-                    <div class="showFull"><a href="#" title="" class="showAllOnself">показать полностью</a></div>
-                    <div class="borderBox"></div><!--разделительная линия-->
-                    <h1>Стоимость услуг</h1>
-                    <div class="costServiceBox">
-                        <div>
-                            Свадебная прическа и макияж + репетиция
-                            <span>13 000</span>
-                        </div>
-                        <div>
-                            Свадебная прическа и макияж + репетиция
-                            <span>13 000</span>
-                        </div>
-                        <div>
-                            Свадебная прическа и макияж + репетиция
-                            <span>13 000</span>
-                        </div>
-                        <div class="costAddServiceBox" style="display:none;">
-                            <div>
-                                Свадебная прическа и макияж + репетиция
-                                <span>13 000</span>
-                            </div>
-                            <div>
-                                Свадебная прическа и макияж + репетиция
-                                <span>13 000</span>
-                            </div>
-                            <div>
-                                Свадебная прическа и макияж + репетиция
-                                <span>13 000</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="costAddService"><a href="#" title="" class="costAddServiceLink">стоимость дополнительных услуг</a></div>
-                </div>
-                <div class="addressMaster">
-                    <div class="mapBlock">
-                        <img src="themes/sapota/img/map_example.jpg" alt="map">
-                    </div>
-                    <div class="addressBox">
-                        <i class="fa fa-map-o"></i>
-                        <div class="addressMasterTextWrapper">
-                            <div class="addressMasterText">
-                                <div>
-                                    <span class="boldtext">город:</span><span>Москва</span>
-                                </div>
-                                <div style="display:none;">
-                                    <span class="boldtext">район:</span><span class="areaName">Тушинский</span><!--/--------------Если район выезда--------------/-->
-                                </div>
-                                <div>
-                                    <span class="boldtext">метро:</span><span class="undergroundNameandImage"><img src="themes/sapota/img/underground.png" alt="" />Кожуховская</span><!--/-------Если метро выезда------/-->
-                                </div>
-                                <div>
-                                    <span class="boldtext">адрес:</span><span>2-й Южнопортовый проезд, д.18, стр.1</span>
-                                </div>
-                                <div class="exitToClient">
-                                    <i class="fa fa-car"></i>
-                                    <span class="boldtext">выезд к клиенту:</span><span>возможен</span>
-                                </div>
-                            </div>
-                            <div class="regionExit" style="display:none;"><!--/--------------Если район выезда--------------/-->
-                                <span class="boldtext ">район выезда</span>
-                                <span class="areaExit">(5)</span>: 
-                                <div>ЮВАО</div>
-                                <div>ВАО</div>
-                                <div class="lastVisibleArea">ЮАО</div>
-                                <div style="display:none;">ЗАО</div>
-                                <div style="display:none;">ЮЗАО</div>
-                                <a href="#" title="" class="showAllArea">Показать все</a>
-                            </div>
-                            <div class="undergroundExit"><!--/-------Если метро выезда------/-->
-                                <img src="themes/sapota/img/underground.png" alt="" />
-                                <span class="boldtext ">станции выезда</span>
-                                <span class="areaExit">(5)</span>: 
-                                <div>Бабушкинская</div>
-                                <div>Пушкинская</div>
-                                <div class="lastVisibleArea">Спортивная</div>
-                                <div style="display:none;">Лужники</div>
-                                <div style="display:none;">Марьина роща</div>
-                                <a href="#" title="" class="showAllArea">Показать все</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="borderBox"></div><!--разделительная линия-->
-            <div class="portfolioMasterWrapper">
-                <div class="countPortfolio">
-                    <div class="countPortfolioText">Портфолио: 15 работ</div>
-                    <a href="#" title="" class="showAllPhotosPortfolio">Показать все работы</a>
-                </div>
-                <div class="photosPortfolio">
-                    <!--/--------код для галлереи PrettyPhoto--------/-->
-                    <!--ul class="gallery clearfix">
-                        <li>
-                            <a title="Описание снизу" href="themes/sapota/img/big/portfolio1.jpg" rel="prettyPhoto[gallery1]">
-                                
-                                <img src="themes/sapota/img/portfolio1.jpg" alt="Название вверху" width="119" height="auto" />
-                                <div class="title" style="display: none;">Название</div>
-                                <div class="description" style="display: none;">Описание</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="themes/sapota/img/big/portfolio2.jpg" rel="prettyPhoto[gallery1]">
-                                <img src="themes/sapota/img/portfolio2.jpg" alt="Название вверху" width="119" height="auto" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="themes/sapota/img/big/portfolio3.jpg" rel="prettyPhoto[gallery1]">
-                                <img src="themes/sapota/img/portfolio3.jpg" alt="Название вверху" width="119" height="auto" />
-                            </a>
-                        </li>
-                    </ul><div class="clear"></div>-->
-                    <span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-                    <span><img src="themes/sapota/img/portfolio2.jpg" alt=""></span>
-                    <span><img src="themes/sapota/img/portfolio3.jpg" alt=""></span>
-                    <span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-                    <span><img src="themes/sapota/img/portfolio2.jpg" alt=""></span>
-                    <span><img src="themes/sapota/img/portfolio3.jpg" alt=""></span>
-                    <div class="portfolioImgHide" style="display:none;">
-                        <span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-                        <span><img src="themes/sapota/img/portfolio2.jpg" alt=""></span>
-                        <span><img src="themes/sapota/img/portfolio3.jpg" alt=""></span>
-                        <span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-                        <span><img src="themes/sapota/img/portfolio2.jpg" alt=""></span>
-                        <span><img src="themes/sapota/img/portfolio3.jpg" alt=""></span>
-                        <span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-                        <span><img src="themes/sapota/img/portfolio2.jpg" alt=""></span>
-                        <span><img src="themes/sapota/img/portfolio3.jpg" alt=""></span>
-                    </div>
-                </div>
-            </div>
-            <div class="borderBox"></div><!--разделительная линия-->
-            <div class="opinionMasterWrapper">
-                <div class="opinionCount">
-                    <div class="opinionCountText">Отзывы: 3 отзыва</div>
-                    <a href="#" title="" class="showAllOpinion">Показать все отзывы</a>
-                </div>
-                <div class="opinionText">
-                    <div class="opinionTextWrapper"><!--первый отзыв-->
-                        <div class="clientNameOpinion">
-                            <span class="boldtext">Ирина Константиновна</span>
-                            <span>оценка: <span class="jobEvaluation">3,5</span></span>
-                        </div>
-                        <div class="clientDateOpinion">
-                            <span>12.12.2012</span>
-                            <div class="ratingStarsColor">
-                                <img src="themes/sapota/img/ratingStars.png" alt="" />
-                            </div>
-                        </div>
-                        <div class="clientTextOpinion">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna dolor, facilisis sed tempor dapibus, consequat eget felis.
-                            Proin id justo tellus. Integer a urna tortor. Nulla nec massa sit amet odio tempus fringilla. Aenean eget urna non neque volutpat iaculis.
-                            Aliquam lorem sapien, vehicula non lectus quis, ullamcorper pharetra libero.
-                            Donec ornare, orci quis eleifend lobortis, mi ante vehicula quam, mollis luctus orci libero sit amet orci. Donec eget varius quam, egestas ullamcorper odio.
-                            Aenean magna velit, fermentum eu pretium sit amet, tristique ac urna.
-                        </div>
-                    </div>
-                    <div class="borderBox"></div>
-                    <div class="opinionTextWrapper"><!--второй отзыв-->
-                        <div class="clientNameOpinion">
-                            <span class="boldtext">Ирина Константиновна</span>
-                            <span>оценка: <span class="jobEvaluation">1,5</span></span>
-                        </div>
-                        <div class="clientDateOpinion">
-                            <span>12.12.2012</span>
-                            <div class="ratingStarsColor">
-                                <img src="themes/sapota/img/ratingStars.png" alt="" />
-                            </div>
-                        </div>
-                        <div class="clientTextOpinion">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna dolor, facilisis sed tempor dapibus, consequat eget felis.
-                            Proin id justo tellus. Integer a urna tortor. Nulla nec massa sit amet odio tempus fringilla. Aenean eget urna non neque volutpat iaculis.
-                            Aliquam lorem sapien, vehicula non lectus quis, ullamcorper pharetra libero.
-                            Donec ornare, orci quis eleifend lobortis, mi ante vehicula quam, mollis luctus orci libero sit amet orci. Donec eget varius quam, egestas ullamcorper odio.
-                            Aenean magna velit, fermentum eu pretium sit amet, tristique ac urna.
-                        </div>
-                    </div>
-                    <div class="borderBox"></div>
-                    <div class="opinionTextWrapper"><!--третий отзыв-->
-                        <div class="clientNameOpinion">
-                            <span class="boldtext">Ирина Константиновна</span>
-                            <span>оценка: <span class="jobEvaluation">5</span></span>
-                        </div>
-                        <div class="clientDateOpinion">
-                            <span>12.12.2012</span>
-                            <div class="ratingStarsColor">
-                                <img src="themes/sapota/img/ratingStars.png" alt="" />
-                            </div>
-                        </div>
-                        <div class="clientTextOpinion">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna dolor, facilisis sed tempor dapibus, consequat eget felis.
-                            Proin id justo tellus. Integer a urna tortor. Nulla nec massa sit amet odio tempus fringilla. Aenean eget urna non neque volutpat iaculis.
-                            Aliquam lorem sapien, vehicula non lectus quis, ullamcorper pharetra libero.
-                            Donec ornare, orci quis eleifend lobortis, mi ante vehicula quam, mollis luctus orci libero sit amet orci. Donec eget varius quam, egestas ullamcorper odio.
-                            Aenean magna velit, fermentum eu pretium sit amet, tristique ac urna.
-                        </div>
-                    </div>
-                </div>
-                <div class="opinionStay">
-                    <button class="opinionStayBtn">Оставить отзыв</button>
-                    <div class="socialNetworks">
-                        <span>Рекомендовать мастера</span>
-                        <ul>
-                          <li class="vk"><a href="#"></a></li>
-                          <li class="fb"><a href="#"></a></li>
-                          <li class="odn"><a href="#"></a></li>
-                        </ul>
-                    </div>
-                    <a href="#" title="">Пожаловаться</a>
-                </div>
-            </div>
-        </div>
-        <!--/--------END Так видят Вашу анкету клиенты (мастер)--------/-->  
-		
-		<!--/--------Так видят Вашу анкету клиенты (салон)--------/-->
-		<div class="viewAnketaMasterWrapper salon"><!-- style="display:none;"-->
-			<div class="infoMasterWrapper">
-                <div class="photoMaster">
-                    <div class="popUpViewAnketaWrapper">
-                        <div class="popUpViewAnketa">
-                            <img src="themes/sapota/img/corner_popup_bottom.png" alt="corner">
-                            Так видят Вашу анкету клиенты. <a href="" title="">Вернуться к редактированию профиля</a>
-                        </div>
-                    </div>
-                    <div class="masterName">Angel Salon & Spa</div>
-                    <div class="masterPhotoRating">
-                        <div class="photoMasterBox">
-                            <img src="themes/sapota/img/salonLogo.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div class="masterMessage">
-                        <button class="signUpMasterButton">Записаться</button>
-                        <a href="#" title="" class="addCompare">добавить к сравнению</a>
-                    </div>
-                    <div class="masterPhone">
-                        <p class="phoneBox">
-                            <i class="fa fa-phone"></i>
-                            <span class="phoneNumberMaster" style="display:none;">+7 (800) 800-90-90</span>
-                            <span class="showPhoneNumberMaster">Показать номер телефона</span>
-                        </p>
-                        <p class="workClockBox">
-                            <i class="fa fa-clock-o"></i>
-                            <span>
-                                пн-пт 9:00-18:00<br />
-                                сб-вс 6:00-21:00
-                            </span>
-                        </p>
-                    </div>
-                </div>
-                <div class="infoMasterAnketa">
-                    <h1>Салон красоты</h1>
-                    <div class="ratingMasterBox">
-						<p>рейтинг: <span class="boldtext ratingNumber">4,5</span>
-							<span class="ratingStarsColor">
-								<img src="themes/sapota/img/ratingStars.png" alt="" />
-							</span>
-						</p>
-					</div>
-					<p class="mainJob">
-                        <span class="boldtext">Основные направления: </span>
-                        маникюр, дизайн ногтей, прически, окрашивание, уход за волосами, макияж, наращивание ресниц, татуаж,
-						косметология лица, укладка волос, стрижка, массаж, эпиляция, косметология тела, татуировки, уход за ногтями.
-                    </p>
-                    <h2>О себе:</h2>
-                    <p class="oneself_salon">
-                        Мы ежедневно ждем вас в салоне красоты ANGEL SALON & SPA!<br />
-						Благодаря нашим совместным усилиям вы всегда будете обворожительно красивы и наполнены положительной энергией. Станьте неотразимы вместе с нами!<br />
-						Все, что нужно для вашей красоты!
-                    </p>
-                    <div class="borderBox"></div><!--разделительная линия-->
-                    <h1>Стоимость основных услуг</h1>
-                    <div class="costServiceBox">
-                        <div>
-                            Свадебная прическа и макияж + репетиция
-                            <span>13 000</span>
-                        </div>
-                        <div>
-                            Свадебная прическа и макияж + репетиция
-                            <span>13 000</span>
-                        </div>
-                        <div>
-                            Свадебная прическа и макияж + репетиция
-                            <span>13 000</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="addressMaster">
-                    <div class="mapBlock">
-                        <img src="themes/sapota/img/map_example.jpg" alt="map">
-                    </div>
-                    <div class="addressBox">
-                        <i class="fa fa-map-o"></i>
-                        <div class="addressMasterTextWrapper">
-                            <div class="addressMasterText">
-                                <div>
-                                    <span class="boldtext">город:</span><span>Москва</span>
-                                </div>
-                                <div style="display:none;">
-                                    <span class="boldtext">район:</span><span class="areaName">Тушинский</span><!--/--------------Если район выезда--------------/-->
-                                </div>
-                                <div>
-                                    <span class="boldtext">метро:</span><span class="undergroundNameandImage"><img src="themes/sapota/img/underground.png" alt="" />Кожуховская</span><!--/-------Если метро выезда------/-->
-                                </div>
-                                <div>
-                                    <span class="boldtext">адрес:</span><span>2-й Южнопортовый проезд, д.18, стр.1</span>
-                                </div>
-                                <div class="exitToClient">
-                                    <i class="fa fa-car"></i>
-                                    <span class="boldtext">выезд к клиенту:</span><span>возможен</span>
-                                </div>
-                            </div>
-                            <div class="regionExit" style="display:none;"><!--/--------------Если район выезда--------------/-->
-                                <span class="boldtext ">район выезда</span>
-                                <span class="areaExit">(5)</span>: 
-                                <div>ЮВАО</div>
-                                <div>ВАО</div>
-                                <div class="lastVisibleArea">ЮАО</div>
-                                <div style="display:none;">ЗАО</div>
-                                <div style="display:none;">ЮЗАО</div>
-                                <a href="#" title="" class="showAllArea">Показать все</a>
-                            </div>
-                            <div class="undergroundExit"><!--/-------Если метро выезда------/-->
-                                <img src="themes/sapota/img/underground.png" alt="" />
-                                <span class="boldtext ">станции выезда</span>
-                                <span class="areaExit">(5)</span>: 
-                                <div>Бабушкинская</div>
-                                <div>Пушкинская</div>
-                                <div class="lastVisibleArea">Спортивная</div>
-                                <div style="display:none;">Лужники</div>
-                                <div style="display:none;">Марьина роща</div>
-                                <a href="#" title="" class="showAllArea">Показать все</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-			
-			<!--меню салона-->
-			<div class="menuSalonBlock">
-				<ul class="menuSalonBlockPoints">
-					<li class="menuSalonPrice activePoits">Прайс-лист</li>
-					<li class="menuSalonMasters">Мастера (2)</li>
-					<li class="menuSalonPortfolio">Портфолио (15)</li>
-					<li class="menuSalonOpinions">Отзывы (3)</li>
-				</ul>
-			</div>
-			<!--END меню салона-->
-			
-			<div class="salonDataMenuWrapper">
-				<!--/----------прайс-лист----------/-->
-				<div class="salonPriceListWrapper">
-					<div class="salonPriceList">
-						<a href="" title="" class="showAllPricesSalon">развернуть все</a>
-						<div class="costServiceBox">
-							<h1>
-								Маникюр
-								<b class="trigger"><i class="arrow"></i></b>
-							</h1>
-							<div class="costServiceMinBox">
-								<div>
-									Покрытие Vinylux
-									<span>1 300</span>
-								</div>
-								<div>
-									Классический маникюр (обрезной)
-									<span>1 000</span>
-								</div>
-								<div>
-									Европейский маникюр (необрезной)
-									<span>2 000</span>
-								</div>
-								<div>
-									Покрытие "Shellac" (цветное)
-									<span>3 000</span>
-								</div>
-								<div>
-									Покрытие Shellac French
-									<span>1 300</span>
-								</div>
-								<div>
-									Покрытие био-гелем (цветное)
-									<span>1 000</span>
-								</div>
-								<div>
-									Покрытие био-гелем French
-									<span>2 000</span>
-								</div>
-								<div>
-									Покрытие лаком для ногтей (основа+лак+закрепитель)
-									<span>3 000</span>
-								</div>
-								<div>
-									Покрытие лаком "французский маникюр"
-									<span>1 300</span>
-								</div>
-								<div>
-									Мужской маникюр
-									<span>1 000</span>
-								</div>
-								<div>
-									Детский маникюр
-									<span>2 000</span>
-								</div>
-							</div>
-							<div class="borderBox"></div><!--разделительная линия-->
-						</div>
-						
-						<div class="costServiceBox">						
-							<h1>
-								Прически
-								<b class="trigger"><i class="arrow"></i></b>
-							</h1>
-							<div class="costServiceMinBox">
-								<div>
-									Вечерние прически
-									<span>1 300</span>
-								</div>
-								<div>
-									Свадебные прически
-									<span>1 000</span>
-								</div>
-								<div>
-									Прически из кос
-									<span>2 000</span>
-								</div>
-								<div>
-									Прически на короткие волосы
-									<span>3 000</span>
-								</div>
-								<div>
-									Прически на средние волосы
-									<span>1 300</span>
-								</div>
-								<div>
-									Прически на длинные волосы
-									<span>1 000</span>
-								</div>
-							</div>
-							<div class="borderBox"></div><!--разделительная линия-->
-						</div>
-						
-						<div class="costServiceBox">
-							<h1>
-								Массаж
-								<b class="trigger"><i class="arrow"></i></b>
-							</h1>
-							<div class="costServiceMinBox">
-								<div>
-									Общий массаж
-									<span>1 300</span>
-								</div>
-								<div>
-									Лечебно-оздоровительный массаж
-									<span>1 000</span>
-								</div>
-								<div>
-									Точечный массаж
-									<span>2 000</span>
-								</div>
-								<div>
-									Спортивный массаж
-									<span>3 000</span>
-								</div>
-								<div>
-									Антицеллюлитный массаж
-									<span>1 300</span>
-								</div>
-								<div>
-									Вакуумно-роликовый lpg массаж
-									<span>1 000</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--/----------END прайс-лист----------/-->
-				
-				<!--/----------мастера----------/-->
-				<div class="salonMasterAllWrapper" style="display:none;">
-					<!--первый мастер-->
-					<div class="infoMasterWrapper salonMaster">
-						<div class="photoMaster">
-							<div class="masterName">Елена Иванова</div>
-							<div class="masterPhotoRating">
-								<div class="photoMasterBox">
-									<img src="themes/sapota/img/photo_master.jpg" alt="" />
-								</div>
-								<div class="ratingMasterBox">
-									<p>опыт: <span class="boldtext">5 лет</span></p>
-									<p>рейтинг: <span class="boldtext ratingNumber">4,5</span><span class="ratingStarsOneStar"></span></p>
-									<p class="countSignUp">отзывы: <span class="boldtext">7</span></p>
-								</div>
-							</div>
-							<div class="masterPhone">
-								<p class="exitYesNo">
-									выезд: <span class="boldtext">возможен</span>
-								</p>
-								<p class="workClockBox">
-									<i class="fa fa-clock-o"></i>
-									<span>
-										пн-пт 9:00-18:00<br />
-										сб-вс 6:00-21:00
-									</span>
-								</p>
-								<p class="countPortfolioMasterSalon">Портфолио: <a href="" title="">15 работ</a></p>
-							</div>
-						</div>
-						<div class="infoMasterAnketa">
-							<h1>Свадебный стилист</h1>
-							<div class="costServiceBox">
-								<div>
-									Свадебная прическа и макияж + репетиция
-									<span>13 000</span>
-								</div>
-								<div>
-									Свадебная прическа и макияж + репетиция
-									<span>13 000</span>
-								</div>
-								<div>
-									Свадебная прическа и макияж + репетиция
-									<span>13 000</span>
-								</div>
-							</div>
-							<div class="examplePortfolioMasterSalonWrapper">
-								<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-								<span><img src="themes/sapota/img/portfolio2.jpg" alt=""></span>
-								<span><img src="themes/sapota/img/portfolio3.jpg" alt=""></span>
-								<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-								<div class="portfolioImgHide" style="display:none;">
-									<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio2.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio3.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio2.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio3.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio2.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio3.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-								</div>
-							</div>
-						</div>
-						<div class="addressMaster">
-							<div class="masterNameSalon">
-								Мастер салона <span class="nameSalonInMaster">ANGEL SALON & SPA</span>
-							</div>
-							<div class="addressBox">
-								<i class="fa fa-map-o"></i>
-								<div class="addressMasterTextWrapper">
-									<div class="addressMasterText">
-										<div>
-											<span class="boldtext">город:</span><span>Москва</span>
-										</div>
-										<div style="display:none;">
-											<span class="boldtext">район:</span><span class="areaName">Тушинский</span><!--/--------------Если район выезда--------------/-->
-										</div>
-										<div>
-											<span class="boldtext">метро:</span><span class="undergroundNameandImage"><img src="themes/sapota/img/underground.png" alt="" />Кожуховская</span><!--/-------Если метро выезда------/-->
-										</div>
-										<div>
-											<span class="boldtext">адрес:</span><span>2-й Южнопортовый проезд, д.18, стр.1</span>
-										</div>	
-									</div>
-								</div>	
-							</div>
-							<div class="signUpBlock">
-								<button class="signUpMasterButton">Записаться</button>
-								<a href="" title="" class="addToChange">добавить к сравнению</a>
-							</div>
-						</div>
-						<div class="borderBox"></div><!--разделительная линия-->
-					</div>	
-					
-					<!--второй мастер-->
-					<div class="infoMasterWrapper salonMaster">
-						<div class="photoMaster">
-							<div class="masterName">Елена Иванова</div>
-							<div class="masterPhotoRating">
-								<div class="photoMasterBox">
-									<img src="themes/sapota/img/photo_master.jpg" alt="" />
-								</div>
-								<div class="ratingMasterBox">
-									<p>опыт: <span class="boldtext">5 лет</span></p>
-									<p>рейтинг: <span class="boldtext ratingNumber">4,5</span><span class="ratingStarsOneStar"></span></p>
-									<p class="countSignUp">отзывы: <span class="boldtext">7</span></p>
-								</div>
-							</div>
-							<div class="masterPhone">
-								<p class="exitYesNo">
-									выезд: <span class="boldtext">возможен</span>
-								</p>
-								<p class="workClockBox">
-									<i class="fa fa-clock-o"></i>
-									<span>
-										пн-пт 9:00-18:00<br />
-										сб-вс 6:00-21:00
-									</span>
-								</p>
-								<p class="countPortfolioMasterSalon">Портфолио: <a href="" title="">15 работ</a></p>
-							</div>
-						</div>
-						<div class="infoMasterAnketa">
-							<h1>Свадебный стилист</h1>
-							<div class="costServiceBox">
-								<div>
-									Свадебная прическа и макияж + репетиция
-									<span>13 000</span>
-								</div>
-								<div>
-									Свадебная прическа и макияж + репетиция
-									<span>13 000</span>
-								</div>
-								<div>
-									Свадебная прическа и макияж + репетиция
-									<span>13 000</span>
-								</div>
-							</div>
-							<div class="examplePortfolioMasterSalonWrapper">
-								<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-								<span><img src="themes/sapota/img/portfolio2.jpg" alt=""></span>
-								<span><img src="themes/sapota/img/portfolio3.jpg" alt=""></span>
-								<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-								<div class="portfolioImgHide" style="display:none;">
-									<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio2.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio3.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio2.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio3.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio2.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio3.jpg" alt=""></span>
-									<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-								</div>
-							</div>
-						</div>
-						<div class="addressMaster">
-							<div class="masterNameSalon">
-								Мастер салона <span class="nameSalonInMaster">ANGEL SALON & SPA</span>
-							</div>
-							<div class="addressBox">
-								<i class="fa fa-map-o"></i>
-								<div class="addressMasterTextWrapper">
-									<div class="addressMasterText">
-										<div>
-											<span class="boldtext">город:</span><span>Москва</span>
-										</div>
-										<div style="display:none;">
-											<span class="boldtext">район:</span><span class="areaName">Тушинский</span><!--/--------------Если район выезда--------------/-->
-										</div>
-										<div>
-											<span class="boldtext">метро:</span><span class="undergroundNameandImage"><img src="themes/sapota/img/underground.png" alt="" />Кожуховская</span><!--/-------Если метро выезда------/-->
-										</div>
-										<div>
-											<span class="boldtext">адрес:</span><span>2-й Южнопортовый проезд, д.18, стр.1</span>
-										</div>	
-									</div>
-								</div>	
-							</div>
-							<div class="signUpBlock">
-								<button class="signUpMasterButton">Записаться</button>
-								<a href="" title="" class="addToChange">добавить к сравнению</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--/----------END мастера----------/-->
-				
-				<!--/----------портфолио салона----------/-->
-				<div class="salonPortfolioWrapper" style="display:none;">
-					<div class="salonPortfolioPhotos">
-						<div class="salonPortfolioPhotosCount">
-							Фотографии салона (5)
-						</div>
-						<div class="salonPortfolioPhotosBlock">
-							<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-							<span><img src="themes/sapota/img/portfolio2.jpg" alt=""></span>
-							<span><img src="themes/sapota/img/portfolio3.jpg" alt=""></span>
-							<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-							<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-						</div>
-					</div>
-					<div class="mastersSalonPortfolioPhotos">
-						<div class="mastersSalonPortfolioPhotosCount">
-							Фотографии работ (10)
-						</div>
-						<div class="mastersSalonPortfolioPhotosBlock">
-							<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-							<span><img src="themes/sapota/img/portfolio2.jpg" alt=""></span>
-							<span><img src="themes/sapota/img/portfolio3.jpg" alt=""></span>
-							<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-							<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-							<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-							<span><img src="themes/sapota/img/portfolio2.jpg" alt=""></span>
-							<span><img src="themes/sapota/img/portfolio3.jpg" alt=""></span>
-							<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-							<span><img src="themes/sapota/img/portfolio1.jpg" alt=""></span>
-						</div>
-					</div>
-				</div>
-				<!--/----------END портфолио салона----------/-->
-				
-				<!--/----------отзывы о салоне----------/-->
-				<div class="salonOpinionsWrapper" style="display:none;">
-					<div class="opinionCount">
-						<div class="opinionCountText">Отзывы: 3 отзыва</div>
-						<a href="#" title="" class="showAllOpinion">Показать все отзывы</a>
-						<div class="middleRateWrapper">
-							Средняя оценка:<span class="middleRate">4,5</span>
-						</div>
-						<div class="howMatchRatingOneTable">
-							<div class="howMatchRatingOneRow">
-								<div class="howMatchRatingWrapper">
-									<span class="howMatchRatingOne"></span>
-								</div>
-								<span>1</span>
-							</div>
-							<div class="howMatchRatingOneRow">
-								<div class="howMatchRatingWrapper">
-									<span class="howMatchRatingOne"></span>
-									<span class="howMatchRatingOne"></span>
-								</div>
-								<span>2</span>
-							</div>
-							<div class="howMatchRatingOneRow">
-								<div class="howMatchRatingWrapper">
-									<span class="howMatchRatingOne"></span>
-									<span class="howMatchRatingOne"></span>
-									<span class="howMatchRatingOne"></span>
-								</div>
-								<span>3</span>
-							</div>
-							<div class="howMatchRatingOneRow">
-								<div class="howMatchRatingWrapper">
-									<span class="howMatchRatingOne"></span>
-									<span class="howMatchRatingOne"></span>
-									<span class="howMatchRatingOne"></span>
-									<span class="howMatchRatingOne"></span>
-								</div>
-								<span>4</span>
-							</div>
-							<div class="howMatchRatingOneRow">
-								<div class="howMatchRatingWrapper">
-									<span class="howMatchRatingOne"></span>
-									<span class="howMatchRatingOne"></span>
-									<span class="howMatchRatingOne"></span>
-									<span class="howMatchRatingOne"></span>
-									<span class="howMatchRatingOne"></span>
-								</div>
-								<span>5</span>
-							</div>
-						</div>
-					</div>
-					<div class="opinionText">
-						<div class="opinionTextWrapper"><!--первый отзыв-->
-							<div class="clientNameOpinion">
-								<span class="boldtext">Ирина Константиновна</span>
-								<span>оценка: <span class="jobEvaluation">4</span></span>
-							</div>
-							<div class="clientDateOpinion">
-								<span>12.12.2012</span>
-								<div class="ratingStarsColor" style="width: 70px;">
-									<img src="themes/sapota/img/ratingStars.png" alt="">
-								</div>
-							</div>
-							<div class="clientTextOpinion">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna dolor, facilisis sed tempor dapibus, consequat eget felis.
-								Proin id justo tellus. Integer a urna tortor. Nulla nec massa sit amet odio tempus fringilla. Aenean eget urna non neque volutpat iaculis.
-								Aliquam lorem sapien, vehicula non lectus quis, ullamcorper pharetra libero.
-								Donec ornare, orci quis eleifend lobortis, mi ante vehicula quam, mollis luctus orci libero sit amet orci. Donec eget varius quam, egestas ullamcorper odio.
-								Aenean magna velit, fermentum eu pretium sit amet, tristique ac urna.
-							</div>
-						</div>
-						<div class="borderBox" style="display: none;"></div>
-						<div class="opinionTextWrapper" style="display: none;"><!--второй отзыв-->
-							<div class="clientNameOpinion">
-								<span class="boldtext">Ирина Константиновна</span>
-								<span>оценка: <span class="jobEvaluation">2,5</span></span>
-							</div>
-							<div class="clientDateOpinion">
-								<span>12.12.2012</span>
-								<div class="ratingStarsColor" style="width: 30px;">
-									<img src="themes/sapota/img/ratingStars.png" alt="">
-								</div>
-							</div>
-							<div class="clientTextOpinion">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna dolor, facilisis sed tempor dapibus, consequat eget felis.
-								Proin id justo tellus. Integer a urna tortor. Nulla nec massa sit amet odio tempus fringilla. Aenean eget urna non neque volutpat iaculis.
-								Aliquam lorem sapien, vehicula non lectus quis, ullamcorper pharetra libero.
-								Donec ornare, orci quis eleifend lobortis, mi ante vehicula quam, mollis luctus orci libero sit amet orci. Donec eget varius quam, egestas ullamcorper odio.
-								Aenean magna velit, fermentum eu pretium sit amet, tristique ac urna.
-							</div>
-						</div>
-						<div class="borderBox" style="display: none;"></div>
-						<div class="opinionTextWrapper" style="display: none;"><!--третий отзыв-->
-							<div class="clientNameOpinion">
-								<span class="boldtext">Ирина Константиновна</span>
-								<span>оценка: <span class="jobEvaluation">4,7</span></span>
-							</div>
-							<div class="clientDateOpinion">
-								<span>12.12.2012</span>
-								<div class="ratingStarsColor" style="width: 100px;">
-									<img src="themes/sapota/img/ratingStars.png" alt="">
-								</div>
-							</div>
-							<div class="clientTextOpinion">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean magna dolor, facilisis sed tempor dapibus, consequat eget felis.
-								Proin id justo tellus. Integer a urna tortor. Nulla nec massa sit amet odio tempus fringilla. Aenean eget urna non neque volutpat iaculis.
-								Aliquam lorem sapien, vehicula non lectus quis, ullamcorper pharetra libero.
-								Donec ornare, orci quis eleifend lobortis, mi ante vehicula quam, mollis luctus orci libero sit amet orci. Donec eget varius quam, egestas ullamcorper odio.
-								Aenean magna velit, fermentum eu pretium sit amet, tristique ac urna.
-							</div>
-						</div>
-					</div>
-					<div class="opinionStay">
-						<button class="opinionStayBtn">Оставить отзыв</button>
-						<div class="socialNetworks">
-							<span>Рекомендовать мастера</span>
-							<ul>
-							  <li class="vk"><a href="#"></a></li>
-							  <li class="fb"><a href="#"></a></li>
-							  <li class="odn"><a href="#"></a></li>
-							</ul>
-						</div>
-						<a href="#" title="">Пожаловаться</a>
-					</div>
-				</div>
-				<!--/----------END отзывы о салоне----------/-->
-			</div>
-		</div>
-		<!--/--------END Так видят Вашу анкету клиенты (салон)--------/-->
     </form>   
     <!--/.wrapperSerchFormWithTabs--> 
   </div>

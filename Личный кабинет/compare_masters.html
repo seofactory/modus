@@ -1,0 +1,976 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+
+<!--link href='http://fonts.googleapis.com/css?family=Play&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'-->
+<link href='http://fonts.googleapis.com/css?family=Marck+Script&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+<!--link rel="shortcut icon" href="favicon.ico" type="image/x-icon"-->
+<!--link rel="stylesheet" type="text/css" href="themes/sapota/css/bootstrap.min.css"-->
+<link rel="stylesheet" type="text/css" href="themes/sapota/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="themes/sapota/css/reset.css">
+<link rel="stylesheet" type="text/css" href="themes/sapota/css/template.css">
+<link rel="stylesheet" type="text/css" href="themes/sapota/css/prettyPhoto.css">
+<link rel="stylesheet" type="text/css" href="themes/sapota/css/lk_style.css">
+
+<!--script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script-->
+<script src="themes/sapota/js/jquery.js"></script>
+<!--script src="themes/sapota/js/bootstrap.min.js"></script-->
+
+<!--галлерея-->
+<script src="themes/sapota/js/jquery.prettyPhoto.js"></script>
+<!--маска для телефона-->
+<script src="themes/sapota/js/jquery.maskedinput.min.js"></script>
+<!--чекбоксы-->
+<script src="themes/sapota/js/check.js"></script>
+<!--селекты-->
+<script src="themes/sapota/js/jquery.selectbox.js"></script>
+
+<!--общий-->
+<script src="themes/sapota/js/site.js"></script>
+
+<!--[if IE]>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<link rel="stylesheet" type="text/css" href="themes/sapota/css/font_ie.css">
+<script src="themes/sapota/js/selectivizr-min.js"></script>
+<![endif]-->
+
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="themes/sapota/css/ie.css">
+<![endif]-->
+
+<script type="text/javascript">
+  jQuery(function($) {
+      $('#phone').mask('9 (999) 999-99-99');
+      $('#phoneRegSalon').mask('9 (999) 999-99-99');
+      $('#phoneFormNonReg').mask('9 (999) 999-99-99');
+  });
+</script> 
+
+<script>
+ $(document).ready(function(){
+	$("a[rel^='prettyPhoto']").prettyPhoto({
+		animation_speed:'normal',//скорость анимации
+		theme:'design',//тема оформления
+		slideshow:5000,//время показа слайда
+		autoplay_slideshow: false//автоматический старт слайдшоу
+	});
+ });
+</script>
+
+</head>
+<body>
+<div class="layout">
+  <header class="headerMain">
+  
+  <!--/-----------------Войти на сайт добавил после 14.10.15--------------------------/-->
+  <div class="intoSiteFormWrapperAll" style="display:none;">
+      <div class="intoSiteFormWrapper">
+          <div class="intoSiteForm">
+              <img class="close_button" src="themes/sapota/img/close_button.png" />
+              <!--/----------простой вход на сайт----------/-->
+              <div class="intoSiteForm_content">
+                  <div class="bodyIntoSite">
+                      <div class="intoBlock">
+                          <h2 class="boldtext">Войти на сайт</h2>
+                          <span><input type="text" placeholder="Логин" /></span>
+                          <div class="passwordBlock">
+                            <span>
+                                <input type="text" placeholder="Пароль" />   
+                            </span>
+                            <span class="forgotPassword"><a href="#">Напомнить пароль</a></span>
+                          </div>
+                      </div>
+                      <div class="intoButtonBlock">
+                          <button>Войти</button>
+                      </div>
+                      <div class="socialIn">
+                            <span class="social_text">Войти через:</span>
+                            <a href="#"><span class="social vk"></span></a>
+                            <a href="#"><span class="social f"></span></a>
+                      </div>
+                  </div>
+              </div>
+              <!--/----------END простой вход на сайт----------/-->
+              
+              <!--/----------записаться к мастеру----------/-->
+              <div class="intoSiteForm_content toMaster" style="display:none;">
+                  <div class="headerIntoSite">
+                      Записаться к мастеру
+                  </div>
+                  <div class="bodyIntoSite">
+                      <p class="infoBodyText">
+                          Пожалуйста, авторизуйтесь, если Вы уже являетесь нашим пользователем.
+                      </p>
+                      <p class="infoBodyLinks">
+                          Нет аккаунта? <a href="#" title="">Зарегистрироваться</a><br />
+                          <a href="#" title="">Войти без регистрации</a>
+                      </p>
+                      <div class="intoBlock">
+                          <h2 class="boldtext">Войти на сайт</h2>
+                          <span><input type="text" placeholder="Логин" /></span>
+                          <div class="passwordBlock">
+                            <span>
+                                <input type="text" placeholder="Пароль" />   
+                            </span>
+                            <span class="forgotPassword"><a href="#">Напомнить пароль</a></span>
+                          </div>
+                      </div>
+                      <div class="intoButtonBlock">
+                          <button>Войти</button>
+                      </div>
+                      <div class="socialIn">
+                            <span class="social_text">Войти через:</span>
+                            <a href="#"><span class="social vk"></span></a>
+                            <a href="#"><span class="social f"></span></a>
+                       </div>
+                  </div>
+              </div>
+              <!--/----------END записаться к мастеру----------/-->
+              
+              <!--/----------записаться к мастеру без регистрации----------/-->
+              <div class="intoNonRegSiteForm_content" style="display:none;">
+                  <div class="headerIntoSite">
+                      Записаться к мастеру
+                  </div>
+                  <div class="bodyIntoSite">
+                      <p class="infoBodyText">
+                          <span>Пожалуйста, авторизуйтесь, если Вы уже являетесь нашим пользователем.</span>
+                          <button>Войти</button>
+                      </p>
+                      <div class="needServices">
+                          <h2 class="boldtext">Вы выбрали мастера/салон:</h2>
+                          <div class="infoMaster">
+                              <span class="photoMaster">
+                                  <img src="themes/sapota/img/photoMaster.png" alt="" />
+                              </span>
+                              <span>Елена Иванова</span>
+                          </div>
+                      </div>
+                      <div class="needServices">
+                          <h2 class="boldtext">Необходимые услуги:</h2>
+                          <textarea></textarea>
+                      </div>
+                      <div class="intoBlock">
+                          <h2 class="boldtext">Ваши личные данные:</h2>
+                          <span><input type="text" placeholder="Имя" /></span>
+                          <span><input type="text" id="phoneFormNonReg" placeholder="Телефон" /></span>
+                          <span><input type="text" placeholder="E-mail" /></span>
+                      </div>
+                      <div class="intoButtonBlock">
+                          <button>Записаться без регистрации</button>
+                      </div>
+                      <div class="socialIn">
+                            <span><a href="#" title="">Зарегистрироваться</a></span>
+                            <span class="social_text">Войти через:</span>
+                            <a href="#"><span class="social vk"></span></a>
+                            <a href="#"><span class="social f"></span></a>
+                      </div>
+                  </div>
+              </div>
+              <!--/----------END записаться к мастеру без регистрации----------/-->
+          </div>
+      </div>
+  </div>
+  
+  <!--/--------Попап при клике на фото в портфолио--------/-->
+  <div class="portfolioPhotoPopUpWrapper" style="display:none;">
+      <div class="portfolioPhotoPopUp">
+          <div class="portfolioPhotoPopUpForm">
+              <img class="close_button" src="themes/sapota/img/close_button.png" />
+              <div class="bigPhotoPortfolio">
+                  <img src="themes/sapota/img/portfolioBigImg.png" />
+              </div>
+              <div class="contentPhotoPopUpWrapper">
+                  <div class="descPortfolioPopUp">
+                      <div class="photoMasterForPopUp">
+                          <img src="themes/sapota/img/photo_master.jpg" alt="">
+                      </div>
+                      <div class="descMasterForPopUp">
+                          <p class="descMasterNamePopUp">Елена Иванова</p>
+                          <p>Свадебный маникюр</p>
+                          <p class="costDescMasterForPopUpWrapp">от <span class="costDescMasterForPopUp">600 руб.</span></p>
+                      </div>
+                      <div class="nextPrevPhotos">
+                          <i class="fa fa-angle-left"></i>
+                          <div></div>
+                          <i class="fa fa-angle-right"></i>
+                      </div>
+                  </div>
+                  <div class="textPortfolioPopUp">
+                      Классический маникюр, покрытие шеллаком, дизайн одного ногтя.
+                      Итоговая стоимость работы 1200 рублей.
+                  </div>
+              </div>
+              <div class="wantAlso">
+                  <button>Хочу так же!</button>
+              </div>
+              <div class="formWantAlsoWrapper" style="display:none;">
+                  <div class="borderBox"></div>
+                  <div class="formWantAlso">
+                      <h2 class="boldtext">Ваши личные данные:</h2>
+                      <span><input type="text" placeholder="Имя" /></span>
+                      <span><input type="text" id="phoneFormNonReg" placeholder="Телефон" /></span>
+                      <span><input type="text" placeholder="E-mail" /></span>
+                      <h2 class="boldtext comments">Комментарии:</h2>
+                      <textarea></textarea>
+                      <button class="messClaim">Отправить заявку</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--/--------Попап при клике на фото в портфолио--------/-->
+  <!--/-----------------END Войти на сайт добавил после 14.10.15--------------------------/-->
+  
+  <!--форма регистрации, клиенты-->
+  <div class="registrationClientFormWrapper" style="display:none;">
+      <div class="registrationClientForm">
+          <img class="close_button" src="themes/sapota/img/close_button.png" />
+          <div class="headerClientReg">
+              Найдите лучшего специалиста для себя
+          </div>
+          <div class="fasterReg">
+              <span>Быстрая регистрация через:</span>
+              <div class="fasterRegSocialIcon">
+                <a href="#"><span class="social_big vk"></span></a>
+                <a href="#"><span class="social_big f"></span></a>
+              </div>
+              <span>или по элекронной почте</span>
+          </div>
+          <form class="formClientReg">
+              <div class="inputRegBlock">
+                <span><input type="text" placeholder="Ваше имя" /></span>
+                <span><input type="text" placeholder="E-mail" /></span>
+                <input type="text" placeholder="Город" />
+            </div>
+            <div class="readyRegBlock">
+              <label class="inputWithValue">
+                <span class="check redChecked"></span>
+                <span class="value">Подписаться на новости проекта</span>
+                <!--input type="checkbox" name="main_prof[]" value="1" style="display: none;"-->
+              </label>
+              <label class="inputWithValue">
+                <span class="check redChecked"></span>
+                <span class="value">Присылать уведомления о появлении<br /> новых мастеров в Вашем городе</span>
+                <!--input type="checkbox" name="main_prof[]" value="1" style="display: none;"-->
+              </label>
+              <button>
+                Зарегистрироваться
+              </button>
+            </div>
+            <div class="go">
+              Уже зарегистрированы? 
+              <a href="#">Войти</a>
+            </div>
+        </form>
+      </div>
+  </div>
+  <!--END форма регистрации, клиенты-->
+  
+  <!--форма регистрации, мастера, салоны-->
+  <div class="registrationFormWrapper" style="display:none;">
+      <div class="registrationForm">
+          <img class="close_button" src="themes/sapota/img/close_button.png" />
+          <div class="headerRegBlock">
+              <span>Тысячи клиентов ждут тебя!</span>
+              Мастер Модус - место, где салоны красоты и мастера находят своих клиентов.
+          </div>
+          <div class="clear"></div>
+          <div class="form_block">
+              <span>Регистрация</span>
+              <form>
+                  <div class="changeMasterSalon">
+                    <span>Вы</span>
+                    <label class="inputWithValue">
+                        <span class="check redChecked"></span>
+                        <span class="value">мастер</span>
+                        <!--input type="checkbox" name="main_prof[]" value="1" style="display: none;"-->
+                      </label>
+                      <label class="inputWithValue">
+                        <span class="check redChecked checked"></span>
+                        <span class="value red">салон красоты</span>
+                        <!--input type="checkbox" name="main_prof[]" value="1" style="display: none;"-->
+                      </label>
+                    </div>
+                    <div class="inputRegBlock">
+                        <span><input type="text" placeholder="Название салона" class="master_salon_name" /></span>
+                        <span><input type="text" placeholder="E-mail" /></span>
+                        <span><input type="text" id="phoneRegSalon" placeholder="Телефон" /></span>
+                        <input type="text" placeholder="Город" />
+                    </div>
+                    <div class="readyRegBlock">
+                        <label class="inputWithValue">
+                          <span class="check redChecked"></span>
+                          <span class="value">Я принимаю условия <a href="#">договора оферты</a></span>
+                          <!--input type="checkbox" name="main_prof[]" value="1" style="display: none;"-->
+                        </label>
+                        <button>
+                            Зарегистрироваться
+                        </button>
+                    </div>
+                    <div class="socialIn">
+                        <span class="social_text">Войти через:</span>
+                        <a href="#"><span class="social vk"></span></a>
+                        <a href="#"><span class="social f"></span></a>
+                    </div>
+                    <div class="go">
+                        Уже зарегистрированы? 
+                        <a href="#">Войти</a>
+                    </div>
+              </form>
+          </div>
+          <div class="description">
+              <div class="descHeader">
+                  <span class="whatWeOffered active">Что мы предлагаем?</span>
+                  <span class="howThisWork">Как это работает?</span>
+              </div>
+              <div class="descBody_offered">
+                  <p>
+                      <img class="v_img" src="themes/sapota/img/v_img.png" alt="" />
+                      <span class="h2">Новые клиенты</span>
+                      Ежедневно более 245 записей в салоны красоты и к частным мастерам по всей Москве и Московской области.
+                  </p>
+                  <p>
+                      <img class="v_img" src="themes/sapota/img/v_img.png" alt="" />
+                      <span class="h2">Управление и контроль</span>
+                      С помощью личного кабинета Вы можете без труда планировать свое расписание, принимать заявки и следить за их статусами.
+                  </p>
+                  <p>
+                      <img class="v_img" src="themes/sapota/img/v_img.png" alt="" />
+                      <span class="h2">Работа только за результат</span>
+                      Оплата производится только за клиента, который воспользовался Вашими услугами.
+                  </p>
+              </div>
+              <div class="descBody_work" style="display:none;">
+                  <ul style="list-style:none;">
+                    <li><span class="numberOrder">1.</span> <span>Вы регистрируетесь на нашем портале.</span></li>
+                    <li><span class="numberOrder">2.</span> <span>Заполняете свою персональную анкету.</span></li>
+                    <li><span class="numberOrder">3.</span> <span>Потенциальный клиента выбирает Вас на нашем сайте.</span></li>
+                    <li><span class="numberOrder">4.</span> <span>Оставляет online-заявку.</span></li>
+                    <li><span class="numberOrder">5.</span> <span>Заявка отражается в Личном кабинете.</span></li>
+                    <li><span class="numberOrder">6.</span> <span>Вы связываетесь с клиентом и договариваетесь о дате и времени приема.</span></li>
+                    <li><span class="numberOrder">7.</span> <span>Клиент приходит к Вам на прием.</span></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--END форма регистрации, мастера, салоны-->
+  <div class="inner"> 
+    <!--логин, телефон, лого-->
+    <div class="logoPhoneLoginLeft">
+      <div class="phone">+7 (495) <span>324-65-78</span></div>
+      <a class="logo" href="/"><img src="themes/sapota/img/logo.png" alt="" /></a>
+      <!--/.logoPhoneLogin--> 
+    </div>
+    <!--статистика-->
+    <div class="statisticsBlock statisticsWizard"> <i class="inlineBlock"></i>
+      <div>99 999 999</div>
+      мастеров 
+    </div>
+    <div class="statisticsBlock statisticsCity"> <i class="inlineBlock"></i>
+      <div>999</div>
+      городов 
+    </div>
+    <div class="statisticsBlock statisticsCountry"> <i class="inlineBlock"></i>
+      <div>9</div>
+      стран
+    </div>
+    <div class="balanceRatingBlock">
+        <div class="nameMaster">Мария Машкова</div>
+        <div class="balance">
+          Ваш баланс: 200 руб.
+          <div>
+              <a href="#">пополнить баланс?</a>
+          </div>
+        </div>
+        <div class="rating">
+            Ваш рейтинг: 4,5
+            <span class="ratingStars four"></span>
+        </div>
+        <button class="exit">
+            выход
+        </button>
+    </div>
+    <div class="statis_block">
+        <div class="status_text red">
+            <span style="display:none;">Ваш статус для клиентов "В отпуске"</span><!--статус "В отпуске-->
+            <span style="color: #0d8705;">Ваша анкета активна</span><!--статус "Анкета активна-->
+            <span style="display:none;">Ваша анкета проверяется модератором</span><!--статус "Модератор-->
+        </div><!--если статус "в отпуске" или "анкета активна"-->
+          <div class="button status_master">
+                <!--работаю-->
+                в отпуске
+              <div class="popupWrapper" style="display:none;">
+                <img src="themes/sapota/img/corner_popup.png" alt="corner" />
+                <div class="status_desc_wrapper">
+                    <div class="status_desc">
+                      <!--если статус "В отпуске"-->
+                      <span style="display:none;">
+                        Сейчас клиенты не видят вашу анкету.<br />
+                        Нажмите на кнопку "Работаю", чтобы вновь сделать её активной.
+                      </span>
+                      <!--если статус "Ваша анкета активна"-->
+                      <span>
+                        На время отсутствия включите режим "в отпуске"<br />
+                        во избежании заказов от клиентов в этот период.
+                      </span>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <!--если статус "Ваша анкета проверяется модератором"-->
+          <div class="moderator" style="display:none;">
+              <a href="mailto:info@modus.ru" class="mail_link_info">info@modus.ru</a> | 8(800) 888-90-90 | <a href="#">Онлайн-консультант</a>
+          </div>
+		</div>
+		<!--/.inner--> 
+		</div>
+	</header>
+
+	<div class="wrapper wrapperOnMainPage lk">
+		<div class="body_lk_wrapper wrapper">
+			<div class="fasterFindClient">
+				<span>Найдите клиента быстрее</span>
+				<div>
+				  <div class="wrapper_mini_block premium">
+					  <a href="#">
+						<span class="icon_bonus_block"></span>
+						<span>СДЕЛАТЬ ПРЕМИУМ</span>
+					  </a>
+				  </div>
+				</div>
+				<div>
+				  <div class="wrapper_mini_block vip">
+					  <a href="#">
+						  <span class="icon_bonus_block"></span>
+						  <span>СДЕЛАТЬ VIP</span>
+					  </a>
+				  </div>    
+				</div>
+				<div>
+				  <div class="wrapper_mini_block eliminate">
+					  <a href="#">
+						  <span class="icon_bonus_block"></span>
+						  <span>ВЫДЕЛИТЬ</span>
+					  </a>
+				  </div>
+				</div>
+				<div>
+				  <div class="wrapper_mini_block liftToFind">
+					  <a href="#">
+						<span class="icon_bonus_block"></span>
+						<span>ПОДНЯТЬ В ПОИСКЕ</span>
+					  </a>
+				  </div>
+				</div>
+				<div>
+				  <div class="wrapper_mini_block makePackeg">
+					  <a href="#">
+						<span class="icon_bonus_block"></span>
+						<span>ПРИМЕНИТЬ ПАКЕТ УСЛУГ</span>
+					  </a>
+				  </div>
+				</div>
+			</div>
+		</div>
+
+		<!--хлебные крошки-->
+		<div class="bread_crumbs">
+			<a onclick=" location.href='file:///Z:/!Харитонов Андрей/Модус/git/modus/Личный кабинет/index.html'" href="#" alt="">Главная</a> /
+			<a onclick=" location.href='file:///Z:/!Харитонов Андрей/Модус/git/modus/Личный кабинет/index.html'" href="#" alt="">Мастер красоты</a> /
+			Сравнение мастеров
+		</div>
+		<!--/.хлебные крошки-->
+
+		<!--сравнение мастеров-->
+		<div class="compareMastersWrapper">
+			<div class="compareMastersWrapperHeader">
+				<h2>Сравнение мастеров</h2>
+			</div>
+			<div class="compareMasters">
+				<div class="chooseBlock">
+					<div class="compare_masterPersonalData">
+						<p class="compare_masterChoose">выбрано:<p>
+						<p class="compare_masterBody"><span>8</span> мастеров крастоты</p>
+					</div>	
+					<button class="contactAllMastersButton">Связаться со всеми</button>
+					<div class="compare_masterDeleteOrder">
+						<a href="#" title="">очистить список</a>
+					</div>
+					<div class="compare_masterShowParameters">
+						<div class="compare_masterShowData">Показать параметры</div>
+						<ul class="compare_masterShowDataChoose">
+							<li><a href="#" title="">Все</a></li>
+							<li class="activePoits"><a href="#" title="">Различающиеся</a></li>
+						</ul>
+					</div>
+
+					<ul class="compare_masterData">
+						<li>опыт</li>
+						<li>рейтинг</li>
+						<li>отзывы</li>
+						<li>город</li>
+						<li>возможность выезда</li>
+						<li>количество работ в портфолио</li>
+					</ul>
+
+					<ul class="compare_masterServiceCost">
+						<li>
+							стоимость услуг
+							<ul class="compare_masterServiceCostInside">
+								<li>Макияж</li>
+								<li>Уход за лицом</li>
+								<li>Уход за глазами</li>
+								<li>Индивидуальная консультация</li>
+								<li>Подбор стиля</li>
+								<li>Подбор цветовой палитры</li>
+							</ul>
+						</li>
+					</ul>
+					<div class="compareMasterBorder">
+						<div class="border_art">
+							<div class="border_art_top">
+								<img src="themes/sapota/img/border_img_top.png">
+							</div>
+							<div class="border_art_bottom">
+								<img src="themes/sapota/img/border_img_bottom.png">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--1-->	
+					<div class="masterBlock" data-master-order="1">
+						<div class="compare_masterPersonalData">
+							<div class="compare_masterName">Елена Иванова-Сидорова 1</div>
+							<div class="compare_masterJob">косметолог</div>
+						</div>
+						<div class="compare_masterPhoto">
+							<span class="compare_photoWrapper"><img src="themes/sapota/img/photo_master.jpg" alt=""></span>
+						</div>
+						<button class="signUpMasterButton">Записаться</button>
+						<div class="compare_masterDelete">
+							<a href="#" title="">убрать из списка</a>
+						</div>
+						
+						<ul class="compare_masterData">
+							<li>2 года</li>
+							<li>4,7</li>
+							<li>5</li>
+							<li>Санкт-Петербург</li>
+							<li>возможен</li>
+							<li>15 <a href="#" title="">посмотреть</a></li>
+						</ul>
+						
+						<ul class="compare_masterServiceCost">
+							<li>
+								&nbsp;
+								<ul>
+									<li>800 руб.</li>
+									<li>250 руб.</li>
+									<li>1 500 руб.</li>
+									<li>2 600 руб.</li>
+									<li>3 000 руб.</li>
+									<li>2 500 руб.</li>
+								</ul>
+							</li>
+						</ul>
+						<div class="compare_masterViewProfile">
+							<a href="#" title="">смотреть профиль</a>
+						</div>
+						<div class="compareMasterBorder"></div>
+					</div>
+				<!--/.1-->
+
+				<!--2-->	
+					<div class="masterBlock" data-master-order="2">
+						<div class="compare_masterPersonalData">
+							<div class="compare_masterName">Елена Иванова 2</div>
+							<div class="compare_masterJob">косметолог</div>
+						</div>
+						<div class="compare_masterPhoto">
+							<span class="compare_photoWrapper"><img src="themes/sapota/img/photo_master.jpg" alt=""></span>
+						</div>
+						<button class="signUpMasterButton">Записаться</button>
+						<div class="compare_masterDelete">
+							<a href="#" title="">убрать из списка</a>
+						</div>
+						
+						<ul class="compare_masterData">
+							<li>2 года</li>
+							<li>4,7</li>
+							<li>5</li>
+							<li>Санкт-Петербург</li>
+							<li>возможен</li>
+							<li>15 <a href="#" title="">посмотреть</a></li>
+						</ul>
+						
+						<ul class="compare_masterServiceCost">
+							<li>
+								&nbsp;
+								<ul>
+									<li>-</li>
+									<li>250 руб.</li>
+									<li>1 500 руб.</li>
+									<li>2 600 руб.</li>
+									<li>3 000 руб.</li>
+									<li>2 500 руб.</li>
+								</ul>
+							</li>
+						</ul>
+						<div class="compare_masterViewProfile">
+							<a href="#" title="">смотреть профиль</a>
+						</div>
+						<div class="compareMasterBorder"></div>
+					</div>
+				<!--/.2-->
+
+				<!--3-->	
+					<div class="masterBlock" data-master-order="3">
+						<div class="compare_masterPersonalData">
+							<div class="compare_masterName">Елена Иванова 3</div>
+							<div class="compare_masterJob">косметолог</div>
+						</div>
+						<div class="compare_masterPhoto">
+							<span class="compare_photoWrapper"><img src="themes/sapota/img/photo_master.jpg" alt=""></span>
+						</div>
+						<button class="signUpMasterButton">Записаться</button>
+						<div class="compare_masterDelete">
+							<a href="#" title="">убрать из списка</a>
+						</div>
+						
+						<ul class="compare_masterData">
+							<li>2 года</li>
+							<li>4,7</li>
+							<li>5</li>
+							<li>Санкт-Петербург</li>
+							<li>возможен</li>
+							<li>15 <a href="#" title="">посмотреть</a></li>
+						</ul>
+						
+						<ul class="compare_masterServiceCost">
+							<li>
+								&nbsp;
+								<ul>
+									<li>800 руб.</li>
+									<li>250 руб.</li>
+									<li>1 500 руб.</li>
+									<li>2 600 руб.</li>
+									<li>3 000 руб.</li>
+									<li>-</li>
+								</ul>
+							</li>
+						</ul>
+						<div class="compare_masterViewProfile">
+							<a href="#" title="">смотреть профиль</a>
+						</div>
+						<div class="compareMasterBorder"></div>
+					</div>
+				<!--/.3-->
+
+				<!--4-->	
+					<div class="masterBlock" data-master-order="4">
+						<div class="compare_masterPersonalData">
+							<div class="compare_masterName">Елена Иванова 4</div>
+							<div class="compare_masterJob">косметолог</div>
+						</div>
+						<div class="compare_masterPhoto">
+							<span class="compare_photoWrapper"><img src="themes/sapota/img/photo_master.jpg" alt=""></span>
+						</div>
+						<button class="signUpMasterButton">Записаться</button>
+						<div class="compare_masterDelete">
+							<a href="#" title="">убрать из списка</a>
+						</div>
+						
+						<ul class="compare_masterData">
+							<li>2 года</li>
+							<li>4,7</li>
+							<li>5</li>
+							<li>Санкт-Петербург</li>
+							<li>возможен</li>
+							<li>15 <a href="#" title="">посмотреть</a></li>
+						</ul>
+						
+						<ul class="compare_masterServiceCost">
+							<li>
+								&nbsp;
+								<ul>
+									<li>800 руб.</li>
+									<li>250 руб.</li>
+									<li>1 500 руб.</li>
+									<li>-</li>
+									<li>3 000 руб.</li>
+									<li>2 500 руб.</li>
+								</ul>
+							</li>
+						</ul>
+						<div class="compare_masterViewProfile">
+							<a href="#" title="">смотреть профиль</a>
+						</div>
+						<div class="compareMasterBorder"></div>
+					</div>
+				<!--/.4-->
+
+				<!--5-->
+					<div class="masterBlock" data-master-order="5">
+						<div class="compare_masterPersonalData">
+							<div class="compare_masterName">Елена Иванова-Сидорова 5</div>
+							<div class="compare_masterJob">косметолог-дерматолог-визажист</div>
+						</div>
+						<div class="compare_masterPhoto">
+							<span class="compare_photoWrapper"><img src="themes/sapota/img/photo_master.jpg" alt=""></span>
+						</div>
+						<button class="signUpMasterButton">Записаться</button>
+						<div class="compare_masterDelete">
+							<a href="#" title="">убрать из списка</a>
+						</div>
+						
+						<ul class="compare_masterData">
+							<li>2 года</li>
+							<li>4,7</li>
+							<li>5</li>
+							<li>Санкт-Петербург</li>
+							<li>возможен</li>
+							<li>15 <a href="#" title="">посмотреть</a></li>
+						</ul>
+						
+						<ul class="compare_masterServiceCost">
+							<li>
+								&nbsp;
+								<ul>
+									<li>800 руб.</li>
+									<li>250 руб.</li>
+									<li>1 500 руб.</li>
+									<li>2 600 руб.</li>
+									<li>3 000 руб.</li>
+									<li>2 500 руб.</li>
+								</ul>
+							</li>
+						</ul>
+						<div class="compare_masterViewProfile">
+							<a href="#" title="">смотреть профиль</a>
+						</div>
+						<div class="compareMasterBorder"></div>
+					</div>
+				<!--/.5-->
+
+				<!--6-->
+					<div class="masterBlock" data-master-order="6">
+						<div class="compare_masterPersonalData">
+							<div class="compare_masterName">Елена Иванова-Сидорова 6</div>
+							<div class="compare_masterJob">косметолог-дерматолог-визажист</div>
+						</div>
+						<div class="compare_masterPhoto">
+							<span class="compare_photoWrapper"><img src="themes/sapota/img/photo_master.jpg" alt=""></span>
+						</div>
+						<button class="signUpMasterButton">Записаться</button>
+						<div class="compare_masterDelete">
+							<a href="#" title="">убрать из списка</a>
+						</div>
+						
+						<ul class="compare_masterData">
+							<li>2 года</li>
+							<li>4,7</li>
+							<li>5</li>
+							<li>Санкт-Петербург</li>
+							<li>возможен</li>
+							<li>15 <a href="#" title="">посмотреть</a></li>
+						</ul>
+						
+						<ul class="compare_masterServiceCost">
+							<li>
+								&nbsp;
+								<ul>
+									<li>800 руб.</li>
+									<li>250 руб.</li>
+									<li>1 500 руб.</li>
+									<li>2 600 руб.</li>
+									<li>3 000 руб.</li>
+									<li>2 500 руб.</li>
+								</ul>
+							</li>
+						</ul>
+						<div class="compare_masterViewProfile">
+							<a href="#" title="">смотреть профиль</a>
+						</div>
+						<div class="compareMasterBorder"></div>
+					</div>
+				<!--/.6-->
+
+				<!--7-->
+					<div class="masterBlock" data-master-order="7">
+						<div class="compare_masterPersonalData">
+							<div class="compare_masterName">Елена Иванова-Сидорова 7</div>
+							<div class="compare_masterJob">косметолог-дерматолог-визажист</div>
+						</div>
+						<div class="compare_masterPhoto">
+							<span class="compare_photoWrapper"><img src="themes/sapota/img/photo_master.jpg" alt=""></span>
+						</div>
+						<button class="signUpMasterButton">Записаться</button>
+						<div class="compare_masterDelete">
+							<a href="#" title="">убрать из списка</a>
+						</div>
+						
+						<ul class="compare_masterData">
+							<li>2 года</li>
+							<li>4,7</li>
+							<li>5</li>
+							<li>Санкт-Петербург</li>
+							<li>возможен</li>
+							<li>15 <a href="#" title="">посмотреть</a></li>
+						</ul>
+						
+						<ul class="compare_masterServiceCost">
+							<li>
+								&nbsp;
+								<ul>
+									<li>800 руб.</li>
+									<li>250 руб.</li>
+									<li>1 500 руб.</li>
+									<li>2 600 руб.</li>
+									<li>3 000 руб.</li>
+									<li>2 500 руб.</li>
+								</ul>
+							</li>
+						</ul>
+						<div class="compare_masterViewProfile">
+							<a href="#" title="">смотреть профиль</a>
+						</div>
+						<div class="compareMasterBorder"></div>
+					</div>
+				<!--/.7-->
+
+				<!--8-->
+					<div class="masterBlock" data-master-order="8">
+						<div class="compare_masterPersonalData">
+							<div class="compare_masterName">Елена Иванова-Сидорова 8</div>
+							<div class="compare_masterJob">косметолог-дерматолог-визажист</div>
+						</div>
+						<div class="compare_masterPhoto">
+							<span class="compare_photoWrapper"><img src="themes/sapota/img/photo_master.jpg" alt=""></span>
+						</div>
+						<button class="signUpMasterButton">Записаться</button>
+						<div class="compare_masterDelete">
+							<a href="#" title="">убрать из списка</a>
+						</div>
+						
+						<ul class="compare_masterData">
+							<li>2 года</li>
+							<li>4,7</li>
+							<li>5</li>
+							<li>Санкт-Петербург</li>
+							<li>возможен</li>
+							<li>15 <a href="#" title="">посмотреть</a></li>
+						</ul>
+						
+						<ul class="compare_masterServiceCost">
+							<li>
+								&nbsp;
+								<ul>
+									<li>800 руб.</li>
+									<li>250 руб.</li>
+									<li>1 500 руб.</li>
+									<li>2 600 руб.</li>
+									<li>3 000 руб.</li>
+									<li>2 500 руб.</li>
+								</ul>
+							</li>
+						</ul>
+						<div class="compare_masterViewProfile">
+							<a href="#" title="">смотреть профиль</a>
+						</div>
+						<div class="compareMasterBorder"></div>
+					</div>
+				<!--/.8-->
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div class="returnToOrder">
+			<span></span>
+			<a onclick=" location.href='file:///Z:/!Харитонов Андрей/Модус/git/modus/Личный кабинет/index.html'" href="#" title="">Вернуться к поиску</a>
+		</div>
+		<!--/.сравнение мастеров-->
+	</div>
+
+	<!--FOOTER-->
+	<footer>
+	  <div class="inner"> 
+		
+		<!--footerContactsBlock-->
+		<div class="footerContactsBlock"> <a href="/" class="footerLogo"><img src="themes/sapota/img/logoInFooter.png" alt="" /></a>
+		  <div class="phone">+7 (495) <span>324-65-78</span></div>
+		  <a href="mailto:info@master_modus.com" class="mail">info@master_modus.com</a>
+		  <div class="socialNetworks">
+			<ul>
+			  <li class="vk"><a href="#"></a></li>
+			  <li class="fb"><a href="#"></a></li>
+			  <li class="odn"><a href="#"></a></li>
+			</ul>
+			<div class="clear"></div>
+		  </div>
+		  <div class="login"> 
+			  <a class="getInto" href="#">Войти</a> | <a class="goRegistration" href="#">Зарегистрироваться</a> 
+			  <div class="changeGetInto" style="display:none;">
+				<label class="inputWithValue client">
+				  <span class="check redChecked"></span>
+				  <span class="value">как клиент</span>
+				  <!--input type="checkbox" name="main_prof[]" value="5" style="display: none;"-->
+				</label>
+				<label class="inputWithValue master">
+				  <span class="check redChecked"></span>
+				  <span class="value">как мастер/салон</span>
+				  <!--input type="checkbox" name="main_prof[]" value="5" style="display: none;"-->
+				</label>
+				<div class="continueButton">
+				  <button class="continue">
+					  Продолжить
+				  </button>
+				</div>
+			  </div>
+		  </div>
+		  <!--/.footerContactsBlock--> 
+		</div>
+		
+		<!--footerNavLeft-->
+		<nav class="footerNavLeft">
+		  <ul>
+			<li><a href="#">О нас</a></li>
+			<li><a href="#">Форум</a></li>
+			<li><a href="#">Модные новости</a></li>
+			<li><a href="#">Часто задаваемые вопросы</a></li>
+			<li><a href="#">Правила сотрудничества</a></li>
+		  </ul>
+		  <!--/.footerNavLeft--> 
+		</nav>
+		<!--footerNavRight-->
+		<nav class="footerNavRight"> <a href="#" class="bigOrangeH txt13">Статьи</a>
+		  <ul>
+			<li><a href="#">Длинный заголовок длинной длинной длинной длинной статьи</a></li>
+			<li><a href="#">Заголовок статьи</a></li>
+			<li><a href="#">Заголовок статьи</a></li>
+			<li><a href="#">Заголовок статьи</a></li>
+		  </ul>
+		  <a href="#" class="bigOrangeH txt11">Все статьи</a> 
+		  <!--/.footerNavRight--> 
+		</nav>
+		<div class="clear"></div>
+		<!--/.inner--> 
+	  </div>
+	  <div class="footerBottom">
+		<!--inner-->
+		<div class="inner"> 
+		<a class="logoSF" href="http://www.seofactory.ru/" target="_blank">
+			<img src="themes/sapota/img/logoSeoFactory.png" alt="" />
+			<span>Создание и<br> продвижение сайтов</span>
+		</a>
+		<!--/.inner-->
+		</div>
+		<!--/.footerBottom--> 
+	  </div>
+	</footer>
+</body>
+</html>
